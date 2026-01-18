@@ -22,4 +22,6 @@ createCanvas(canvasWidth,canvasHeight);
 
 function draw() {
 background("black");
+fill(text.r, text.g, text.b); // text colour for "text" object 
+
 }
