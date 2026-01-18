@@ -24,6 +24,15 @@ function draw() {
 
  }
 rect(0,0,rectW, rectH);
- 
+
+
+//rectangle 2 
+if (mouseX > rectW && mouseX < rectW *2){
+fill( 255);
+} else {
+    fill(0,100,255);
 }
+rect(rectW, 0, rectW, rectH);
+}
+
 
