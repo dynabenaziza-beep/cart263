@@ -5,9 +5,9 @@ const canvasHeight = 500;
 
 const text= { 
  word: "test" ,
- r: 255,
- g: 255, 
- b: 255,
+ r: 255, // white 
+ g: 255, //white 
+ b: 255,// white 
  size: 28,
  x: Width/2 ,
  y: Height /2
@@ -17,7 +17,7 @@ const text= {
 
 function setup() {
     console.log("go")
-createCanvas(500,500)
+createCanvas(canvasWidth,canvasHeight);
 }
 
 function draw() {
