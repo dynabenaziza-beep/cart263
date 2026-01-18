@@ -33,6 +33,14 @@ fill( 255);
     fill(0,100,255);
 }
 rect(rectW, 0, rectW, rectH);
+
+//rectangle 3 
+
+if (mouseX > rectW *2 ){
+    fill (255);
+
+} else {
+   fill(0,200,255);   
 }
-
-
+rect(rectW * 2,0, rectW, rectH);
+}
