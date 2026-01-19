@@ -1,8 +1,11 @@
 "use strict";
 
+
 const canvasW= 500;
 const canvasH = 500; 
 
+const radiusStep = 15;
+const alphaStep = 10;
 
 let counter=0;
 
@@ -17,6 +20,11 @@ const orangeSquare = {
         b: 0
     }
 };
+const hoverBoost = 60;
+
+let radius = 30;
+let ellipseAlpha = 40;
+
 
 function setup() {
     console.log("go")
@@ -25,11 +33,35 @@ createCanvas(canvasW, canvasH);
 
 function draw() {
  background("black");
- displaySquare();
 
+ background("black");
+
+  displaySquare();
+
+  // only draw if counter is between 1 and 10
+  if (counter >= 1 && counter <= 10) {
+
+    let i = 0;
+    let currentRadius = radius;
+    let currentAlpha = ellipseAlpha;
+
+    // ONE while loop
+    while (i < counter) {
+      push();
+      fill(255, 255, 255, currentAlpha);
+      ellipse(width / 2, height / 2, currentRadius * 2, currentRadius * 2);
+      pop();
+
+      currentRadius = currentRadius + radiusStep;
+      currentAlpha = currentAlpha + alphaStep;
+
+      i = i + 1;
+    }
+  }
 }
 function displaySquare(){
- push();
+push();
+    
 if (checkCollisionWithSquare() === true) {
         fill(
             orangeSquare.color.r,
@@ -56,5 +88,11 @@ const insideX = mouseX >= orangeSquare.x && mouseX <= orangeSquare.x + orangeSqu
         return true;
     } else {
         return false;
+    }
+}
+
+function mousePressed() {
+    if (checkCollisionWithSquare() === true) {
+        counter = counter + 1;
     }
 }
