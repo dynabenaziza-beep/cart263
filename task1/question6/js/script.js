@@ -44,4 +44,9 @@ for (let i = 0; i <= 0; i++){
  text(i, xPos, yPos);
   }
 
+for (let i=verticalStart ; i>= verticalEnd; i--){
+    
+}
+
+
 }
