@@ -29,5 +29,8 @@ function draw() {
 
 }
 function displaySquare(){
-    
+ push();
+    fill(orangeSquare.color.r, orangeSquare.color.g, orangeSquare.color.b);
+    rect(orangeSquare.x, orangeSquare.y, orangeSquare.w, orangeSquare.h);
+    pop();   
 }
