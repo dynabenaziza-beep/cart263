@@ -34,3 +34,6 @@ function displaySquare(){
     rect(orangeSquare.x, orangeSquare.y, orangeSquare.w, orangeSquare.h);
     pop();   
 }
+function checkCollisionWithSquare(){
+    
+}
