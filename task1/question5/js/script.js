@@ -30,10 +30,31 @@ function draw() {
 }
 function displaySquare(){
  push();
+if (checkCollisionWithSquare() === true) {
+        fill(
+            orangeSquare.color.r,
+            orangeSquare.color.g + hoverBoost,
+            orangeSquare.color.b + hoverBoost
+        );
+
+    }else{
+
     fill(orangeSquare.color.r, orangeSquare.color.g, orangeSquare.color.b);
+    }
     rect(orangeSquare.x, orangeSquare.y, orangeSquare.w, orangeSquare.h);
     pop();   
+
 }
+
+
 function checkCollisionWithSquare(){
-    
+
+const insideX = mouseX >= orangeSquare.x && mouseX <= orangeSquare.x + orangeSquare.w;
+    const insideY = mouseY >= orangeSquare.y && mouseY <= orangeSquare.y + orangeSquare.h;
+
+    if (insideX && insideY) {
+        return true;
+    } else {
+        return false;
+    }
 }
