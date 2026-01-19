@@ -51,8 +51,7 @@ for (let i=verticalStart ; i>= verticalEnd; i--){
     const xPos = startX;
     const yPos = startY + i * spacing;
 
-
-    text(i, xPos, yPos);
+ text(i, xPos, yPos);
 }
 
 
