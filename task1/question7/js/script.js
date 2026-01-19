@@ -15,13 +15,21 @@ let drawCircle = true;
 function setup() {
     console.log("go")
 createCanvas(500,500);
+
+randomizeColor(); // pick color on refresh
 }
 
 function draw() {
 background("black");
+
+push();
+  fill(shapeR, shapeG, shapeB);
+  ellipse(width / 2, height / 2, shapeSize, shapeSize);
+  pop();
 }
 
 function randomizeColor(){
-
-    
+shapeR = floor(random(256));
+    shapeG = floor(random(256));
+    shapeB = floor(random(256));
 }
