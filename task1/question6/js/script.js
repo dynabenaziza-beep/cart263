@@ -20,7 +20,7 @@ const startY = 50;
 const verticalStart = 15 ; 
 const verticalEnd =1;
 
-const spacing = 20; 
+const spacing = 28; 
 
 function setup() {
     
