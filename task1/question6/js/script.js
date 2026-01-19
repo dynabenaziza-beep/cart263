@@ -17,6 +17,10 @@ const textData= {
 const startX = 50 ;
 const startY = 50; 
 
+const verticalStart = 15 ; 
+const verticalEnd =1;
+
+
 function setup() {
     
 createCanvas(canvasWidth,canvasHeight);
@@ -32,6 +36,12 @@ textAlign(CENTER , CENTER);
 text(text.word, text.x , text.y);
 
 // draw series num 
-for let i = 0; i <= 0; i++)
+for (let i = 0; i <= 0; i++){
+
+  const xPos = startX + i * spacing;
+    const yPos = startY;  
+
+ text(i, xPos, yPos);
+  }
 
 }
