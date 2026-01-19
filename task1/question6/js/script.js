@@ -3,26 +3,28 @@
 const canvasWidth = 500; // constant for canvas 
 const canvasHeight = 500;
 
-const text= { 
+const textData= { 
  word: "test" ,
  r: 255, // white 
  g: 255, //white 
  b: 255,// white 
  size: 28,
- x: Width/2 ,
- y: Height /2
+ x: canvasWidth/2 ,
+ y: canvasHeight /2
 
 
 };
 
 function setup() {
-    console.log("go")
+    
 createCanvas(canvasWidth,canvasHeight);
 }
 
 function draw() {
 background("black");
-fill(text.r, text.g, text.b); // text colour for "text" object 
+fill(textData.r, textData.g, textData.b); // text colour for "text" object 
 textSize(text.size); // text size  for "text" object 
+textAlign(CENTER , CENTER);
+text(text.word, text.x , text.y);
 
 }
