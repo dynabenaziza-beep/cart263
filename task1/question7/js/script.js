@@ -1,4 +1,6 @@
 "use strict";
+ const canvasW = 500;
+const canvasH = 500;
 
 function setup() {
     console.log("go")
