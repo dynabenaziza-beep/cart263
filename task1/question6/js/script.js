@@ -37,7 +37,7 @@ textAlign(CENTER , CENTER);
 text(textData.word, textData.x , textData.y);
 
 // draw series num  horizental 
-for (let i = 0; i <= 0; i++){
+for (let i = 0; i <= 9; i++){
 
   const xPos = startX + i * spacing;
     const yPos = startY;  
