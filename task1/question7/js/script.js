@@ -30,6 +30,7 @@ push();
   fill(shapeR, shapeG, shapeB);
   ellipse(width / 2, height / 2, shapeSize, shapeSize);
   pop();
+  
 }
 }
 }
