@@ -39,3 +39,9 @@ shapeR = floor(random(256));
     shapeG = floor(random(256));
     shapeB = floor(random(256));
 }
+
+function keyPressed() {
+  if (key === " ") {
+    randomizeColor();
+  }
+}
