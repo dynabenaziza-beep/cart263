@@ -25,4 +25,9 @@ createCanvas(canvasW, canvasH);
 
 function draw() {
  background("black");
+ displaySquare();
+
+}
+function displaySquare(){
+    
 }
