@@ -25,10 +25,13 @@ createCanvas(canvasWidth,canvasHeight);
 function draw() {
 background("black");
 
-
+// draw centered word 
 fill(textData.r, textData.g, textData.b); // text colour for "text" object 
 textSize(text.size); // text size  for "text" object 
 textAlign(CENTER , CENTER);
 text(text.word, text.x , text.y);
+
+// draw series num 
+for let i = 0; i <= 0; i++)
 
 }
