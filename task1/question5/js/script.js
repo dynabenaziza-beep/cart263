@@ -56,6 +56,7 @@ function draw() {
       currentAlpha = currentAlpha + alphaStep;
 
       i = i + 1;
+      
     }
   }
 }
