@@ -45,3 +45,7 @@ function keyPressed() {
     randomizeColor();
   }
 }
+
+function mousePressed() {
+  drawCircle = !drawCircle;
+}
