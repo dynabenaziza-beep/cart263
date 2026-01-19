@@ -22,10 +22,16 @@ randomizeColor(); // pick color on refresh
 function draw() {
 background("black");
 
+for (let y = shapeSize / 2; y <= height - shapeSize / 2; y += shapeSize) {
+    for (let x = shapeSize / 2; x <= width - shapeSize / 2; x += shapeSize) {
+
+
 push();
   fill(shapeR, shapeG, shapeB);
   ellipse(width / 2, height / 2, shapeSize, shapeSize);
   pop();
+}
+}
 }
 
 function randomizeColor(){
