@@ -154,10 +154,12 @@ for(let pTag of allPTagsThree){
 function customNewCreate(parent){
 /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv.*/
     let newDiv = document.createElement("div");
+/* 2C:Then append this new element to the parent variable within the function.*/
+    newDiv.className ="testDiv";
+    /* 2D:Finally, return</code> this new element */
+    parent.appendChilss(newDiv);
+    return newDiv;
 }
-
-/* 2C:Then append this new element to the parent variable within the function. 
-/* 2D:Finally, return</code> this new element */
 /* 2E:Create a nested for loop (for rows and columns) to iterate through 10 columns and 10 rows (just like the JS Review :)). 
     Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. 
     Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
