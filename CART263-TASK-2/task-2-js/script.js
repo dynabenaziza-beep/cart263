@@ -160,9 +160,12 @@ function customNewCreate(parent){
     parent.appendChilss(newDiv);
     return newDiv;
 }
+
 /* 2E:Create a nested for loop (for rows and columns) to iterate through 10 columns and 10 rows (just like the JS Review :)). 
-    Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. 
-    Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
+    Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. */
+    
+let gridParent = document.getElementById("new-grid");  
+   /* Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
 /* 2F: You will see at this point that the x,y position of the resulting divs makes no sense... 
     Fix this by doing the following: every time you call customNewBoxCreate() - save the current returned element 
     in a variable i.e. returnedDiv. 
