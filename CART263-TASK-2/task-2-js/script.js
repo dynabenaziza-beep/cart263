@@ -151,7 +151,11 @@ for(let pTag of allPTagsThree){
 /*************************************** */
 /* 2: GRID OF BOXES */
 /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
-/* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. 
+function customNewCreate(parent){
+/* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv.*/
+    let newDiv = document.createElement("div");
+}
+
 /* 2C:Then append this new element to the parent variable within the function. 
 /* 2D:Finally, return</code> this new element */
 /* 2E:Create a nested for loop (for rows and columns) to iterate through 10 columns and 10 rows (just like the JS Review :)). 
