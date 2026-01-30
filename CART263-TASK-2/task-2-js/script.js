@@ -163,8 +163,10 @@ function customNewBoxCreate(parent){
 
 /* 2E:Create a nested for loop (for rows and columns) to iterate through 10 columns and 10 rows (just like the JS Review :)). 
     Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. */
-    
+  
 let gridParent = document.getElementById("new-grid"); 
+
+let boxSize = 40;
 for( let row= 0; row < 10;row++){ //outer loop 
 for (let col = 0; col < 10; col++){ // inner loop 
 
