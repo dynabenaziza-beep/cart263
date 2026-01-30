@@ -151,13 +151,13 @@ for(let pTag of allPTagsThree){
 /*************************************** */
 /* 2: GRID OF BOXES */
 /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
-function customNewCreate(parent){
+function customNewBoxCreate(parent){
 /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv.*/
     let newDiv = document.createElement("div");
 /* 2C:Then append this new element to the parent variable within the function.*/
     newDiv.className ="testDiv";
     /* 2D:Finally, return</code> this new element */
-    parent.appendChilss(newDiv);
+    parent.appendChild(newDiv);
     return newDiv;
 }
 
@@ -165,14 +165,16 @@ function customNewCreate(parent){
     Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. */
     
 let gridParent = document.getElementById("new-grid"); 
-for( let row= 0; row < 10;row++){
-for (let col = 0; col < 10; col++){
+for( let row= 0; row < 10;row++){ //outer loop 
+for (let col = 0; col < 10; col++){ // inner loop 
 
+let returnedDiv =customNewBoxCreate(gridParent);
 }
 }
    /* Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
-/* 2F: You will see at this point that the x,y position of the resulting divs makes no sense... 
-    Fix this by doing the following: every time you call customNewBoxCreate() - save the current returned element 
+/* 2F: You will see at this point that the x,y position of the resulting divs makes no sense... à*/
+
+    /*Fix this by doing the following: every time you call customNewBoxCreate() - save the current returned element 
     in a variable i.e. returnedDiv. 
     Set the style (left and top) to the of this element to 
     the necessary x and y position (use the counter variables in the for nested for loop to 
