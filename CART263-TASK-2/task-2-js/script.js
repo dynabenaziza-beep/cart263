@@ -214,6 +214,20 @@ let returnedDiv =customNewBoxCreate(gridParent);
     when dividing by three. */
 
 /***CODE */
+//get parent element for the second grid 
+let gridParentThree = document.getElementById("new grid-three");
+console.log(gridParentThree);
+
+for (let row = 0; row < 10; row++) {
+  for (let col = 0; col < 10; col++) {
+    customNewBoxCreate(gridParentThree);
+  }
+}
+
+// check how many divs were created
+console.log(
+  document.querySelectorAll("#new-grid-three .testDiv").length
+);
 
 
 /***EXPLANATION::
