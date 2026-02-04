@@ -171,11 +171,13 @@ let boxSize = 40;
 for( let row= 0; row < 10;row++){ //outer loop 
 for (let col = 0; col < 10; col++){ // inner loop 
 
+    let returnedDiv =customNewBoxCreate(gridParent);
+
 returnedDiv.style.position = "absolute";  // to manualy place/change  the box in the text 
 returnedDiv.style.left = (col * boxSize) + "px"; //
 returnedDiv.style.top = (row * boxSize) + "px";
 
-let returnedDiv =customNewBoxCreate(gridParent);
+
 }
 }
    /* Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
