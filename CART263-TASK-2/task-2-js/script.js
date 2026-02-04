@@ -167,8 +167,13 @@ function customNewBoxCreate(parent){
 let gridParent = document.getElementById("new-grid"); 
 
 let boxSize = 40;
+
 for( let row= 0; row < 10;row++){ //outer loop 
 for (let col = 0; col < 10; col++){ // inner loop 
+
+returnedDiv.style.position = "absolute";  // to manualy place/change  the box in the text 
+returnedDiv.style.left = (col * boxSize) + "px"; //
+returnedDiv.style.top = (row * boxSize) + "px";
 
 let returnedDiv =customNewBoxCreate(gridParent);
 }
@@ -215,7 +220,6 @@ let returnedDiv =customNewBoxCreate(gridParent);
  * 
  * 
  */
-
 /*************************************** */
 /*** END PART THREE CREATE */ 
 /*************************************** */
