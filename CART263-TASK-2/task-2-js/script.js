@@ -217,12 +217,16 @@ returnedDiv.style.top = (row * boxSize) + "px";
 
 /***CODE */
 //get parent element for the second grid 
-let gridParentThree = document.getElementById("new grid-three");
+let gridParentThree = document.getElementById("new-grid-three");
 console.log(gridParentThree);
 
 for (let row = 0; row < 10; row++) {
   for (let col = 0; col < 10; col++) {
-    let returnedDiv=(gridParentThree);
+    let returnedDiv= customNewBoxCreate(gridParentThree);
+
+    returnedDiv.style.position="absolute";
+    returnedDiv.style.left =(col* 40)+"px";
+    returnedDiv.style.top =(row *40) +"px";
   }
 }
 
