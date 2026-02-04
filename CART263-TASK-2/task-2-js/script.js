@@ -227,6 +227,7 @@ for (let row = 0; row < 10; row++) {
     returnedDiv.style.position="absolute";
     returnedDiv.style.left =(col* 40)+"px";
     returnedDiv.style.top =(row *40) +"px";
+    let remainder= col % 3;// % = vertical color rol 
   }
 }
 
