@@ -228,6 +228,17 @@ for (let row = 0; row < 10; row++) {
     returnedDiv.style.left =(col* 40)+"px";
     returnedDiv.style.top =(row *40) +"px";
     let remainder= col % 3;// % = vertical color rol 
+
+    if (remainder=== 0){
+        returnedDiv.style.backgroundColor="red";
+    }else if(remainder ===1 ){
+        returnedDiv.style.backgroundColor ="orange";
+    } else {
+        returnedDiv.style.backgroundColor="yellow";
+    }
+    returnedDiv.style.backgroundColor= "yelow" ;
+  
+  
   }
 }
 
