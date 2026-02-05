@@ -247,7 +247,6 @@ console.log(
   document.querySelectorAll("#new-grid-three .testDiv").length
 );
 
-
 /***EXPLANATION::
  * 
  * 
