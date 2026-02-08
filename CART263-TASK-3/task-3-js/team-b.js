@@ -121,6 +121,7 @@ function setup_B() {
 
     let cellSize = 25;   //size of each square 
 
+let gap = 2; //space between squares 
 
     //repeat  loop left to right 
     for (let j= 0; j < rows; j ++){
@@ -133,8 +134,8 @@ function setup_B() {
 
     //place it so i can see it
    // move square to the rigth using i  
-    d.style.left =(i * cellSize) + "px"; //move rigth 
-    d.style.top =(j* cellSize)+ "px";  //move down 
+    d.style.left = i * (cellSize + gap) + "px"; //move rigth 
+    d.style.top = j * (cellSize + gap )+ "px";  //move down 
 
     }
    }
