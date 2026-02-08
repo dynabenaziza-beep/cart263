@@ -137,6 +137,10 @@ let gap = 2; //space between squares
     d.style.left = i * (cellSize + gap) + "px"; //move rigth 
     d.style.top = j * (cellSize + gap )+ "px";  //move down 
 
+    //repeat colors by column 
+    let colorIndex = i % colors.length;
+    d.style.backgroundColor = colors[colorIndex];
+
     }
    }
   }
