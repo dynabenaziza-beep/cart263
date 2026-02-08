@@ -121,4 +121,16 @@ function setup_B() {
 
     let cellSize = 25;   //size of each square 
 
+
+// test : make one square appear
+    let d = document.createElement("div"); //create div element (square)
+    d.classList.add("TEAM_B_ANI_D_cell"); //so css can style 
+    parentCanvas.appendChild(d);
+
+    //place it so i can see it 
+    d.style.left ="25px"; //move rigth 
+    d.style.top ="25px";  //move down 
+
     }
+  
+  }
