@@ -122,6 +122,8 @@ function setup_B() {
     let cellSize = 25;   //size of each square 
 
 let gap = 2; //space between squares 
+let time = 0; // keep track animation time 
+let cells =[]; // store all square so can animate them 
 
     //repeat  loop left to right 
     for (let j= 0; j < rows; j ++){
@@ -132,10 +134,13 @@ let gap = 2; //space between squares
     d.classList.add("TEAM_B_ANI_D_cell"); //so css can style 
     parentCanvas.appendChild(d);
 
+    cells.push(d); // remember square 
+
     //place it so i can see it
    // move square to the rigth using i  
-    d.style.left = i * (cellSize + gap) + "px"; //move rigth 
-    d.style.top = j * (cellSize + gap )+ "px";  //move down 
+    d.style.left = i * (cellSize + gap) + "px"; //move rigth
+
+    d.style.top = j * (cellSize + gap )+  "px";  //move down 
 
     //repeat colors by column 
     let colorIndex = i % colors.length;
@@ -143,5 +148,22 @@ let gap = 2; //space between squares
 
     }
    }
+
+function animate () {
+  time += 0.02;
+
+// move every square again every frame
+  for (let index = 0; index < cells.length; index++) {
+    let d = cells[index]; // get one square
+
+    // figure out which row this square is in
+    let row = Math.floor(index / cols);
+
+    // set top again using row + time (makes movement)
+    d.style.top = row * (cellSize + gap) + time * 2 + "px";
   }
+requestAnimationFrame(animate);
+  }
+  animate();
+}
 }
