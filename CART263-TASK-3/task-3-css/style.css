@@ -161,3 +161,11 @@ body{
   border-radius:10px;
   transform: translate(-50%, -50%);
 }
+
+/* TEAM B -ANI D */
+.TEAM_B_ANI_D_cell{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background: red;
+}
