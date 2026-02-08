@@ -116,14 +116,15 @@ function setup_B() {
     "yellow"
     ];
 //size of the grid 
-    let cols = 24;  // across
-    let rows = 24;   // how many down
+    let cols = 15;  // across
+    let rows = 15;   // how many down
 
     let cellSize = 25;   //size of each square 
 
 
     //repeat  loop left to right 
-    for (let i= 0; i < cols; i++){
+    for (let j= 0; j < rows; j ++){
+      for (let i = 0; i < cols ; i++){
 
 // test : make one square appear
     let d = document.createElement("div"); //create div element (square)
@@ -133,8 +134,9 @@ function setup_B() {
     //place it so i can see it
    // move square to the rigth using i  
     d.style.left =(i * cellSize) + "px"; //move rigth 
-    d.style.top ="25px";  //move down 
+    d.style.top =(j* cellSize)+ "px";  //move down 
 
     }
    }
   }
+}
