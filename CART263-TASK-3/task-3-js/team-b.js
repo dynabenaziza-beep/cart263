@@ -139,11 +139,11 @@ let cells =[]; // store all square so can animate them
     //place it so i can see it
    // move square to the rigth using i  
     d.style.left = i * (cellSize + gap) + "px"; //move rigth
-
+d.style.top = j * (cellSize + gap) + "px"; // move down
     
 
     //repeat colors by column 
-    let colorIndex = i % colors.length;
+  let colorIndex = i % colors.length; // base color per column  
     d.style.backgroundColor = colors[colorIndex];
 
     }
@@ -156,11 +156,9 @@ function animate () {
   for (let index = 0; index < cells.length; index++) {
     let d = cells[index]; // get one square
 
-    // figure out which row this square is in
-    let row = Math.floor(index / cols);
-
-    // set top again using row + time (makes movement)
-    d.style.top = row * (cellSize + gap) + Math.sin(time )* 6+ "px";
+let colorIndex = (index + Math.floor(time * 4)) % colors.length;
+    d.style.backgroundColor = colors[colorIndex];
+    
   }
 requestAnimationFrame(animate);
   }
