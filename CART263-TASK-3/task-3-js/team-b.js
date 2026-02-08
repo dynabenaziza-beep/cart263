@@ -160,7 +160,7 @@ function animate () {
     let row = Math.floor(index / cols);
 
     // set top again using row + time (makes movement)
-    d.style.top = row * (cellSize + gap) + time * 2 + "px";
+    d.style.top = row * (cellSize + gap) + Math.sin(time )* 6+ "px";
   }
 requestAnimationFrame(animate);
   }
