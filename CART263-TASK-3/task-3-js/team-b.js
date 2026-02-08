@@ -116,8 +116,8 @@ function setup_B() {
     "yellow"
     ];
 //size of the grid 
-    let cols = 15;  // across
-    let rows = 15;   // how many down
+    let cols = 14;  // across
+    let rows = 14;   // how many down
 
     let cellSize = 25;   //size of each square 
 
