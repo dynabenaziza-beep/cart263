@@ -107,14 +107,12 @@ function setup_B() {
 
    function aniD(parentCanvas) {
     console.log("in ani-D -teamB");
-
-
-    //put color in array so i can reuse them 
+//put color in array so i can reuse them 
     let colors =[
-    "red",
-    "red",
-    "blue",
-    "yellow"
+    "black",
+    "black",
+    "gray",
+    "red"
     ];
 //size of the grid 
     let cols = 14;  // across
@@ -124,7 +122,7 @@ function setup_B() {
 
 let gap = 2; //space between squares 
 let time = 0; // keep track animation time 
-let cells =[]; // store all square so can animate them 
+let cells = parentCanvas.children;
 
     //repeat  loop left to right 
     for (let j= 0; j < rows; j ++){
@@ -134,34 +132,30 @@ let cells =[]; // store all square so can animate them
     let d = document.createElement("div"); //create div element (square)
     d.classList.add("TEAM_B_ANI_D_cell"); //so css can style 
     parentCanvas.appendChild(d);
-
-    cells.push(d); // remember square 
+ 
+    d.style.width  = cellSize - (i % 3) * 3 + "px";
+d.style.height = cellSize - (i % 3) * 3 + "px";
 
     //place it so i can see it
    // move square to the rigth using i  
     d.style.left = i * (cellSize + gap) + "px"; //move rigth
 d.style.top = j * (cellSize + gap) + "px"; // move down
-    
-
     //repeat colors by column 
   let colorIndex = i % colors.length; // base color per column  
     d.style.backgroundColor = colors[colorIndex];
-
     }
    }
-
 function animate () {
   //move time forward slowly 
-  time += 0.02;
-//update every square frame 
-  for (let index = 0; index < cells.length; index++) {
-    let d = cells[index]; // get one square
-
+  time += 0.008;
+//update every square frame   
+for (let i = 0; i < cells.length; i++) {
+    let d = cells[i];
 // move  colors over time modulo 
-let colorIndex = (index + Math.floor(time * 2)) % colors.length;
-    d.style.backgroundColor = colors[colorIndex];
-    
+let colorIndex = (i + Math.floor(time * 2)) % colors.length;
+    d.style.backgroundColor = colors[colorIndex];  
   }
+  
 requestAnimationFrame(animate);
   }
   // start animation once 
