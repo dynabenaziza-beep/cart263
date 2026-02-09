@@ -112,6 +112,7 @@ function setup_B() {
     //put color in array so i can reuse them 
     let colors =[
     "red",
+    "red",
     "blue",
     "yellow"
     ];
@@ -150,18 +151,20 @@ d.style.top = j * (cellSize + gap) + "px"; // move down
    }
 
 function animate () {
+  //move time forward slowly 
   time += 0.02;
-
-// move every square again every frame
+//update every square frame 
   for (let index = 0; index < cells.length; index++) {
     let d = cells[index]; // get one square
 
-let colorIndex = (index + Math.floor(time * 4)) % colors.length;
+// move  colors over time modulo 
+let colorIndex = (index + Math.floor(time * 2)) % colors.length;
     d.style.backgroundColor = colors[colorIndex];
     
   }
 requestAnimationFrame(animate);
   }
+  // start animation once 
   animate();
 }
 }
