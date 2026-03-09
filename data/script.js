@@ -46,3 +46,7 @@ function seedDots() {
 }
 
 seedDots();
+
+function moveDots (){
+    
+}
