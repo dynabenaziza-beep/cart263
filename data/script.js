@@ -19,7 +19,16 @@ dot.style.background =typeColors [type];
   dot.style.top = y + "px";
 
   stage.appendChild(dot);
-}
 
+  // store all important data for this dot
+  dots.push({
+    x: x,
+    y: y,
+    vx: random(-0.6, 0.6),
+    vy: random(-0.6, 0.6),
+    type: type,
+    element: dot
+  });
+}
 // test dot
 addDot(200, 200);
