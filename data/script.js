@@ -15,4 +15,6 @@ const dot = document.createElement("div"); //
   dot.className = "dot"; // css class dot 
 dot.style.background =typeColors [type];
 
+stage.appendChild(dot);
+
 }
