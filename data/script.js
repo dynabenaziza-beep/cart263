@@ -30,8 +30,6 @@ dot.style.background =typeColors [type];
     element: dot
   });
 }
-// test dot
-addDot(200, 200);
 
 function seedDots() {
 
