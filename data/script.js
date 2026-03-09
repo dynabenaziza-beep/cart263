@@ -44,9 +44,13 @@ function seedDots() {
   }
 
 }
-
+//generate all starting dots 
 seedDots();
 
 function moveDots (){
-    
-}
+  
+     dots.forEach(function(dot) {
+    dot.x += dot.vx; //
+    dot.y += dot.vy; //
+  });
+    }
