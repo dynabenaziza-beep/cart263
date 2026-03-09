@@ -10,5 +10,9 @@ function random(min, max) {
 
   function addDot(x, y) {
   const type = Math.floor(Math.random() * 3);
+
+const dot = document.createElement("div"); //
+  dot.className = "dot"; // css class dot 
+
 }
 }
