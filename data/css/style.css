@@ -7,4 +7,6 @@ body {
   width: 100vw;
   height: 100vh;
   background: #050505;
+  position:relative;
+  overflow: hidden;
 }
