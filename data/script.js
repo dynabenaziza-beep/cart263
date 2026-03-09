@@ -7,12 +7,12 @@ const typeColors = ["#ffffff", "#9ca3af", "#60a5fa"]; // each dot will random us
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
-
+}
   function addDot(x, y) {
   const type = Math.floor(Math.random() * 3);
 
 const dot = document.createElement("div"); //
   dot.className = "dot"; // css class dot 
+dot.style.background =typeColors [type];
 
-}
 }
