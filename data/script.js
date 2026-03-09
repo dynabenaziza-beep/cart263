@@ -15,6 +15,11 @@ const dot = document.createElement("div"); //
   dot.className = "dot"; // css class dot 
 dot.style.background =typeColors [type];
 
-stage.appendChild(dot);
+  dot.style.left = x + "px";
+  dot.style.top = y + "px";
 
+  stage.appendChild(dot);
 }
+
+// test dot
+addDot(200, 200);
