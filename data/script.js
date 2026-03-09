@@ -22,13 +22,27 @@ dot.style.background =typeColors [type];
 
   // store all important data for this dot
   dots.push({
-    x: x,
-    y: y,
-    vx: random(-0.6, 0.6),
-    vy: random(-0.6, 0.6),
-    type: type,
+    x: x,   // horizental 
+    y: y, //vertical 
+    vx: random(-0.6, 0.6),  //h speed 
+    vy: random(-0.6, 0.6),  //v speed
+    type: type,             //dot type 
     element: dot
   });
 }
 // test dot
 addDot(200, 200);
+
+function seedDots() {
+
+  const rect = stage.getBoundingClientRect(); // get stage size
+
+  for (let i = 0; i < totalDots; i++) {
+
+    const x = random(20, rect.width - 20); // random x position
+    const y = random(20, rect.height - 20); // random y position
+
+    addDot(x, y); // create a dot at that position
+  }
+
+}
