@@ -9,6 +9,6 @@ function random(min, max) {
   return Math.random() * (max - min) + min;
 
   function addDot(x, y) {
-
+  const type = Math.floor(Math.random() * 3);
 }
 }
