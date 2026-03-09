@@ -1,8 +1,6 @@
 const stage = document.getElementById("stage");
 
-const testDot = document.createElement("div");
-testDot.className = "dot";
-testDot.style.left ="200px"; //set horizontal posiiton of the dot 
-testDot.style.top ="200px" ; //set vertical position of the dot 
+const dots = []; //create an emoty array to store all dots 
+const totalDots = 35;//how many dots 
 
-stage.appendChild(testDot);
+const typeColors = ["#ffffff", "#9ca3af", "#60a5fa"]; // each dot will random use those colors 
