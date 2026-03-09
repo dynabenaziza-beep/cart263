@@ -44,3 +44,5 @@ function seedDots() {
   }
 
 }
+
+seedDots();
