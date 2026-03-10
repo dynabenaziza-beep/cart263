@@ -54,3 +54,12 @@ function moveDots (){
     dot.y += dot.vy; //
   });
     }
+
+    function drawDots() {
+
+  dots.forEach(function(dot) {
+    dot.element.style.left = dot.x + "px";
+    dot.element.style.top = dot.y + "px";
+  });
+
+}
