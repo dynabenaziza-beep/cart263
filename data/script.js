@@ -83,14 +83,8 @@ function drawLines(){
         //caculate distance 
         const distance = getDistance(dot1 , dot2);
 
-        if (distance < 120){ //only connect dots that are close 
-            ctx.beginPath();
-
-            // start from the center of the first dot
-        ctx.moveTo(dot1.x + 6, dot1.y + 6);
-
-        // end at the center of the second dot
-        ctx.lineTo(dot2.x + 6, dot2.y + 6);
+        if (distance < 120 && lineIndex < lines.length){ //only connect dots that are close 
+           
 
 
          }
@@ -101,7 +95,7 @@ function drawLines(){
  function animate(){
 moveDots();
   drawDots();
-  drawLines();
+  drawLines();//update connection 
 
   requestAnimationFrame(animate);
  }
