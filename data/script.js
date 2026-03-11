@@ -85,9 +85,15 @@ function drawLines(){
 
         if (distance < 120){ //only connect dots that are close 
             ctx.beginPath();
+
+            // start from the center of the first dot
+        ctx.moveTo(dot1.x + 6, dot1.y + 6);
+
+        // end at the center of the second dot
+        ctx.lineTo(dot2.x + 6, dot2.y + 6);
+         }
         }
- }
-}
+    }
 }
 
  function animate(){
