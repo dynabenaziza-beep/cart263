@@ -76,6 +76,7 @@ function groupSimilarDots(){
         
         const dot1 = dots[i];
         const dot2 = dots[j];
+        const distance = getDistance(dot1, dot2);
 
     }
   }  
