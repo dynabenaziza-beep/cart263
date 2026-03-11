@@ -46,8 +46,6 @@ function seedDots() {
   }
 
 }
-
-
 function moveDots (){
   
      dots.forEach(function(dot) {
@@ -126,6 +124,11 @@ for (let i = 0; i < 300; i++) {
     addLine();
   }
 }
+//listen for click inside stage 
+stage.addEventListener("click", function(event){
+
+});
+
  //generate all starting dots 
 seedDots();
 seedLines();
