@@ -71,10 +71,15 @@ function getDistance(dot1,dot2){
     // Math.sqrt = square root
     return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 }
+//draw line between dots that are close to each other 
 function drawLines(){
+    for (let i =0; i <dots.length;i++){// loop through every dot in the dots array 
 
+    for (let j=i+1; j< dots.length;j++){
+
+    }
 }
-
+}
 
  function animate(){
 moveDots();
