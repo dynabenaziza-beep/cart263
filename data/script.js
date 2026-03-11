@@ -126,7 +126,9 @@ for (let i = 0; i < 300; i++) {
 }
 //listen for click inside stage 
 stage.addEventListener("click", function(event){
-
+//  clicks inside the stage(position and size )
+stage.addEventListener("click", function(event) {
+});
 });
 
  //generate all starting dots 
