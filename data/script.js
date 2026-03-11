@@ -73,6 +73,7 @@ function getDistance(dot1,dot2){
 }
 //draw line between dots that are close to each other 
 function drawLines(){
+    let lineIndex=0;
     for (let i =0; i <dots.length;i++){// loop through every dot in the dots array 
 //j start at i + 1 = dont compare same pair twice 
     for (let j=i+1; j< dots.length;j++){
@@ -90,9 +91,20 @@ function drawLines(){
                 const dy = dot2.y - dot1.y;
 
                 const angle = Math.atan2(dy, dx) * 180 / Math.PI
-         }
+  line.style.width = distance + "px";
+  line.style.left = dot1.x + 6 + "px";
+  line.style.top = dot1.y + 6 + "px";
+  line.style.transform = "rotate(" + angle + "deg)";
+  line.style.display = "block";
+
+  lineIndex++;
+           }
         }
     }
+    while (lineIndex < lines.length) {
+    lines[lineIndex].style.display = "none";
+    lineIndex++;
+  }
 }
 
  function animate(){
