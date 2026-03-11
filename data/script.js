@@ -69,6 +69,12 @@ function getDistance(dot1,dot2){
     // Math.sqrt = square root
     return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 }
+
+function groupSimilarDots(){
+ // check if the dots are the same type
+if (dot1.type === dot2.type) {   
+}
+}
 //draw line between dots that are close to each other 
 function drawLines(){
     let lineIndex=0;
@@ -130,7 +136,6 @@ for (let i = 0; i < 300; i++) {
 stage.addEventListener("click", function(event){
 //  clicks inside the stage(position and size )
 const rect = stage.getBoundingClientRect();
-
 
      const x = event.clientX - rect.left; //get click x position 
       const y = event.clientY - rect.top;// get  y position 
