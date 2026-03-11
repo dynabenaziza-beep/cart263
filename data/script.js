@@ -69,6 +69,12 @@ moveDots();
   drawDots();
   requestAnimationFrame(animate);
  }
+ function addLine() {
+  const line = document.createElement("div");
+  line.className = "line";
+  stage.appendChild(line);
+  lines.push(line);
+}
  //generate all starting dots 
 seedDots();
 animate(); 
