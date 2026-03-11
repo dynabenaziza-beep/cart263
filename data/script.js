@@ -74,10 +74,12 @@ function getDistance(dot1,dot2){
 //draw line between dots that are close to each other 
 function drawLines(){
     for (let i =0; i <dots.length;i++){// loop through every dot in the dots array 
-
+//j start at i + 1 = dont compare same pair twice 
     for (let j=i+1; j< dots.length;j++){
 
-    }
+        const dot1 = dots[i]; // get first dot from dots array using index i 
+        const dot2 =dots[j]; // second dpt from dots array using index j 
+ }
 }
 }
 
