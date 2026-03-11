@@ -79,6 +79,9 @@ function drawLines(){
 
         const dot1 = dots[i]; // get first dot from dots array using index i 
         const dot2 =dots[j]; // second dpt from dots array using index j 
+
+        //caculate distance 
+        const distance = getDistance(dot1 , dot2);
  }
 }
 }
