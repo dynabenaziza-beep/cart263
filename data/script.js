@@ -131,6 +131,7 @@ stage.addEventListener("click", function(event) {
 
      const x = event.clientX - rect.left; //get click x position 
       const y = event.clientY - rect.top;// get  y position 
+      addDot(x, y);
 });
 });
 
