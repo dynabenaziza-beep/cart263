@@ -64,8 +64,15 @@ function moveDots (){
   });
 
 }
+//find distance between 2 dots 
+function getDistance(dot1,dot2){
+    const xDistance= dot1.x -dot2.x; //horizental dist between two dot 
+    const yDistance = dot1.y-dot2.y; //vertical distance betweem two dot
+    // Math.sqrt = square root
+    return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+}
 function drawLines(){
-    
+
 }
 
 
