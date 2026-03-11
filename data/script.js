@@ -73,6 +73,9 @@ function getDistance(dot1,dot2){
 function groupSimilarDots(){
  for (let i = 0; i < dots.length; i++) {
     for (let j = i + 1; j < dots.length; j++) {
+        
+        const dot1 = dots[i];
+        const dot2 = dots[j];
 
     }
   }  
