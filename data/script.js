@@ -91,6 +91,8 @@ function drawLines(){
 
         // end at the center of the second dot
         ctx.lineTo(dot2.x + 6, dot2.y + 6);
+
+
          }
         }
     }
@@ -99,6 +101,7 @@ function drawLines(){
  function animate(){
 moveDots();
   drawDots();
+  drawLines();
 
   requestAnimationFrame(animate);
  }
