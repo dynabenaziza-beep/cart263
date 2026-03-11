@@ -81,6 +81,8 @@ function drawLines(){
 
         //caculate distance 
         const distance = getDistance(dot1 , dot2);
+        // check if the dots are the same type
+   if (dot1.type === dot2.type) {
 
         if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
            const line = lines[lineIndex]; // get line element when two dots are close 
@@ -139,3 +141,4 @@ const rect = stage.getBoundingClientRect();
 seedDots();
 seedLines();
 animate(); 
+}
