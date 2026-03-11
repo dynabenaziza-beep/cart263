@@ -71,9 +71,11 @@ function getDistance(dot1,dot2){
 }
 
 function groupSimilarDots(){
- // check if the dots are the same type
-if (dot1.type === dot2.type) {   
-}
+ for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+
+    }
+  }  
 }
 //draw line between dots that are close to each other 
 function drawLines(){
