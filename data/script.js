@@ -83,7 +83,15 @@ function groupSimilarDots(){
 
       // only group dots of the same type
       if (dot1.type === dot2.type) {  
+ 
+        // only group if they are close enough
+        if (distance < 150) {
+          const dx = dot2.x - dot1.x;
+          const dy = dot2.y - dot1.y;
+
+        
     }
+}
   }  
 }
 }
