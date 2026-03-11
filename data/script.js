@@ -130,6 +130,7 @@ stage.addEventListener("click", function(event){
 stage.addEventListener("click", function(event) {
 
      const x = event.clientX - rect.left; //get click x position 
+      const y = event.clientY - rect.left;// get  y position 
 });
 });
 
