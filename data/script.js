@@ -89,7 +89,8 @@ function groupSimilarDots(){
           const dx = dot2.x - dot1.x;
           const dy = dot2.y - dot1.y;
 
-        
+        dot1.x += dx * 0.002;
+          dot1.y += dy * 0.002;
     }
 }
   }  
