@@ -84,7 +84,7 @@ function drawLines(){
         const distance = getDistance(dot1 , dot2);
 
         if (distance < 120){ //only connect dots that are close 
-
+            ctx.beginPath();
         }
  }
 }
