@@ -76,10 +76,16 @@ function groupSimilarDots(){
         
         const dot1 = dots[i];
         const dot2 = dots[j];
-        const distance = getDistance(dot1, dot2);
 
+        const distance = getDistance(dot1, dot2);//measure distance 
+       // only group dots of the same type
+      if (dot1.type === dot2.type) { 
+
+      // only group dots of the same type
+      if (dot1.type === dot2.type) {  
     }
   }  
+}
 }
 //draw line between dots that are close to each other 
 function drawLines(){
@@ -152,4 +158,5 @@ const rect = stage.getBoundingClientRect();
 seedDots();
 seedLines();
 animate(); 
+}
 }
