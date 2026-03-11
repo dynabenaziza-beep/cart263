@@ -128,6 +128,8 @@ for (let i = 0; i < 300; i++) {
 stage.addEventListener("click", function(event){
 //  clicks inside the stage(position and size )
 stage.addEventListener("click", function(event) {
+
+     const x = event.clientX - rect.left; //get click x position 
 });
 });
 
