@@ -76,9 +76,12 @@ moveDots();
   stage.appendChild(line);
   lines.push(line);
 }
-function seedLines{
-    
+function seedLines(){
+for (let i = 0; i < 300; i++) {
+    addLine();
+  }
 }
  //generate all starting dots 
 seedDots();
+seedLines();
 animate(); 
