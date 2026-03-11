@@ -83,10 +83,8 @@ function drawLines(){
         //caculate distance 
         const distance = getDistance(dot1 , dot2);
 
-        if (distance < 120 && lineIndex < lines.length){ //only connect dots that are close 
-           
-
-
+        if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
+           const line = lines[lineIndex]; // get line element when two dots are close 
          }
         }
     }
