@@ -64,9 +64,15 @@ function moveDots (){
   });
 
 }
+function drawLines(){
+    
+}
+
+
  function animate(){
 moveDots();
   drawDots();
+
   requestAnimationFrame(animate);
  }
 
