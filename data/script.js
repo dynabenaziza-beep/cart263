@@ -85,6 +85,11 @@ function drawLines(){
 
         if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
            const line = lines[lineIndex]; // get line element when two dots are close 
+
+             const dx = dot2.x - dot1.x;
+                const dy = dot2.y - dot1.y;
+
+                const angle = Math.atan2(dy, dx) * 180 / Math.PI
          }
         }
     }
