@@ -44,8 +44,7 @@ function seedDots() {
   }
 
 }
-//generate all starting dots 
-seedDots();
+
 
 function moveDots (){
   
@@ -63,3 +62,11 @@ function moveDots (){
   });
 
 }
+ function animate(){
+moveDots();
+  drawDots();
+  requestAnimationFrame(animate);
+ }
+ //generate all starting dots 
+seedDots();
+animate(); 
