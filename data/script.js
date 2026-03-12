@@ -170,9 +170,14 @@ const rect = stage.getBoundingClientRect();
       addDot(x, y);
 });
 
+function checkprofile(){
+
+    
+}
  //generate all starting dots 
 seedDots();
 seedLines();
 animate(); 
+checkprofile();
 
 
