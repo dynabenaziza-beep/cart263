@@ -1,4 +1,5 @@
 const stage = document.getElementById("stage");
+const profile = document.getElementById("profile"); // profile circle
 
 const dots = []; //create an emoty array to store all dots 
 
