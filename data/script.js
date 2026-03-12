@@ -79,7 +79,6 @@ function groupSimilarDots(){
 
         const distance = getDistance(dot1, dot2);//measure distance 
        // only group dots of the same type
-      if (dot1.type === dot2.type) { 
 
       // only group dots of the same type
       if (dot1.type === dot2.type) {  
@@ -92,8 +91,8 @@ function groupSimilarDots(){
         dot1.x += dx * 0.002; //first dot
           dot1.y += dy * 0.002;
 
-          dot2.x += dx * 0.002;  //second dot 
-          dot2.y += dy * 0.002;
+          dot2.x -= dx * 0.002;  //second dot 
+          dot2.y -= dy * 0.002;
     }
 }
   }  
@@ -112,6 +111,8 @@ function drawLines(){
         //caculate distance 
         const distance = getDistance(dot1 , dot2);
         // check if the dots are the same type
+
+     console.log(dot1.type, dot2.type);   
    if (dot1.type === dot2.type) {
 
         if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
@@ -119,11 +120,12 @@ function drawLines(){
 
              const dx = dot2.x - dot1.x;
                 const dy = dot2.y - dot1.y;
+const angle = Math.atan2(dy, dx) * 180 / Math.PI
 
-                const angle = Math.atan2(dy, dx) * 180 / Math.PI
   line.style.width = distance + "px";
-  line.style.left = dot1.x + 6 + "px";
-  line.style.top = dot1.y + 6 + "px";
+  line.style.left = dot1.x + 5 + "px";
+  line.style.top = dot1.y + 5 + "px";
+  line.style.background = typeColors[dot1.type];
   line.style.transform = "rotate(" + angle + "deg)";
   line.style.display = "block";
 
@@ -131,14 +133,15 @@ function drawLines(){
            }
         }
     }
+}
     while (lineIndex < lines.length) {
     lines[lineIndex].style.display = "none";
     lineIndex++;
   }
 }
-
  function animate(){
 moveDots();
+groupSimilarDots();
   drawDots();
   drawLines();//update connection 
 
@@ -170,5 +173,5 @@ const rect = stage.getBoundingClientRect();
 seedDots();
 seedLines();
 animate(); 
-}
-}
+
+

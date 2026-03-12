@@ -13,14 +13,14 @@ body {
 .dot {
   width: 10px;
   height: 10px;
-  background: white;
+
   border-radius: 50%; /*turn the square into circle */
   position: absolute; /*let it place anywhere on the screen */
 }
 .line {
   position: absolute;
-  height: 1px;
-  background: white;
+  height: 2px;
+  
   transform-origin: left center;
   display: none;
 }
