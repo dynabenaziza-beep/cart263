@@ -174,7 +174,11 @@ function checkprofile(){
 let whiteCount = 0;
 let grayCount = 0;
 let blueCount = 0;
-    
+ 
+dots.forEach(function(dot) { //go through each dot in array 
+
+});
+
 }
  //generate all starting dots 
 seedDots();
