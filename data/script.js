@@ -181,6 +181,12 @@ if (dot.type === 1) grayCount++;   //if dot gray= add 1 to whitecount
 if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 
 });
+if (whiteCount > 10 || grayCount > 10 || blueCount > 10) {
+const rect = stage.getBoundingClientRect();
+
+} else {
+
+}
 
 }
  //generate all starting dots 
