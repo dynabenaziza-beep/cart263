@@ -112,7 +112,7 @@ function drawLines(){
         const distance = getDistance(dot1 , dot2);
         // check if the dots are the same type
 
-     console.log(dot1.type, dot2.type);   
+       
    if (dot1.type === dot2.type) {
 
         if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
