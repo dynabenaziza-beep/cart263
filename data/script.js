@@ -171,7 +171,9 @@ const rect = stage.getBoundingClientRect();
 });
 
 function checkprofile(){
-
+let whiteCount = 0;
+let grayCount = 0;
+let blueCount = 0;
     
 }
  //generate all starting dots 
