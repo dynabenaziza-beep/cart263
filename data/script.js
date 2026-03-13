@@ -3,7 +3,7 @@ const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
 
 
-let profileCreated = false; // make profile only one time
+
 
 const dots = []; //create an emoty array to store all dots 
 
@@ -175,6 +175,9 @@ const rect = stage.getBoundingClientRect();
       addDot(x, y);
 });
 
+function showNewProfile(){
+    
+}
 function checkprofile(){
 let whiteCount = 0;
 let grayCount = 0;
