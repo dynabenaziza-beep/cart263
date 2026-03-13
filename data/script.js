@@ -3,8 +3,6 @@ const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
 
 
-
-
 const dots = []; //create an emoty array to store all dots 
 
 const lines = []; // store all line divs here
@@ -176,7 +174,17 @@ const rect = stage.getBoundingClientRect();
 });
 
 function showNewProfile(){
-    
+profile.style.opacity = 1; // show ring
+  profile.style.boxShadow = "0 0 20px white"; // make ring glow
+
+  message.textContent = "New user created"; // show text
+  message.style.opacity = 1; // show message
+
+  setTimeout(function() {
+    profile.style.opacity = 0; // hide ring again
+    profile.style.boxShadow = "none"; // remove glow
+    message.style.opacity = 0; // hide message again
+  }, 800);
 }
 function checkprofile(){
 let whiteCount = 0;
@@ -193,12 +201,9 @@ if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 if (profileCreated === false) {
 
     if (whiteCount > 10 || grayCount > 10 || blueCount > 10) { 
-        profile.style.opacity = 1; //check if any color has more then 10 dots 
-       profile.style.boxShadow = "0 0 20px white"; // make the ring glow
-       message.textContent = "New profile created"; // show message
+        showNewProfile(); //flash ring and hsow text
+    
 }
-}
-
 }
  //generate all starting dots 
 seedDots();
@@ -207,3 +212,4 @@ animate();
 checkprofile();
 
 
+}
