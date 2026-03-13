@@ -1,5 +1,6 @@
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
+message = document.getElementById("message"); // text message on screen
 
 const dots = []; //create an emoty array to store all dots 
 
