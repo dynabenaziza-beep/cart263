@@ -145,6 +145,7 @@ moveDots();
 groupSimilarDots();
   drawDots();
   drawLines();//update connection 
+  checkprofile(); //check profile every frame 
 
   requestAnimationFrame(animate);
  }
@@ -184,10 +185,14 @@ if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 if (whiteCount > 10 || grayCount > 10 || blueCount > 10) {
 const rect = stage.getBoundingClientRect();
 
-profile.style.left = rect.width / 2 + "px";
-profile.style.top = rect.height / 2 + "px";
+profile.style.left = rect.width / 2 + "px"; // profile horizontally 
+profile.style.top = rect.height / 2 + "px"; //profile vertically 
+
+ profile.style.opacity = 0.6; // show the profile
+
 
 } else {
+profile.style.opacity = 0; // hide the profile
 
 }
 
