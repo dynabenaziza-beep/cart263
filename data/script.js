@@ -192,6 +192,7 @@ if (profileCreated === false) {
     if (whiteCount > 10 || grayCount > 10 || blueCount > 10) { 
         profile.style.opacity = 1; //check if any color has more then 10 dots 
        profile.style.boxShadow = "0 0 20px white"; // make the ring glow
+       message.textContent = "New profile created"; // show message
 }
 }
 
