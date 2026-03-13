@@ -1,6 +1,6 @@
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
-message = document.getElementById("message"); // text message on screen
+const message = document.getElementById("message"); // text message on screen
 
 
 let profileCreated = false; // make profile only one time
@@ -191,7 +191,7 @@ if (profileCreated === false) {
 
     if (whiteCount > 10 || grayCount > 10 || blueCount > 10) { 
         profile.style.opacity = 1; //check if any color has more then 10 dots 
-
+       profile.style.boxShadow = "0 0 20px white"; // make the ring glow
 }
 }
 
