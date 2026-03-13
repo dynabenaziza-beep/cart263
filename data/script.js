@@ -189,6 +189,9 @@ if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 
 if (profileCreated === false) {
 
+    if (whiteCount > 10 || grayCount > 10 || blueCount > 10) {  //check if any color has more then 10 dots 
+
+}
 }
 
 }
