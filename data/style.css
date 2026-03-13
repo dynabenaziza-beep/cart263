@@ -9,6 +9,7 @@ body {
   background: #050505;
   position:relative;
   overflow: hidden;
+   position: relative;
 }
 .dot {
   width: 10px;

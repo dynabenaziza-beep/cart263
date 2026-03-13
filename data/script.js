@@ -1,8 +1,8 @@
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
-
-
+let profileActive = false; // prevents the ring from flashing too fast
+let profileExists = false; // remembers if a profile already existed
 const dots = []; //create an emoty array to store all dots 
 
 const lines = []; // store all line divs here
@@ -174,6 +174,10 @@ const rect = stage.getBoundingClientRect();
 });
 
 function showNewProfile(){
+if (profileActive === true) return; // stop if already flashing
+
+  profileActive = true;
+    
 profile.style.opacity = 1; // show ring
   profile.style.boxShadow = "0 0 20px white"; // make ring glow
 
@@ -181,11 +185,14 @@ profile.style.opacity = 1; // show ring
   message.style.opacity = 1; // show message
 
   setTimeout(function() {
-    profile.style.opacity = 0; // hide ring again
-    profile.style.boxShadow = "none"; // remove glow
-    message.style.opacity = 0; // hide message again
+    profile.style.opacity = 0;
+    profile.style.boxShadow = "none";
+    message.style.opacity = 0;
+
+    profileActive = false; // allow next flash
   }, 800);
-}
+  }
+
 function checkprofile(){
 let whiteCount = 0;
 let grayCount = 0;
@@ -197,13 +204,16 @@ if (dot.type === 1) grayCount++;   //if dot gray= add 1 to whitecount
 if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 
 });
+let hasProfile = false; // check if there is a profile right now
 
-if (profileCreated === false) {
-
-    if (whiteCount > 10 || grayCount > 10 || blueCount > 10) { 
-        showNewProfile(); //flash ring and hsow text
-    
+if (whiteCount > 10 || grayCount > 10 || blueCount > 10) {
+    hasProfile = true;
 }
+if (hasProfile === true && profileExists === false) {
+    showNewProfile(); // only flash when profile appears for the first time
+}
+
+ profileExists = hasProfile; // save current state for next frame   
 }
  //generate all starting dots 
 seedDots();
@@ -212,4 +222,3 @@ animate();
 checkprofile();
 
 
-}
