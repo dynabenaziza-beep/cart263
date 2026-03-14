@@ -4,7 +4,7 @@ const message = document.getElementById("message"); // text message on screen
 let profileActive = false; // prevents the ring from flashing too fast
 let lastProfileLevel = 0; // remembers the last 10-dot level
 
-let profileExists = false; // remembers if a profile already existed
+
 const dots = []; //create an emoty array to store all dots 
 
 const lines = []; // store all line divs here
