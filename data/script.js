@@ -251,7 +251,7 @@ function hasConnectedProfile() {
 
 
 function checkprofile(){
-
+const maxConnected = getMaxConnectedCount();
 }
 
  
