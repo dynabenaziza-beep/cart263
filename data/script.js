@@ -192,22 +192,61 @@ profile.style.opacity = 1; // show ring
     profileActive = false; // allow next flash
   }, 800);
   }
+function hasConnectedProfile() {
+  for (let i = 0; i < dots.length; i++) {
+    let connectedCount = 1; // start with the current dot
+
+    for (let j = 0; j < dots.length; j++) {
+      if (i !== j) {
+        const dot1 = dots[i];
+        const dot2 = dots[j];
+
+        const distance = getDistance(dot1, dot2);
+
+        // same color and close enough
+        if (dot1.type === dot2.type && distance < 120) {
+          connectedCount++;
+        }
+      }
+    }
+
+    // if one dot has 10 same-color dots near it
+    if (connectedCount >= 10) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 
 function checkprofile(){
-let whiteCount = 0;
-let grayCount = 0;
-let blueCount = 0;
- 
-dots.forEach(function(dot) { //go through each dot in array 
-if (dot.type === 0) whiteCount++;  //if dot white = add 1 to whitecount 
-if (dot.type === 1) grayCount++;   //if dot gray= add 1 to whitecount
-if (dot.type === 2) blueCount++;    //if dot blue= add 1 to whitecount
 
-});
 let hasProfile = false; // check if there is a profile right now
+ // go through every dot
+  for (let i = 0; i < dots.length; i++) {
+    let connectedCount = 1; // start with the current dot
 
-if (whiteCount > 10 || grayCount > 10 || blueCount > 10) {
-    hasProfile = true;
+    // compare this dot with all other dots
+    for (let j = 0; j < dots.length; j++) {
+      if (i !== j) {
+        const dot1 = dots[i];
+        const dot2 = dots[j];
+
+        const distance = getDistance(dot1, dot2);
+
+        // same color and close enough
+        if (dot1.type === dot2.type && distance < 120) {
+          connectedCount++;
+        }
+      }
+    }
+
+    // if this dot has 10 or more same-color dots near it
+    if (connectedCount >= 10) {
+      hasProfile = true;
+    }
+  
 }
 if (hasProfile === true && profileExists === false) {
     showNewProfile(); // only flash when profile appears for the first time
@@ -219,6 +258,6 @@ if (hasProfile === true && profileExists === false) {
 seedDots();
 seedLines();
 animate(); 
-checkprofile();
+
 
 
