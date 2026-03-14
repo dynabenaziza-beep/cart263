@@ -238,7 +238,6 @@ if (maxConnected < 10) {
 
 }
 
- 
  //generate all starting dots 
 seedDots();
 seedLines();
