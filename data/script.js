@@ -75,6 +75,34 @@ function getDistance(dot1,dot2){
     return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 }
 
+function getMaxConnectedCount() {
+  let maxCount = 0;
+
+  for (let i = 0; i < dots.length; i++) {
+    let connectedCount = 1; // start with current dot
+
+    for (let j = 0; j < dots.length; j++) {
+      if (i !== j) {
+        const dot1 = dots[i];
+        const dot2 = dots[j];
+        const distance = getDistance(dot1, dot2);
+
+        // same color and close enough
+        if (dot1.type === dot2.type && distance < 120) {
+          connectedCount++;
+        }
+      }
+    }
+
+    // save the biggest group found
+    if (connectedCount > maxCount) {
+      maxCount = connectedCount;
+    }
+  }
+
+  return maxCount;
+}
+
 function groupSimilarDots(){
  for (let i = 0; i < dots.length; i++) {
     for (let j = i + 1; j < dots.length; j++) {
@@ -224,38 +252,9 @@ function hasConnectedProfile() {
 
 function checkprofile(){
 
-let hasProfile = false; // check if there is a profile right now
- // go through every dot
-  for (let i = 0; i < dots.length; i++) {
-    let connectedCount = 1; // start with the current dot
-
-    // compare this dot with all other dots
-    for (let j = 0; j < dots.length; j++) {
-      if (i !== j) {
-        const dot1 = dots[i];
-        const dot2 = dots[j];
-
-        const distance = getDistance(dot1, dot2);
-
-        // same color and close enough
-        if (dot1.type === dot2.type && distance < 120) {
-          connectedCount++;
-        }
-      }
-    }
-
-    // if this dot has 10 or more same-color dots near it
-    if (connectedCount >= 10) {
-      hasProfile = true;
-    }
-  
-}
-if (hasProfile === true && profileExists === false) {
-    showNewProfile(); // only flash when profile appears for the first time
 }
 
- profileExists = hasProfile; // save current state for next frame   
-}
+ 
  //generate all starting dots 
 seedDots();
 seedLines();
