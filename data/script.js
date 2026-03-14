@@ -222,32 +222,6 @@ profile.style.opacity = 1; // show ring
     profileActive = false; // allow next flash
   }, 800);
   }
-function hasConnectedProfile() {
-  for (let i = 0; i < dots.length; i++) {
-    let connectedCount = 1; // start with the current dot
-
-    for (let j = 0; j < dots.length; j++) {
-      if (i !== j) {
-        const dot1 = dots[i];
-        const dot2 = dots[j];
-
-        const distance = getDistance(dot1, dot2);
-
-        // same color and close enough
-        if (dot1.type === dot2.type && distance < 120) {
-          connectedCount++;
-        }
-      }
-    }
-
-    // if one dot has 10 same-color dots near it
-    if (connectedCount >= 10) {
-      return true;
-    }
-  }
-
-  return false;
-}
 
 
 function checkprofile(){
