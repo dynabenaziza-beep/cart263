@@ -258,6 +258,9 @@ if (currentLevel > lastProfileLevel) {
   showNewProfile();
   lastProfileLevel = currentLevel;
 }
+if (maxConnected < 10) {
+  lastProfileLevel = 0;
+}
 
 }
 
