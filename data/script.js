@@ -252,6 +252,7 @@ function hasConnectedProfile() {
 
 function checkprofile(){
 const maxConnected = getMaxConnectedCount();
+const currentLevel = Math.floor(maxConnected / 10);
 }
 
  
