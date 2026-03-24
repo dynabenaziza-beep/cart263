@@ -3,6 +3,43 @@ window.onload = go_all_stuff;
 function go_all_stuff(){
 console.log("go");
 
+// microphone variables
+let audioContext;
+let analyser;
+let microphone;
+let dataArray;
+
+
+// start microphone
+function setupMic(){
+navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+    audioContext = new AudioContext();
+    analyser = audioContext.createAnalyser();
+    microphone = audioContext.createMediaStreamSource(stream);
+    microphone.connect(analyser);
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
+});
+}
+
+// get sound level
+function getVolume(){
+    if(!analyser){
+        return 0;
+    }
+
+    analyser.getByteFrequencyData(dataArray);
+
+    let total = 0;
+
+    for(let i = 0; i < dataArray.length; i++){
+        total += dataArray[i];
+    }
+
+    let average = total / dataArray.length;
+
+    return average / 255;
+}
+
 /* for loading the video */
 let videoEl = document.getElementById("video-birds");
 window.addEventListener("click", function(){
@@ -11,16 +48,17 @@ window.addEventListener("click", function(){
     }
 })
 
-// microphone variables
-let audioContext;
-let analyser;
-let microphone;
-let dataArray;
+
+
 
 videoEl.loop = true;
 
 let theCanvases = document.querySelectorAll(".canvases");
 let theContexts =[];
+
+
+
+
 //add a context for each canvas and put into an array
 
 for(let i =0; i<theCanvases.length; i++){
