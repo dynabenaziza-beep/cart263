@@ -11,6 +11,11 @@ window.addEventListener("click", function(){
     }
 })
 
+// microphone variables
+let audioContext;
+let analyser;
+let microphone;
+let dataArray;
 
 videoEl.loop = true;
 
