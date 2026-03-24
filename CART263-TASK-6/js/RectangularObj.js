@@ -33,8 +33,11 @@ class RectangularObj {
   }
 
   update(){
-    //update freestyle
-   // this.x+=1;
-    //console.log("rectangle update")
+ // change size with microphone
+this.width = this.baseWidth + this.mic * 200;
+this.height = this.baseHeight + this.mic * 120;
+
+// small animation
+this.angle += 0.01; 
 }
 }
