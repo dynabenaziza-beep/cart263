@@ -103,7 +103,8 @@ update: function () {
       console.log("in C")
     }
     if(this.drawingBoardId ==="partD"){
-      this.objectsOnCanvas[0].changeColor("#FF0000");
+      let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  this.objectsOnCanvas[0].changeColor(randomColor);
       }
   }
   /* method to add obj to canvas */
