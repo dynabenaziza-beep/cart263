@@ -103,7 +103,7 @@ update: function () {
       console.log("in C")
     }
     if(this.drawingBoardId ==="partD"){
-      console.log("in D")
+      this.objectsOnCanvas[0].changeColor("#FF0000");
       }
   }
   /* method to add obj to canvas */
