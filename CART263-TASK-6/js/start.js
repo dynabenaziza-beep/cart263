@@ -99,9 +99,13 @@ window.requestAnimationFrame(animationLoop);
 
 function animationLoop(){
     /*** CALL THE EACH CANVAS TO ANIMATE INSIDE  */
-    drawingBoardA.animate();
-    drawingBoardB.animate();
-    drawingBoardC.animate();
+   drawingBoardA.animate();
+
+// send microphone value to rectangle (Board B)
+drawingBoardB.objectsOnCanvas[0].mic = getVolume();
+
+drawingBoardB.animate();
+drawingBoardC.animate();
     drawingBoardD.run(videoEl)
     window.requestAnimationFrame(animationLoop);
 }
