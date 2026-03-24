@@ -1,13 +1,12 @@
-
 class DrawingBoard {
   /* Constructor */
-  constructor(canvas, context,drawingBoardId) {
+  constructor(canvas, context, drawingBoardId) {
     this.canvas = canvas;
     this.context = context;
     this.objectsOnCanvas = [];
     let self = this;
     this.drawingBoardId = drawingBoardId;
-    //each element has a mouse clicked and a mouse over
+
     this.canvas.addEventListener("click", function (e) {
       self.clickCanvas(e);
     });
@@ -18,122 +17,134 @@ class DrawingBoard {
   }
 
   overCanvas(e) {
-    //console.log("over");
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     this.mouseOffsetX = parseInt(e.clientX - this.canvasBoundingRegion.x);
     this.mouseOffsetY = parseInt(e.clientY - this.canvasBoundingRegion.y);
+
     console.log(this.mouseOffsetX, this.mouseOffsetY);
-    //differentiate which canvas
-    //you can remove the console.logs /// 
-    if(this.drawingBoardId ==="partA"){
-      console.log("in A")
-      
-    
+
+    if (this.drawingBoardId === "partA") {
+      console.log("in A");
     }
-    if(this.drawingBoardId ==="partB"){
-      console.log("in B")
+
+    if (this.drawingBoardId === "partB") {
+      console.log("in B");
     }
-    if(this.drawingBoardId ==="partC"){
-      console.log("in C")
+
+    if (this.drawingBoardId === "partC") {
+      console.log("in C");
     }
-    if(this.drawingBoardId ==="partD"){
-      console.log("in D")
-      this.objectsOnCanvas[0].updatePositionRect(this.mouseOffsetX, this.mouseOffsetY);
-   }
+
+    if (this.drawingBoardId === "partD") {
+      console.log("in D");
+      if (this.objectsOnCanvas.length > 0) {
+        this.objectsOnCanvas[0].updatePositionRect(this.mouseOffsetX, this.mouseOffsetY);
+      }
+    }
   }
 
   clickCanvas(e) {
-   // console.log("clicked");
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
     this.mouseOffsetX = parseInt(e.clientX - this.canvasBoundingRegion.x);
     this.mouseOffsetY = parseInt(e.clientY - this.canvasBoundingRegion.y);
-    //console.log(this.mouseOffsetX, this.mouseOffsetY);
-     
-    //differentiate which canvas
-   //you can remove the console.logs /// 
-     if(this.drawingBoardId ==="partA"){
-      console.log("in A")
-  if (e.shiftKey) {
-    if (this.objectsOnCanvas.length > 0) {
-      this.objectsOnCanvas.pop();
-    }
-  } else {
-    let circle = {
-      context: this.context,
-      x: this.mouseOffsetX,
-      y: this.mouseOffsetY,
-      radius: Math.floor(Math.random() * 20) + 10,
-      color: "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")",
- vx: Math.random() * 4 - 2,
-vy: Math.random() * 4 - 2,
 
+    if (this.drawingBoardId === "partA") {
+      console.log("in A");
 
-update: function () {
-  this.x = this.x + this.vx;
-  this.y = this.y + this.vy;
+      if (e.shiftKey) {
+        if (this.objectsOnCanvas.length > 0) {
+          this.objectsOnCanvas.pop();
+        }
+      } else {
+        let circle = {
+          context: this.context,
+          x: this.mouseOffsetX,
+          y: this.mouseOffsetY,
+          radius: Math.floor(Math.random() * 20) + 10,
+          color:
+            "rgb(" +
+            Math.floor(Math.random() * 255) +
+            "," +
+            Math.floor(Math.random() * 255) +
+            "," +
+            Math.floor(Math.random() * 255) +
+            ")",
+          vx: Math.random() * 4 - 2,
+          vy: Math.random() * 4 - 2,
 
-  if (this.x + this.radius > this.context.canvas.width || this.x - this.radius < 0) {
-    this.vx = this.vx * -1;
-  }
+          update: function () {
+            this.x = this.x + this.vx;
+            this.y = this.y + this.vy;
 
-  if (this.y + this.radius > this.context.canvas.height || this.y - this.radius < 0) {
-    this.vy = this.vy * -1;
-  }
+            if (
+              this.x + this.radius > this.context.canvas.width ||
+              this.x - this.radius < 0
+            ) {
+              this.vx = this.vx * -1;
+            }
 
-  this.vx = this.vx * 0.99;
-  this.vy = this.vy * 0.99;
-},
+            if (
+              this.y + this.radius > this.context.canvas.height ||
+              this.y - this.radius < 0
+            ) {
+              this.vy = this.vy * -1;
+            }
 
-      display: function () {
-        this.context.beginPath();
-        this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        this.context.fillStyle = this.color;
-        this.context.fill();
+            this.vx = this.vx * 0.99;
+            this.vy = this.vy * 0.99;
+          },
+
+          display: function () {
+            this.context.beginPath();
+            this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            this.context.fillStyle = this.color;
+            this.context.fill();
+          }
+        };
+
+        this.addObj(circle);
       }
-    };
-
-    this.addObj(circle);
-  }
-}
-
-    if(this.drawingBoardId ==="partB"){
-      console.log("in B")
     }
-    if(this.drawingBoardId ==="partC"){
-      console.log("in C")
+
+    if (this.drawingBoardId === "partB") {
+      console.log("in B");
     }
-    if(this.drawingBoardId ==="partD"){
-      let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-  this.objectsOnCanvas[0].changeColor(randomColor);
+
+    if (this.drawingBoardId === "partC") {
+      console.log("in C");
+    }
+
+    if (this.drawingBoardId === "partD") {
+      if (this.objectsOnCanvas.length > 0) {
+        let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        this.objectsOnCanvas[0].changeColor(randomColor);
       }
+    }
   }
-  /* method to add obj to canvas */
+
   addObj(objToAdd) {
     this.objectsOnCanvas.push(objToAdd);
   }
 
-  /* method to add display objects on canvas */
   display() {
     for (let i = 0; i < this.objectsOnCanvas.length; i++) {
       this.objectsOnCanvas[i].display();
     }
   }
 
-  /* method to add animate objects on canvas */
   animate() {
-   this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-  for (let i = 0; i < this.objectsOnCanvas.length; i++) {
- this.objectsOnCanvas[i].update();
-     this.objectsOnCanvas[i].display();
+    for (let i = 0; i < this.objectsOnCanvas.length; i++) {
+      this.objectsOnCanvas[i].update();
+      this.objectsOnCanvas[i].display();
     }
   }
 
-  run(videoElement){
+  run(videoElement) {
     for (let i = 0; i < this.objectsOnCanvas.length; i++) {
       this.objectsOnCanvas[i].update(videoElement);
       this.objectsOnCanvas[i].display();
     }
-
   }
 }

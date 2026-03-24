@@ -10,6 +10,13 @@ class VideoObj {
     this.shapeY =10;
     this.shapeCol = "#000000";
 
+
+        this.userProvidedBlur = 0;
+    this.userProvidedSepia = 0;
+    this.userProvidedHue = 0;
+    this.userProvidedInvert = 0;
+
+
      let self = this;
  
 
@@ -47,26 +54,33 @@ filterButton_grayscale.addEventListener("click", function () {
 });
 
     }
+  
+
+
+
   display() {
     this.context.save();
-this.context.filter = `blur(${this.userProvidedBlur}px) brightness(${this.userProvidedBrightness}%) contrast(${this.userProvidedContrast}%) grayscale(${this.userProvidedGrayscale}%)`;
+
+    this.context.filter = `blur(${this.userProvidedBlur}px) sepia(${this.userProvidedSepia}%) hue-rotate(${this.userProvidedHue}deg) invert(${this.userProvidedInvert}%)`;
+
     this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
+
     this.context.fillStyle = this.shapeCol;
-    this.context.fillRect(this.shapeX, this.shapeY, 50,50)
+    this.context.fillRect(this.shapeX, this.shapeY, 50, 50);
+
     this.context.restore();
   }
 
-    //called when rectangle color is to be updated
-  changeColor(newCol){
-   this.shapeCol = newCol;
+  changeColor(newCol) {
+    this.shapeCol = newCol;
   }
-  //called when rectangle Pos is to be updated
-  updatePositionRect(mx,my){
-     this.shapeX = mx;
-  this.shapeY = my;
+
+  updatePositionRect(mx, my) {
+    this.shapeX = mx;
+    this.shapeY = my;
   }
+
   update(videoElement) {
     this.videoElement = videoElement;
   }
-
 }
