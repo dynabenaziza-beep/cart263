@@ -27,8 +27,7 @@ class DrawingBoard {
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
       
-      for (let i = 0; i < this.objectsOnCanvas.length; i++) {
-    this.objectsOnCanvas[i].y = this.mouseOffsetY;
+      
   }
     }
     if(this.drawingBoardId ==="partB"){
@@ -67,6 +66,7 @@ class DrawingBoard {
  vx: Math.random() * 4 - 2,
 vy: Math.random() * 4 - 2,
 
+
 update: function () {
   this.x = this.x + this.vx;
   this.y = this.y + this.vy;
@@ -78,7 +78,11 @@ update: function () {
   if (this.y + this.radius > this.context.canvas.height || this.y - this.radius < 0) {
     this.vy = this.vy * -1;
   }
+
+  this.vx = this.vx * 0.99;
+  this.vy = this.vy * 0.99;
 },
+
       display: function () {
         this.context.beginPath();
         this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
