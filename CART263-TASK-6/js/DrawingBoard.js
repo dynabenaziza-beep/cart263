@@ -27,6 +27,9 @@ class DrawingBoard {
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
       
+      for (let i = 0; i < this.objectsOnCanvas.length; i++) {
+    this.objectsOnCanvas[i].y = this.mouseOffsetY;
+  }
     }
     if(this.drawingBoardId ==="partB"){
       console.log("in B")
