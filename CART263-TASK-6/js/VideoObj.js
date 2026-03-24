@@ -14,6 +14,9 @@ class VideoObj {
     let filterButton_blur = document.getElementById("filter_button_blur");
     let blurInput = document.getElementById("blurnum");
     this.userProvidedBlur  = 0;
+    this.userProvidedBrightness = 100;
+this.userProvidedContrast = 100;
+this.userProvidedGrayscale = 0;
     let self = this;
 
     filterButton_blur.addEventListener("click", function () {
