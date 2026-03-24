@@ -12,7 +12,13 @@ class FreeStyleObj {
       this.angularSpeed = .07;
       this.context =context;
 
+     this.mic = 0;          
+    this.baseY = y;        
+    this.waveMove = 0;     
+
     }
+
+    
   
     display() {
       this.theta =0; //reset everytime
@@ -29,9 +35,10 @@ class FreeStyleObj {
     }
 
     update(){
-        //update freestyle
-       // console.log("free style update")
-       // this.x+=1;
-    }
+        this.waveMove += 0.05;  
+
+    this.y = this.baseY + Math.sin(this.waveMove) * 20;  
+    this.yOffset = 20 + this.mic * 100;                  
+    this.angularSpeed = 0.07 + this.mic * 0.3;           
   }
-  
+}

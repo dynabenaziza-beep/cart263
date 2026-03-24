@@ -1,4 +1,9 @@
+
 window.onload = go_all_stuff;
+
+let mic;
+let micLevel = 0;
+
 
 function go_all_stuff(){
 console.log("go");
@@ -98,6 +103,7 @@ drawingBoardD.display();
 window.requestAnimationFrame(animationLoop);
 
 function animationLoop(){
+    
     /*** CALL THE EACH CANVAS TO ANIMATE INSIDE  */
    drawingBoardA.animate();
 
@@ -105,6 +111,7 @@ function animationLoop(){
 drawingBoardB.objectsOnCanvas[0].mic = getVolume();
 
 drawingBoardB.animate();
+drawingBoardC.objectsOnCanvas[0].mic = getVolume();
 drawingBoardC.animate();
     drawingBoardD.run(videoEl)
     window.requestAnimationFrame(animationLoop);

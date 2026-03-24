@@ -51,5 +51,6 @@ this.height = this.baseHeight + this.mic * 120;
 
 // small animation
 this.angle += 0.01; 
+
 }
 }
