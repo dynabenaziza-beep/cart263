@@ -27,8 +27,7 @@ class DrawingBoard {
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
       
-      
-  }
+    
     }
     if(this.drawingBoardId ==="partB"){
       console.log("in B")
