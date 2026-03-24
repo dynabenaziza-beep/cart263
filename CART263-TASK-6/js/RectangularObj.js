@@ -25,13 +25,25 @@ class RectangularObj {
   }
 
   display() {
-    this.context.fillStyle = this.fill_color; // change the color we are using
-    this.context.fillRect(this.x, this.y,this.width, this.height);
-    this.context.strokeStyle = this.stroke_color; // change the color we are using
-    this.context.lineWidth = 2; //change stroke
-    this.context.strokeRect(this.x, this.y,this.width, this.height);
-  }
+    
+    this.context.save();
 
+// move to center
+this.context.translate(this.x + this.width/2, this.y + this.height/2);
+
+// rotate
+this.context.rotate(this.angle);
+
+// draw rectangle
+this.context.fillStyle = this.fill_color;
+this.context.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+
+this.context.strokeStyle = this.stroke_color;
+this.context.lineWidth = 2;
+this.context.strokeRect(-this.width/2, -this.height/2, this.width, this.height);
+
+this.context.restore()
+  }
   update(){
  // change size with microphone
 this.width = this.baseWidth + this.mic * 200;
