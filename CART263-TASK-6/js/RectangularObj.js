@@ -11,6 +11,17 @@ class RectangularObj {
     this.startAngle = 0;
     this.endAngle = Math.PI * 2; //full rotation
     this.context = context;
+
+     // microphone value
+  this.mic = 0;
+
+  // keep original size
+  this.baseWidth = w;
+  this.baseHeight = h;
+
+  // small animation
+  this.angle = 0;
+
   }
 
   display() {
