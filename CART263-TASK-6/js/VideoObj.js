@@ -19,13 +19,36 @@ this.userProvidedContrast = 100;
 this.userProvidedGrayscale = 0;
     let self = this;
 
+    let filterButton_brightness = document.getElementById("filter_button_brightness");
+let brightnessInput = document.getElementById("brightnessnum");
+
+let filterButton_contrast = document.getElementById("filter_button_contrast");
+let contrastInput = document.getElementById("contrastnum");
+
+let filterButton_grayscale = document.getElementById("filter_button_grayscale");
+let grayscaleInput = document.getElementById("grayscalenum");
+
     filterButton_blur.addEventListener("click", function () {
       //get value from input field
       self.userProvidedBlur = blurInput.value;
       console.log(self.userProvidedBlur);
-    });
-  }
 
+      filterButton_brightness.addEventListener("click", function () {
+  self.userProvidedBrightness = brightnessInput.value;
+  console.log(self.userProvidedBrightness);
+});
+
+filterButton_contrast.addEventListener("click", function () {
+  self.userProvidedContrast = contrastInput.value;
+  console.log(self.userProvidedContrast);
+});
+
+filterButton_grayscale.addEventListener("click", function () {
+  self.userProvidedGrayscale = grayscaleInput.value;
+  console.log(self.userProvidedGrayscale);
+});
+  
+  
   display() {
     this.context.save();
      this.context.filter = `blur(${this.userProvidedBlur}px)`;
@@ -47,4 +70,5 @@ this.userProvidedGrayscale = 0;
   update(videoElement) {
     this.videoElement = videoElement;
   }
-}
+
+    }
