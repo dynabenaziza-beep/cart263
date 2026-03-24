@@ -70,8 +70,15 @@ vy: Math.random() * 4 - 2,
 update: function () {
   this.x = this.x + this.vx;
   this.y = this.y + this.vy;
-},
 
+  if (this.x + this.radius > this.context.canvas.width || this.x - this.radius < 0) {
+    this.vx = this.vx * -1;
+  }
+
+  if (this.y + this.radius > this.context.canvas.height || this.y - this.radius < 0) {
+    this.vy = this.vy * -1;
+  }
+},
       display: function () {
         this.context.beginPath();
         this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
