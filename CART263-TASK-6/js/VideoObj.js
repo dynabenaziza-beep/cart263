@@ -10,30 +10,28 @@ class VideoObj {
     this.shapeY =10;
     this.shapeCol = "#000000";
  
-
+;
+    
     let filterButton_blur = document.getElementById("filter_button_blur");
     let blurInput = document.getElementById("blurnum");
-    this.userProvidedBlur  = 0;
-    this.userProvidedBrightness = 100;
-this.userProvidedContrast = 100;
-this.userProvidedGrayscale = 0;
-    let self = this;
 
     let filterButton_brightness = document.getElementById("filter_button_brightness");
-let brightnessInput = document.getElementById("brightnessnum");
+    let brightnessInput = document.getElementById("brightnessnum");
 
-let filterButton_contrast = document.getElementById("filter_button_contrast");
-let contrastInput = document.getElementById("contrastnum");
+    let filterButton_contrast = document.getElementById("filter_button_contrast");
+    let contrastInput = document.getElementById("contrastnum");
 
-let filterButton_grayscale = document.getElementById("filter_button_grayscale");
-let grayscaleInput = document.getElementById("grayscalenum");
+    let filterButton_grayscale = document.getElementById("filter_button_grayscale");
+    let grayscaleInput = document.getElementById("grayscalenum");
 
-    filterButton_blur.addEventListener("click", function () {
-      //get value from input field
+    let self = this;
+
+     filterButton_blur.addEventListener("click", function () {
       self.userProvidedBlur = blurInput.value;
       console.log(self.userProvidedBlur);
+    });
 
-      filterButton_brightness.addEventListener("click", function () {
+    filterButton_brightness.addEventListener("click", function () {
   self.userProvidedBrightness = brightnessInput.value;
   console.log(self.userProvidedBrightness);
 });
@@ -47,11 +45,11 @@ filterButton_grayscale.addEventListener("click", function () {
   self.userProvidedGrayscale = grayscaleInput.value;
   console.log(self.userProvidedGrayscale);
 });
-  
-  
+
+    }
   display() {
     this.context.save();
-     this.context.filter = `blur(${this.userProvidedBlur}px)`;
+this.context.filter = `blur(${this.userProvidedBlur}px) brightness(${this.userProvidedBrightness}%) contrast(${this.userProvidedContrast}%) grayscale(${this.userProvidedGrayscale}%)`;
     this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
     this.context.fillStyle = this.shapeCol;
     this.context.fillRect(this.shapeX, this.shapeY, 50,50)
@@ -71,4 +69,4 @@ filterButton_grayscale.addEventListener("click", function () {
     this.videoElement = videoElement;
   }
 
-    }
+}
