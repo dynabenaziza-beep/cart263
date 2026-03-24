@@ -9,24 +9,24 @@ class VideoObj {
     this.shapeX = 10;
     this.shapeY =10;
     this.shapeCol = "#000000";
+
+     let self = this;
  
-;
-    
+
     let filterButton_blur = document.getElementById("filter_button_blur");
     let blurInput = document.getElementById("blurnum");
 
-    let filterButton_brightness = document.getElementById("filter_button_brightness");
-    let brightnessInput = document.getElementById("brightnessnum");
+    let filterButton_sepia = document.getElementById("filter_button_sepia");
+    let sepiaInput = document.getElementById("sepianum");
 
-    let filterButton_contrast = document.getElementById("filter_button_contrast");
-    let contrastInput = document.getElementById("contrastnum");
+    let filterButton_hue = document.getElementById("filter_button_hue");
+    let hueInput = document.getElementById("huenum");
 
-    let filterButton_grayscale = document.getElementById("filter_button_grayscale");
-    let grayscaleInput = document.getElementById("grayscalenum");
+    let filterButton_invert = document.getElementById("filter_button_invert");
+    let invertInput = document.getElementById("invertnum");
 
-    let self = this;
-
-     filterButton_blur.addEventListener("click", function () {
+    
+ filterButton_blur.addEventListener("click", function () {
       self.userProvidedBlur = blurInput.value;
       console.log(self.userProvidedBlur);
     });
