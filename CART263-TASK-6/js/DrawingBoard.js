@@ -58,12 +58,21 @@ class DrawingBoard {
     context: this.context,
     x: this.mouseOffsetX,
     y: this.mouseOffsetY,
-    radius: 20,
-    color: "blue",
+    radius: Math.floor(Math.random() * 20) + 10,
+  color: "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")",
+
 
     update: function () {
       this.x = this.x + 1;
     },
+
+display: function () {
+    this.context.beginPath();
+    this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.context.fillStyle = this.color;
+    this.context.fill();
+  }
+};
 
     display: function () {
       this.context.beginPath();
