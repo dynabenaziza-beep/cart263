@@ -25,7 +25,7 @@ class VideoObj {
 
   display() {
     this.context.save();
-     //this.context.filter = `blur(${this.userProvidedBlur}px)`;
+     this.context.filter = `blur(${this.userProvidedBlur}px)`;
     this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
     this.context.fillStyle = this.shapeCol;
     this.context.fillRect(this.shapeX, this.shapeY, 50,50)
