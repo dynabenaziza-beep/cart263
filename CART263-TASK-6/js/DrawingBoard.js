@@ -64,10 +64,13 @@ class DrawingBoard {
       y: this.mouseOffsetY,
       radius: Math.floor(Math.random() * 20) + 10,
       color: "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")",
+ vx: Math.random() * 4 - 2,
+vy: Math.random() * 4 - 2,
 
-      update: function () {
-        this.x = this.x + 1;
-      },
+update: function () {
+  this.x = this.x + this.vx;
+  this.y = this.y + this.vy;
+},
 
       display: function () {
         this.context.beginPath();
