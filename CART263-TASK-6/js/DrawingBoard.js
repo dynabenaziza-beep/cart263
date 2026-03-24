@@ -26,6 +26,7 @@ class DrawingBoard {
     //you can remove the console.logs /// 
     if(this.drawingBoardId ==="partA"){
       console.log("in A")
+      
     }
     if(this.drawingBoardId ==="partB"){
       console.log("in B")
@@ -49,7 +50,30 @@ class DrawingBoard {
    //you can remove the console.logs /// 
      if(this.drawingBoardId ==="partA"){
       console.log("in A")
+
+       let circle = {
+    context: this.context,
+    x: this.mouseOffsetX,
+    y: this.mouseOffsetY,
+    radius: 20,
+    color: "blue",
+
+    update: function () {
+      this.x = this.x + 1;
+    },
+
+    display: function () {
+      this.context.beginPath();
+      this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      this.context.fillStyle = this.color;
+      this.context.fill();
     }
+  };
+
+  this.addObj(circle);
+}
+
+    
     if(this.drawingBoardId ==="partB"){
       console.log("in B")
     }
