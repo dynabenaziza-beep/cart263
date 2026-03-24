@@ -44,9 +44,14 @@ function getVolume(){
 let videoEl = document.getElementById("video-birds");
 window.addEventListener("click", function(){
     if(videoEl.currentTime ===0){
-        videoEl.play()
-    }
-})
+        videoEl.play();
+    
+}
+// start microphone
+    setupMic();
+
+});
+
 
 
 
