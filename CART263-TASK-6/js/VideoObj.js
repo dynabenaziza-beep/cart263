@@ -51,17 +51,14 @@ filterButton_invert.addEventListener("click", function () {
 
 
   display() {
-    this.context.save();
+  this.context.save();
 
-    this.context.filter = `blur(${this.userProvidedBlur}px) sepia(${this.userProvidedSepia}%) hue-rotate(${this.userProvidedHue}deg) invert(${this.userProvidedInvert}%)`;
+this.context.filter =
+  `blur(${this.userProvidedBlur}px) sepia(${this.userProvidedSepia}%) hue-rotate(${this.userProvidedHue}deg) invert(${this.userProvidedInvert}%)`;
 
-    this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
+this.context.drawImage(this.videoElement, this.x, this.y, this.w, this.h);
 
-    this.context.fillStyle = this.shapeCol;
-    this.context.fillRect(this.shapeX, this.shapeY, 50, 50);
-
-    this.context.restore();
-  }
+this.context.restore();
 
   changeColor(newCol) {
     this.shapeCol = newCol;
