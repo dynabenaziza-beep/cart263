@@ -14,7 +14,7 @@ class DrawingBoard {
     this.canvas.addEventListener("mousemove", function (e) {
       self.overCanvas(e);
     });
-  }
+  }   
 
   overCanvas(e) {
     this.canvasBoundingRegion = this.canvas.getBoundingClientRect();
@@ -148,3 +148,5 @@ class DrawingBoard {
     }
   }
 }
+  
+

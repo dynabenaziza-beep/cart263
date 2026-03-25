@@ -101,22 +101,22 @@ drawingBoardD.display();
 
 /*** RUN THE ANIMATION LOOP  */
 window.requestAnimationFrame(animationLoop);
-
 function animationLoop(){
     
-    /*** CALL THE EACH CANVAS TO ANIMATE INSIDE  */
-   drawingBoardA.animate();
+    drawingBoardA.animate();
 
-// send microphone value to rectangle (Board B)
-drawingBoardB.objectsOnCanvas[0].mic = getVolume();
+    drawingBoardB.objectsOnCanvas[0].mic = getVolume();
+    drawingBoardB.animate();
 
-drawingBoardB.animate();
-drawingBoardC.objectsOnCanvas[0].mic = getVolume();
-drawingBoardC.animate();
-    drawingBoardD.run(videoEl)
+    drawingBoardC.objectsOnCanvas[0].mic = getVolume();
+    drawingBoardC.animate();
+
+   
+    drawingBoardD.context.clearRect(0, 0, drawingBoardD.canvas.width, drawingBoardD.canvas.height);
+    drawingBoardD.run(videoEl);
+
     window.requestAnimationFrame(animationLoop);
 }
-
 
 
 /** TASK 1:(Drawing Board A) - 

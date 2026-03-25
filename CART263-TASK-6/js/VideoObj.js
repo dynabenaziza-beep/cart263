@@ -16,44 +16,36 @@ class VideoObj {
     this.userProvidedHue = 0;
     this.userProvidedInvert = 0;
 
+let self = this;
 
-     let self = this;
- 
+let filterButton_blur = document.getElementById("filter_button_blur");
+let blurInput = document.getElementById("blurnum");
 
-    let filterButton_blur = document.getElementById("filter_button_blur");
-    let blurInput = document.getElementById("blurnum");
-
-    let filterButton_sepia = document.getElementById("filter_button_sepia");
-    let sepiaInput = document.getElementById("sepianum");
-
-    let filterButton_hue = document.getElementById("filter_button_hue");
-    let hueInput = document.getElementById("huenum");
-
-    let filterButton_invert = document.getElementById("filter_button_invert");
-    let invertInput = document.getElementById("invertnum");
-
-    
- filterButton_blur.addEventListener("click", function () {
-      self.userProvidedBlur = blurInput.value;
-      console.log(self.userProvidedBlur);
-    });
-
-    filterButton_brightness.addEventListener("click", function () {
-  self.userProvidedBrightness = brightnessInput.value;
-  console.log(self.userProvidedBrightness);
+filterButton_blur.addEventListener("click", function () {
+  self.userProvidedBlur = Number(blurInput.value);
 });
 
-filterButton_contrast.addEventListener("click", function () {
-  self.userProvidedContrast = contrastInput.value;
-  console.log(self.userProvidedContrast);
+let filterButton_sepia = document.getElementById("filter_button_sepia");
+let sepiaInput = document.getElementById("sepianum");
+
+filterButton_sepia.addEventListener("click", function () {
+  self.userProvidedSepia = Number(sepiaInput.value);
 });
 
-filterButton_grayscale.addEventListener("click", function () {
-  self.userProvidedGrayscale = grayscaleInput.value;
-  console.log(self.userProvidedGrayscale);
+let filterButton_hue = document.getElementById("filter_button_hue");
+let hueInput = document.getElementById("huenum");
+
+filterButton_hue.addEventListener("click", function () {
+  self.userProvidedHue = Number(hueInput.value);
 });
 
-    }
+let filterButton_invert = document.getElementById("filter_button_invert");
+let invertInput = document.getElementById("invertnum");
+
+filterButton_invert.addEventListener("click", function () {
+  self.userProvidedInvert = Number(invertInput.value);
+});
+
   
 
 
@@ -82,5 +74,6 @@ filterButton_grayscale.addEventListener("click", function () {
 
   update(videoElement) {
     this.videoElement = videoElement;
+  }
   }
 }
