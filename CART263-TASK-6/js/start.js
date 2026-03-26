@@ -1,35 +1,32 @@
-
 window.onload = go_all_stuff;
 
 let mic;
 let micLevel = 0;
 
-
 function go_all_stuff(){
-console.log("go");
+  console.log("go");
 
-// microphone variables
-let audioContext;
-let analyser;
-let microphone;
-let dataArray;
+  // microphone variables
+  let audioContext;
+  let analyser;
+  let microphone;
+  let dataArray;
 
+  // start microphone
+  function setupMic(){
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      audioContext = new AudioContext();
+      analyser = audioContext.createAnalyser();
+      microphone = audioContext.createMediaStreamSource(stream);
+      microphone.connect(analyser);
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+    });
+  }
 
-// start microphone
-function setupMic(){
-navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
-    audioContext = new AudioContext();
-    analyser = audioContext.createAnalyser();
-    microphone = audioContext.createMediaStreamSource(stream);
-    microphone.connect(analyser);
-    dataArray = new Uint8Array(analyser.frequencyBinCount);
-});
-}
-
-// get sound level
-function getVolume(){
+  // get sound level
+  function getVolume(){
     if(!analyser){
-        return 0;
+      return 0;
     }
 
     analyser.getByteFrequencyData(dataArray);
@@ -37,87 +34,71 @@ function getVolume(){
     let total = 0;
 
     for(let i = 0; i < dataArray.length; i++){
-        total += dataArray[i];
+      total += dataArray[i];
     }
 
     let average = total / dataArray.length;
 
     return average / 255;
-}
+  }
 
-/* for loading the video */
-let videoEl = document.getElementById("video-birds");
-window.addEventListener("click", function(){
-    if(videoEl.currentTime ===0){
-        videoEl.play();
-    
-}
-// start microphone
+  /* for loading the video */
+  let videoEl = document.getElementById("video-birds");
+  window.addEventListener("click", function(){
+    if(videoEl.currentTime === 0){
+      videoEl.play();
+    }
+
+    // start microphone
     setupMic();
+  });
 
-});
+  videoEl.loop = true;
 
+  let theCanvases = document.querySelectorAll(".canvases");
+  let theContexts = [];
 
-
-
-
-videoEl.loop = true;
-
-let theCanvases = document.querySelectorAll(".canvases");
-let theContexts =[];
-
-
-
-
-//add a context for each canvas and put into an array
-
-for(let i =0; i<theCanvases.length; i++){
+  // add a context for each canvas and put into an array
+  for(let i = 0; i < theCanvases.length; i++){
     let context = theCanvases[i].getContext("2d");
     theContexts.push(context);
-}
+  }
 
-let drawingBoardA = new DrawingBoard(theCanvases[0],theContexts[0],theCanvases[0].id);
-//add a circular object to canvas A
-drawingBoardA.addObj(new CircularObj(100,100,20,"#FFC300","#E6E6FA", drawingBoardA.context))
-drawingBoardA.display();
+  let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
+  drawingBoardA.addObj(new CircularObj(100,100,20,"#FFC300","#E6E6FA", drawingBoardA.context));
+  drawingBoardA.display();
 
+  let drawingBoardB = new DrawingBoard(theCanvases[1], theContexts[1], theCanvases[1].id);
+  drawingBoardB.addObj(new RectangularObj(100,100,50,70,"#FF5733","#E6E6FA", drawingBoardB.context));
+  drawingBoardB.display();
 
+  let drawingBoardC = new DrawingBoard(theCanvases[2], theContexts[2], theCanvases[2].id);
+  drawingBoardC.addObj(new FreeStyleObj(10,100,300,"#CF9FFF","#CF9FFF", drawingBoardC.context));
+  drawingBoardC.display();
 
-let drawingBoardB = new DrawingBoard(theCanvases[1],theContexts[1],theCanvases[1].id);
-//add a rectangular object to canvas B
-drawingBoardB.addObj(new RectangularObj(100,100,50,70,"#FF5733","#E6E6FA",drawingBoardB.context))
-drawingBoardB.display();
+  let drawingBoardD = new DrawingBoard(theCanvases[3], theContexts[3], theCanvases[3].id);
+  drawingBoardD.addObj(new VideoObj(0,0,400,300,videoEl,drawingBoardD.context));
+  drawingBoardD.display();
 
+  /*** RUN THE ANIMATION LOOP  */
+  window.requestAnimationFrame(animationLoop);
 
-let drawingBoardC = new DrawingBoard(theCanvases[2],theContexts[2],theCanvases[2].id);
-//add a freestyle object to canvas C
-drawingBoardC.addObj(new FreeStyleObj(10,100,300,"#CF9FFF","#CF9FFF", drawingBoardC.context))
-drawingBoardC.display();
+  function animationLoop(){
 
-let drawingBoardD = new DrawingBoard(theCanvases[3],theContexts[3],theCanvases[3].id);
-drawingBoardD.addObj(new VideoObj(0,0,400,300,videoEl,drawingBoardD.context))
-drawingBoardD.display();
-
-
-/*** RUN THE ANIMATION LOOP  */
-window.requestAnimationFrame(animationLoop);
-function animationLoop(){
-    
     drawingBoardA.animate();
 
-    drawingBoardB.objectsOnCanvas[0].mic = getVolume();
+    drawingBoardB.objectsOnCanvas[0].micLevel = getVolume();
     drawingBoardB.animate();
 
-    drawingBoardC.objectsOnCanvas[0].mic = getVolume();
+    drawingBoardC.objectsOnCanvas[0].micLevel = getVolume();
     drawingBoardC.animate();
 
-   
     drawingBoardD.context.clearRect(0, 0, drawingBoardD.canvas.width, drawingBoardD.canvas.height);
     drawingBoardD.run(videoEl);
 
     window.requestAnimationFrame(animationLoop);
+  }
 }
-
 
 /** TASK 1:(Drawing Board A) - 
  *  1: animate the circle object(s) somehow/anyhow.. (there may be more than one)
@@ -167,5 +148,3 @@ function animationLoop(){
 
 
 
-
-}
