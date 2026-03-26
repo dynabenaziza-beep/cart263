@@ -47,10 +47,19 @@ main {
     height:50px;
     display:flex;
     justify-content: space-around;
+    align-items: center; 
 }
-#filter_button_blur, #filter_button_sepia, #filter_button_hue, #filter_button_invert{
+
+
+#filter_button_blur, 
+#filter_button_sepia, 
+#filter_button_hue, 
+#filter_button_invert{
     padding-top:10px;
     height:40px;
     min-width:20%;
     font-size:14px;
+    border:none;        
+    background:white;   
+    cursor:pointer;     
 }
