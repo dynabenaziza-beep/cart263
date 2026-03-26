@@ -15,7 +15,7 @@ class FreeStyleObj {
 
       // Animation properties
       this.phase = 0;           // phase offset for wave animation
-      this.micLevel = 0;        // microphone volume level (0-1)
+      this.micLevel = 0;        // microphone volume level
       this.hue = 200;           // color hue
       this.amplitude = 5;       // wave amplitude (base)
       this.lineWidthVal = 2;

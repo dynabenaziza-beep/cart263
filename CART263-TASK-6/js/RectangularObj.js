@@ -35,7 +35,7 @@ class RectangularObj {
     this.context.shadowColor = this.fill_color;
     this.context.shadowBlur = this.micLevel * 30;
 
-    // Outer faint ring when mic is loud (creative visual)
+    //  when mic is loud (creative visual)
     if(this.micLevel > 0.05){
       this.context.globalAlpha = this.micLevel * 0.3;
       this.context.strokeStyle = this.stroke_color;

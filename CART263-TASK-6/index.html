@@ -1,79 +1,56 @@
 <!DOCTYPE html>
-<htmL>
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title> CART 263: ALL STUFF INSIDE THE CANVAS</title>
-    <!-- link to css-->
-    <link rel="stylesheet" href="css/all_stuff.css">
-    <!-- link to main script-->
-    <script src="js/VideoObj.js"></script>
-    <script src="js/FreeStyleObj.js"></script>
-    <script src="js/RectangularObj.js"></script>
-    <script src="js/CircularObj.js"></script>
-    <script src="js/DrawingBoard.js"></script>
-    <script src="js/start.js"></script>
+  <meta charset="UTF-8">
+  <title>CART 263: ALL STUFF INSIDE THE CANVAS</title>
+  <link rel="stylesheet" href="css/all_stuff.css">
+
+  <script src="js/VideoObj.js"></script>
+  <script src="js/FreeStyleObj.js"></script>
+  <script src="js/RectangularObj.js"></script>
+  <script src="js/CircularObj.js"></script>
+  <script src="js/DrawingBoard.js"></script>
+  <script src="js/start.js"></script>
 </head>
 
 <body>
-    <h1> CART 263:ALL STUFF INSIDE CANVAS(ES) </h1>
-    <video id="video-birds" src="videos/b1_s.mov" autoplay="autoplay" hidden></video>
-    <main>
-        <div class="container">
-            <p class="board-label">Board A - Circles (click to add / right-click to remove)</p>
-            <div class="button-g">
-                <!-- button-->
-            </div>
-            <canvas class="canvases" width=400 height=300 id="partA"></canvas>
-        </div>
-        <div class="container">
-            <p class="board-label">Board B - Rectangle + Microphone</p>
-            <div class="button-g">
-                <!-- button-->
-            </div>
-            <canvas class="canvases" width=400 height=300 id="partB"></canvas>
-        </div>
-        <div class="container">
-            <p class="board-label">Board C - FreeStyle + Microphone</p>
-            <div class="button-g">
-                <!-- button-->
-            </div>
-            <canvas class="canvases" width=400 height=300 id="partC"></canvas>
-        </div>
+  <h1>CART 263: ALL STUFF INSIDE CANVAS(ES)</h1>
 
-        <div class="container">
-            <p class="board-label">Board D - Video + Filters</p>
-            <div class="button-g">
+  <video id="video-birds" src="videos/b1_s.mov" autoplay hidden></video>
 
-                <span id="filter_button_blur">
-                    <span> blur</span>
-                    <input id="blurnum" type="number" min="0" max="20" value="0" />
-                </span>
+  <main>
+    <div class="container">
+      <div class="button-g"></div>
+      <canvas class="canvases" width="400" height="300" id="partA"></canvas>
+    </div>
 
-                <!-- button-->
-                <span id="filter_button_sepia">
-                    <span> sepia</span>
-                    <input id="sepianum" type="number" min="0" max="100" value="0" />
-                </span>
+    <div class="container">
+      <div class="button-g"></div>
+      <canvas class="canvases" width="400" height="300" id="partB"></canvas>
+    </div>
 
-                 <!-- button 2-->
-                 <span id="filter_button_hue">
-                    <span> hue-rotate</span>
-                    <input id="huenum" type="number" min="0" max="360" value="0" />
-                </span>
+    <div class="container">
+      <div class="button-g"></div>
+      <canvas class="canvases" width="400" height="300" id="partC"></canvas>
+    </div>
 
-                 <!-- button 2-->
-                 <span id="filter_button_invert">
-                    <span> invert</span>
-                    <input id="invertnum" type="number" min="0" max="100" value="0" />
-                </span>
+    <div class="container">
+      <div class="button-g">
+        <input type="number" id="blurnum" min="0" max="20" value="0">
+        <button id="filter_button_blur">Blur</button>
 
-            </div>
-            <canvas class="canvases" width=400 height=300 id="partD"></canvas>
-        </div>
+        <input type="number" id="sepianum" min="0" max="100" value="0">
+        <button id="filter_button_sepia">Sepia</button>
 
+        <input type="number" id="huenum" min="0" max="360" value="0">
+        <button id="filter_button_hue">Hue</button>
 
-    </main>
+        <input type="number" id="invertnum" min="0" max="100" value="0">
+        <button id="filter_button_invert">Invert</button>
+      </div>
+
+      <canvas class="canvases" width="400" height="300" id="partD"></canvas>
+    </div>
+  </main>
 </body>
-
 </html>
