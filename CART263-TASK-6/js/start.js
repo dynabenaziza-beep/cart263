@@ -1,150 +1,121 @@
 window.onload = go_all_stuff;
 
-let mic;
-let micLevel = 0;
-
 function go_all_stuff(){
-  console.log("go");
+console.log("go");
 
-  // microphone variables
-  let audioContext;
-  let analyser;
-  let microphone;
-  let dataArray;
-
-  // start microphone
-  function setupMic(){
-    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
-      audioContext = new AudioContext();
-      analyser = audioContext.createAnalyser();
-      microphone = audioContext.createMediaStreamSource(stream);
-      microphone.connect(analyser);
-      dataArray = new Uint8Array(analyser.frequencyBinCount);
-    });
-  }
-
-  // get sound level
-  function getVolume(){
-    if(!analyser){
-      return 0;
+/* for loading the video */
+let videoEl = document.getElementById("video-birds");
+window.addEventListener("click", function(){
+    if(videoEl.currentTime ===0){
+        videoEl.play()
     }
+})
 
-    analyser.getByteFrequencyData(dataArray);
 
-    let total = 0;
+videoEl.loop = true;
 
-    for(let i = 0; i < dataArray.length; i++){
-      total += dataArray[i];
-    }
+let theCanvases = document.querySelectorAll(".canvases");
+let theContexts =[];
+//add a context for each canvas and put into an array
 
-    let average = total / dataArray.length;
-
-    return average / 255;
-  }
-
-  /* for loading the video */
-  let videoEl = document.getElementById("video-birds");
-  window.addEventListener("click", function(){
-    if(videoEl.currentTime === 0){
-      videoEl.play();
-    }
-
-    // start microphone
-    setupMic();
-  });
-
-  videoEl.loop = true;
-
-  let theCanvases = document.querySelectorAll(".canvases");
-  let theContexts = [];
-
-  // add a context for each canvas and put into an array
-  for(let i = 0; i < theCanvases.length; i++){
+for(let i =0; i<theCanvases.length; i++){
     let context = theCanvases[i].getContext("2d");
     theContexts.push(context);
-  }
-
-  let drawingBoardA = new DrawingBoard(theCanvases[0], theContexts[0], theCanvases[0].id);
-  drawingBoardA.addObj(new CircularObj(100,100,20,"#FFC300","#E6E6FA", drawingBoardA.context));
-  drawingBoardA.display();
-
-  let drawingBoardB = new DrawingBoard(theCanvases[1], theContexts[1], theCanvases[1].id);
-  drawingBoardB.addObj(new RectangularObj(100,100,50,70,"#FF5733","#E6E6FA", drawingBoardB.context));
-  drawingBoardB.display();
-
-  let drawingBoardC = new DrawingBoard(theCanvases[2], theContexts[2], theCanvases[2].id);
-  drawingBoardC.addObj(new FreeStyleObj(10,100,300,"#CF9FFF","#CF9FFF", drawingBoardC.context));
-  drawingBoardC.display();
-
-  let drawingBoardD = new DrawingBoard(theCanvases[3], theContexts[3], theCanvases[3].id);
-  drawingBoardD.addObj(new VideoObj(0,0,400,300,videoEl,drawingBoardD.context));
-  drawingBoardD.display();
-
-  /*** RUN THE ANIMATION LOOP  */
-  window.requestAnimationFrame(animationLoop);
-
-  function animationLoop(){
-
-    drawingBoardA.animate();
-
-    drawingBoardB.objectsOnCanvas[0].micLevel = getVolume();
-    drawingBoardB.animate();
-
-    drawingBoardC.objectsOnCanvas[0].micLevel = getVolume();
-    drawingBoardC.animate();
-
-    drawingBoardD.context.clearRect(0, 0, drawingBoardD.canvas.width, drawingBoardD.canvas.height);
-    drawingBoardD.run(videoEl);
-
-    window.requestAnimationFrame(animationLoop);
-  }
 }
 
-/** TASK 1:(Drawing Board A) - 
- *  1: animate the circle object(s) somehow/anyhow.. (there may be more than one)
- * You can use the mouse coordinates - the canvas ALREADY has event listeners for mouse click and mouse move
- * implemeneted, as well as the proper mouseX and mouseY (NO need to add)
- * -> ensure that any properties that are changed by the circle object occur in the update method already provided,
- * and use the member properties provided (you may add new ones ... or not :)
- * 
- * 2: add new circle objects (different sizes, positions, colors) to the canvas (board A) using some form of user interaction
- * 3: remove new circle objects from the canvas (board A) using some other form of user interaction 
- * Please for this exercise - do not add any new shapes other than the circular object...
- * 
- */
+let drawingBoardA = new DrawingBoard(theCanvases[0],theContexts[0],theCanvases[0].id);
+//add a circular object to canvas A
+drawingBoardA.addObj(new CircularObj(100,100,20,"#FFC300","#E6E6FA", drawingBoardA.context))
+// Add a few more circles for visual richness (Task 1)
+drawingBoardA.addObj(new CircularObj(250,150,15,"#FF5733","#DAF7A6", drawingBoardA.context))
+drawingBoardA.addObj(new CircularObj(300,80,25,"#C70039","#FFC300", drawingBoardA.context))
+drawingBoardA.addObj(new CircularObj(180,220,12,"#900C3F","#FF5733", drawingBoardA.context))
+drawingBoardA.display();
 
 
-/** TASK 2:(Drawing Board B) - 
- *  1: Affect the rectangle by input from the microphone somehow, in real time...
- *  at least two properties of the rectangle need to update and change...
- *  2: apply some arbitrary animation to the rectangle obj (change the properties in the update method provided)
- * -> the code for the microphone has NOT been added  - you need to implement it correctly...
- *  
- */
 
-/** TASK 3:(Drawing Board C) - 
- *  1: Affect the free-style shape by input from the microphone somehow, in real time...
- *  at least two properties of the free-style shape need to update and change...
- *  2: apply some arbitrary animation to the free-style shape (change the properties in the update method provided)
- * -> the code for the microphone has NOT been added  - you need to implement it correctly...
- *  
- */
+let drawingBoardB = new DrawingBoard(theCanvases[1],theContexts[1],theCanvases[1].id);
+//add a rectangular object to canvas B
+drawingBoardB.addObj(new RectangularObj(100,100,50,70,"#FF5733","#E6E6FA",drawingBoardB.context))
+drawingBoardB.display();
 
-/** TASK 4:(Video - recorded - )
- * // add filters or manipulate the pixels... take user input from the boxes..
- *  1: using thr provided VideoObj class - > 
- * you will see all the code needed for activating  a blur filter on the video - activate it
- * 2: Next: apply the same logic to enable the other 3 possible filters (adding the event listeners etc)
- * -> make sure to look at the input/output ranges for the values
- * 3: -> apply the context filters  to the video for the three filter options (and activate the blur as well)
- * 4: ->  using the mousemove event listener (already applied in the drawing board) - 
- * make the rectangle (over the video) - follow the mouse ... AND change color when you click on the canvas
- * USE & FILL IN THE METHODS ALREADY set out in the VideoObj class...
- * 
- * 
- * PLEASE NOTE: there will be marks taken off if you ignore the instructions ;)
- *  
- */
+
+let drawingBoardC = new DrawingBoard(theCanvases[2],theContexts[2],theCanvases[2].id);
+//add a freestyle object to canvas C
+drawingBoardC.addObj(new FreeStyleObj(10,100,300,"#CF9FFF","#CF9FFF", drawingBoardC.context))
+drawingBoardC.display();
+
+let drawingBoardD = new DrawingBoard(theCanvases[3],theContexts[3],theCanvases[3].id);
+drawingBoardD.addObj(new VideoObj(0,0,400,300,videoEl,drawingBoardD.context))
+drawingBoardD.display();
+
+
+let micLevel = 0; // normalized volume 0-1
+
+// Request microphone access
+navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+  .then(function(stream) {
+    console.log("Microphone access granted!");
+
+    // Create audio context and analyser
+    let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    let analyser = audioContext.createAnalyser();
+    let microphone = audioContext.createMediaStreamSource(stream);
+    microphone.connect(analyser);
+
+    analyser.fftSize = 512;
+    let bufferLength = analyser.frequencyBinCount;
+    let dataArray = new Uint8Array(bufferLength);
+
+    // Function to read mic level continuously
+    function getMicLevel() {
+      analyser.getByteFrequencyData(dataArray);
+
+      // Calculate average volume
+      let sum = 0;
+      for (let i = 0; i < bufferLength; i++) {
+        sum += dataArray[i];
+      }
+      let average = sum / bufferLength;
+      micLevel = average / 255; // normalize to 0-1
+
+      // Pass mic level to all objects on Board B (rectangles)
+      for (let i = 0; i < drawingBoardB.objectsOnCanvas.length; i++) {
+        drawingBoardB.objectsOnCanvas[i].micLevel = micLevel;
+      }
+      // Pass mic level to all objects on Board C (freestyle)
+      for (let i = 0; i < drawingBoardC.objectsOnCanvas.length; i++) {
+        drawingBoardC.objectsOnCanvas[i].micLevel = micLevel;
+      }
+
+      requestAnimationFrame(getMicLevel);
+    }
+    getMicLevel();
+  })
+  .catch(function(err) {
+    
+  });
+
+
+/*** RUN THE ANIMATION LOOP  */
+window.requestAnimationFrame(animationLoop);
+
+function animationLoop(){
+    /*** CALL THE EACH CANVAS TO ANIMATE INSIDE  */
+    drawingBoardA.animate();
+    drawingBoardB.animate();
+    drawingBoardC.animate();
+    drawingBoardD.run(videoEl)
+    window.requestAnimationFrame(animationLoop);
+}
+
+
+
+
+
+
+
+}
 
 
 
