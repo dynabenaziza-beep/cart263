@@ -251,5 +251,10 @@ seedDots();
 seedLines();
 animate(); 
 
-function setupThreeScene() {}
+function setupThreeScene() {
+
+  scene = new THREE.Scene();
+
+  
+}
 
