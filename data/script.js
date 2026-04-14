@@ -3,6 +3,12 @@ const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
 const threeContainer = document.getElementById("three-container");
+
+// three.js variables
+let scene;
+let camera;
+let renderer;
+let userSphere;
 let profileActive = false; // prevents the ring from flashing too fast
 let lastProfileLevel = 0; // remembers the last 10-dot level
 
