@@ -254,7 +254,8 @@ animate();
 function setupThreeScene() {
 
   scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+camera.position.z = 3;
 
-  
 }
 
