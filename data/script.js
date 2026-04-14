@@ -212,24 +212,28 @@ const rect = stage.getBoundingClientRect();
 });
 
 function showNewProfile(){
-if (profileActive === true) return; // stop if already flashing
+if (profileActive) return; // stop if already flashing
 
   profileActive = true;
     
-profile.style.opacity = 1; // show ring
-  profile.style.boxShadow = "0 0 20px white"; // make ring glow
+if (userSphere) {
+    userSphere.visible = true;
+  }
 
-  message.textContent = "New user created"; // show text
-  message.style.opacity = 1; // show message
+  message.textContent = "New user created";
+  message.style.opacity = 1;
 
   setTimeout(function() {
-    profile.style.opacity = 0;
-    profile.style.boxShadow = "none";
     message.style.opacity = 0;
 
-    profileActive = false; // allow next flash
+    if (userSphere) {
+      userSphere.visible = false;
+    }
+
+    profileActive = false;
   }, 800);
-  }
+}
+
 
 
 function checkprofile(){
@@ -281,8 +285,11 @@ const material = new THREE.MeshBasicMaterial({
 
 userSphere = new THREE.Mesh(geometry, material);
 
-userSphere.visible = false;
-scene.add(userSphere);
+
+if (userSphere) {
+  userSphere.visible = true;
+}
+
 
 }
 
