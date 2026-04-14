@@ -281,3 +281,13 @@ scene.add(userSphere);
 
 }
 
+function animateThreeScene() {
+  requestAnimationFrame(animateThreeScene);
+
+  if (userSphere) {
+    userSphere.rotation.x += 0.01;
+    userSphere.rotation.y += 0.01;
+  }
+
+  renderer.render(scene, camera);
+}
