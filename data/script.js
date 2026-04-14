@@ -1,4 +1,4 @@
-
+console.log(window.THREE);
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
@@ -246,12 +246,15 @@ if (maxConnected < 10) {
 
 }
 
-setupThreeScene();
-animateThreeScene();
+
  //generate all starting dots 
 seedDots();
 seedLines();
 animate(); 
+setupThreeScene();
+animateThreeScene();
+//setupThreeScene();
+//animateThreeScene();
 
 function setupThreeScene() {
 
@@ -278,7 +281,7 @@ const material = new THREE.MeshBasicMaterial({
 
 userSphere = new THREE.Mesh(geometry, material);
 
-userSphere.visible = false;
+userSphere.visible = true;
 scene.add(userSphere);
 
 }
