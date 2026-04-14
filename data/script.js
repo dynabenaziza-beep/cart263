@@ -276,5 +276,8 @@ const material = new THREE.MeshBasicMaterial({
 
 userSphere = new THREE.Mesh(geometry, material);
 
+userSphere.visible = false;
+scene.add(userSphere);
+
 }
 
