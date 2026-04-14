@@ -246,6 +246,8 @@ if (maxConnected < 10) {
 
 }
 
+setupThreeScene();
+animateThreeScene();
  //generate all starting dots 
 seedDots();
 seedLines();
