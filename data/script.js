@@ -266,5 +266,15 @@ renderer = new THREE.WebGLRenderer({
 renderer.setSize(180, 180);
 threeContainer.appendChild(renderer.domElement);
 
+
+const geometry = new THREE.SphereGeometry(0.9, 20, 20);
+
+const material = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+  wireframe: true
+});
+
+userSphere = new THREE.Mesh(geometry, material);
+
 }
 
