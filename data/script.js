@@ -1,4 +1,16 @@
+
+
 console.log(window.THREE);
+
+let usersGenerated = 0;
+let dotsAddedByClick = 0;
+let maxClusterReached = 0;
+
+let sessionStartTime = Date.now();
+let sessionDuration = 0;
+
+let showArchiveScreen = false;
+let archiveThreshold = 5; // show archive after 5 generated users
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
