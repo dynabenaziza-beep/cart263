@@ -262,36 +262,34 @@ animateThreeScene();
 
 function setupThreeScene() {
 
- scene = new THREE.Scene();
+  scene = new THREE.Scene();
 
-camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-camera.position.z = 3;
+  camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+  camera.position.z = 3;
 
-renderer = new THREE.WebGLRenderer({
-  alpha: true,
-  antialias: true
-});
+  renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
+  });
 
-renderer.setSize(180, 180);
-threeContainer.appendChild(renderer.domElement);
+  renderer.setSize(180, 180);
+  threeContainer.appendChild(renderer.domElement);
 
+  const geometry = new THREE.SphereGeometry(0.9, 20, 20);
 
-const geometry = new THREE.SphereGeometry(0.9, 20, 20);
+  const material = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    wireframe: true
+  });
 
-const material = new THREE.MeshBasicMaterial({
-  color: 0xffffff,
-  wireframe: true
-});
+  userSphere = new THREE.Mesh(geometry, material);
 
-userSphere = new THREE.Mesh(geometry, material);
-
-
-if (userSphere) {
-  userSphere.visible = true;
+  scene.add(userSphere);    
+  userSphere.visible = false; 
 }
 
 
-}
+
 
 function animateThreeScene() {
   requestAnimationFrame(animateThreeScene);
