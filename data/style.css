@@ -49,6 +49,24 @@ top: 50%;
   pointer-events: none;
 }
 
+#archive-screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.92);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  z-index: 20;
+}
+
+#archive-screen.show {
+  display: flex;
+}
+
 #three-container {
   position: absolute;
   left: 50%;
