@@ -337,3 +337,11 @@ function formatSessionTime(ms) {
 
   return paddedMinutes + ":" + paddedSeconds;
 }
+
+function showArchive() {
+  archiveUsers.textContent = usersGenerated;
+  archiveDots.textContent = dotsAddedByClick;
+  archiveCluster.textContent = maxClusterReached;
+
+  archiveScreen.classList.add("show");
+}
