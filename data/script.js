@@ -17,6 +17,12 @@ const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
 const threeContainer = document.getElementById("three-container");
 
+const archiveScreen = document.getElementById("archive-screen");
+const archiveUsers = document.getElementById("archive-users");
+const archiveDots = document.getElementById("archive-dots");
+const archiveCluster = document.getElementById("archive-cluster");
+const archiveDuration = document.getElementById("archive-duration");
+
 // three.js variables
 let scene;
 let camera;
