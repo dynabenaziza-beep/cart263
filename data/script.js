@@ -350,6 +350,7 @@ sessionDuration = Date.now() - sessionStartTime;
   archiveScreen.classList.add("show");
 }
 
+
 function formatTime(ms) {
   let seconds = Math.floor(ms / 1000);
   let minutes = Math.floor(seconds / 60);
