@@ -60,3 +60,27 @@ top: 50%;
   z-index: 2;
   
 }
+
+.archive-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  letter-spacing: 0.1em;
+}
+
+.archive-stats {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.archive-analysis {
+  margin-top: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.archive-restart {
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+}
