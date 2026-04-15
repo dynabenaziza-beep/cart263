@@ -10,6 +10,7 @@ let sessionStartTime = Date.now();
 let sessionDuration = 0;
 
 let showArchiveScreen = false;
+
 let archiveThreshold = 5; // show archive after 5 generated users
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
@@ -215,10 +216,13 @@ for (let i = 0; i < 300; i++) {
 }
 //listen for click inside stage 
 stage.addEventListener("click", function(event){
+if (showArchiveScreen) return;
+
 //  clicks inside the stage(position and size )
 const rect = stage.getBoundingClientRect();
 
-     const x = event.clientX - rect.left; //get click x position 
+
+const x = event.clientX - rect.left; //get click x position 
       const y = event.clientY - rect.top;// get  y position 
       addDot(x, y);
 });
