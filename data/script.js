@@ -251,11 +251,13 @@ if (userSphere) {
   }, 800);
 }
 
-
-
 function checkprofile(){
 const maxConnected = getMaxConnectedCount();
 const currentLevel = Math.floor(maxConnected / 10);
+
+if (maxConnected > maxClusterReached) {
+    maxClusterReached = maxConnected;
+  }
 
 if (currentLevel > lastProfileLevel) {
   showNewProfile();
