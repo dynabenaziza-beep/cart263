@@ -345,3 +345,11 @@ function showArchive() {
 
   archiveScreen.classList.add("show");
 }
+
+function formatTime(ms) {
+  let seconds = Math.floor(ms / 1000);
+  let minutes = Math.floor(seconds / 60);
+  seconds = seconds % 60;
+
+  return minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+}
