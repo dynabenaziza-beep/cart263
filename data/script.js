@@ -231,6 +231,7 @@ function showNewProfile(){
 if (profileActive) return; // stop if already flashing
 
   profileActive = true;
+  usersGenerated++;
     
 if (userSphere) {
     userSphere.visible = true;
