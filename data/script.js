@@ -339,9 +339,13 @@ function formatSessionTime(ms) {
 }
 
 function showArchive() {
+
+sessionDuration = Date.now() - sessionStartTime;
+
   archiveUsers.textContent = usersGenerated;
   archiveDots.textContent = dotsAddedByClick;
   archiveCluster.textContent = maxClusterReached;
+  archiveDuration.textContent = formatTime(sessionDuration);
 
   archiveScreen.classList.add("show");
 }
