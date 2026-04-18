@@ -361,6 +361,9 @@ for (let i = 0; i < archiveData.length; i++) {
       data: entry,
       x: 0,
       y: 0
+      baseX: 0,
+    baseY: 0,
+    offset: 0
     });
 
 
