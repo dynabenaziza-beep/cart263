@@ -18,6 +18,14 @@ let identityStage = 0;
 let clickCount = 0;
 // total number of clicks
 
+const names = [
+  "Lina", "Noah", "Maya", "Adam", "Sofia",
+  "Elias", "Nora", "Leo", "Yara", "Amine",
+  "Ines", "Mila", "Zayn", "Sara", "Ari",
+  "Aya", "Jade", "Mounir", "Liam", "Nina"
+];
+// names that will appear when the user clicks
+
 
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
