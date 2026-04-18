@@ -273,11 +273,10 @@ function animate() {
   drawLines();
   checkProfile();
 
-  requestAnimationFrame(animate);
-
   if (archiveScreen.classList.contains("show")) {
   animateArchiveNumbers();
-}
+  }
+    requestAnimationFrame(animate);
 }
 
 function setupThreeScene() {
