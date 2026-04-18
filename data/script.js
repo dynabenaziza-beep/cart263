@@ -274,6 +274,10 @@ function animate() {
   checkProfile();
 
   requestAnimationFrame(animate);
+
+  if (archiveScreen.classList.contains("show")) {
+  animateArchiveNumbers();
+}
 }
 
 function setupThreeScene() {
