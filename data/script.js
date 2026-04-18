@@ -368,3 +368,10 @@ function formatTime(ms) {
 
   return minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
 }
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "r" || event.key === "R") {
+    location.reload();
+  }
+});
+// restart the artwork when R is pressed
