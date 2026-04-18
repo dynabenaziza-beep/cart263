@@ -406,5 +406,6 @@ function layoutArchiveNumbers(){
 
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
+    
   });
 }
