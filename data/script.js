@@ -400,3 +400,7 @@ document.addEventListener("keydown", function(event) {
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+function addDot(x,y){
+  
+}
