@@ -1,45 +1,14 @@
-
-
 console.log(window.THREE);
 
 let identityStage = 0;
 let sessionStartTime = Date.now();
 let sessionDuration = 0;
-
-let usersGenerated = 0;
-let dotsAddedByClick = 0;
-let maxClusterReached = 0;
-
-
-
-let archiveThreshold = 5;
-let showArchivescreen = false;
-
-
-// this counts how much the generated identity has grown
-
-let clickCount = 0;
-// total number of clicks
-
-const names = [
-  "Lina", "Noah", "Maya", "Adam", "Sofia",
-  "Elias", "Nora", "Leo", "Yara", "Amine",
-  "Ines", "Mila", "Zayn", "Sara", "Ari",
-  "Aya", "Jade", "Mounir", "Liam", "Nina"
-];
-// names that will appear when the user clicks
-
-let usedNameIndex = 0;
-// this helps us move through the names array one by one
-
-
-
+let profileActive = false;
+let lastProfileLevel = 0;
 
 const stage = document.getElementById("stage");
-const profile = document.getElementById("profile"); // profile circle
-const message = document.getElementById("message"); // text message on screen
+const message = document.getElementById("message");
 const threeContainer = document.getElementById("three-container");
-const statusText = document.getElementById("status-text");
 
 const archiveScreen = document.getElementById("archive-screen");
 const archiveUsers = document.getElementById("archive-users");
@@ -52,85 +21,80 @@ let scene;
 let camera;
 let renderer;
 let userSphere;
-let profileActive = false; // prevents the ring from flashing too fast
-let lastProfileLevel = 0; // remembers the last 10-dot level
 
-
-const dots = []; //create an emoty array to store all dots 
-
-const lines = []; // store all line divs here
-const totalDots = 35;//how many dots 
-
-const typeColors = ["#ffffff", "#9ca3af", "#60a5fa"]; // each dot will random use those colors 
+const dots = [];
+const lines = [];
+const totalDots = 35;
+const typeColors = ["#ffffff", "#9ca3af", "#60a5fa"];
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
-  function addDot(x, y) {
+
+function addDot(x, y) {
   const type = Math.floor(Math.random() * 3);
 
-const dot = document.createElement("div"); //
-  dot.className = "dot"; // css class dot 
-dot.style.background =typeColors [type];
-
+  const dot = document.createElement("div");
+  dot.className = "dot";
+  dot.style.background = typeColors[type];
   dot.style.left = x + "px";
   dot.style.top = y + "px";
 
   stage.appendChild(dot);
 
-  // store all important data for this dot
   dots.push({
-    x: x,   // horizental 
-    y: y, //vertical 
-    vx: random(-0.6, 0.6),  //h speed 
-    vy: random(-0.6, 0.6),  //v speed
-    type: type,             //dot type 
+    x: x,
+    y: y,
+    vx: random(-0.6, 0.6),
+    vy: random(-0.6, 0.6),
+    type: type,
     element: dot
   });
 }
 
 function seedDots() {
-
-  const rect = stage.getBoundingClientRect(); // get stage size
+  const rect = stage.getBoundingClientRect();
 
   for (let i = 0; i < totalDots; i++) {
-
-    const x = random(20, rect.width - 20); // random x position
-    const y = random(20, rect.height - 20); // random y position
-
-    addDot(x, y); // create a dot at that position
+    const x = random(20, rect.width - 20);
+    const y = random(20, rect.height - 20);
+    addDot(x, y);
   }
-
 }
-function moveDots (){
-  
-     dots.forEach(function(dot) {
-    dot.x += dot.vx; //
-    dot.y += dot.vy; //
-  });
+
+function moveDots() {
+  dots.forEach(function (dot) {
+    dot.x += dot.vx;
+    dot.y += dot.vy;
+
+    if (dot.x < 0 || dot.x > window.innerWidth - 10) {
+      dot.vx *= -1;
     }
 
-    function drawDots() {
+    if (dot.y < 0 || dot.y > window.innerHeight - 10) {
+      dot.vy *= -1;
+    }
+  });
+}
 
-  dots.forEach(function(dot) {
+function drawDots() {
+  dots.forEach(function (dot) {
     dot.element.style.left = dot.x + "px";
     dot.element.style.top = dot.y + "px";
   });
-
 }
-//find distance between 2 dots 
-function getDistance(dot1,dot2){
-    const xDistance= dot1.x -dot2.x; //horizental dist between two dot 
-    const yDistance = dot1.y-dot2.y; //vertical distance betweem two dot
-    // Math.sqrt = square root
-    return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+function getDistance(dot1, dot2) {
+  const xDistance = dot1.x - dot2.x;
+  const yDistance = dot1.y - dot2.y;
+  return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 }
 
 function getMaxConnectedCount() {
   let maxCount = 0;
 
   for (let i = 0; i < dots.length; i++) {
-    let connectedCount = 1; // start with current dot
+    let connectedCount = 1;
 
     for (let j = 0; j < dots.length; j++) {
       if (i !== j) {
@@ -138,14 +102,12 @@ function getMaxConnectedCount() {
         const dot2 = dots[j];
         const distance = getDistance(dot1, dot2);
 
-        // same color and close enough
         if (dot1.type === dot2.type && distance < 120) {
           connectedCount++;
         }
       }
     }
 
-    // save the biggest group found
     if (connectedCount > maxCount) {
       maxCount = connectedCount;
     }
@@ -154,182 +116,139 @@ function getMaxConnectedCount() {
   return maxCount;
 }
 
-function groupSimilarDots(){
- for (let i = 0; i < dots.length; i++) {
+function groupSimilarDots() {
+  for (let i = 0; i < dots.length; i++) {
     for (let j = i + 1; j < dots.length; j++) {
-        
-        const dot1 = dots[i];
-        const dot2 = dots[j];
+      const dot1 = dots[i];
+      const dot2 = dots[j];
+      const distance = getDistance(dot1, dot2);
 
-        const distance = getDistance(dot1, dot2);//measure distance 
-       // only group dots of the same type
+      if (dot1.type === dot2.type && distance < 150) {
+        const dx = dot2.x - dot1.x;
+        const dy = dot2.y - dot1.y;
 
-      // only group dots of the same type
-      if (dot1.type === dot2.type) {  
- 
-        // only group if they are close enough
-        if (distance < 150) {
-          const dx = dot2.x - dot1.x;
-          const dy = dot2.y - dot1.y;
+        dot1.x += dx * 0.002;
+        dot1.y += dy * 0.002;
 
-        dot1.x += dx * 0.002; //first dot
-          dot1.y += dy * 0.002;
-
-          dot2.x -= dx * 0.002;  //second dot 
-          dot2.y -= dy * 0.002;
+        dot2.x -= dx * 0.002;
+        dot2.y -= dy * 0.002;
+      }
     }
-}
-  }  
-}
-}
-//draw line between dots that are close to each other 
-function drawLines(){
-    let lineIndex=0;
-    for (let i =0; i <dots.length;i++){// loop through every dot in the dots array 
-//j start at i + 1 = dont compare same pair twice 
-    for (let j=i+1; j< dots.length;j++){
-
-        const dot1 = dots[i]; // get first dot from dots array using index i 
-        const dot2 =dots[j]; // second dpt from dots array using index j 
-
-        //caculate distance 
-        const distance = getDistance(dot1 , dot2);
-        // check if the dots are the same type
-
-       
-   if (dot1.type === dot2.type) {
-
-        if (distance < 120 && lineIndex < lines.length){ //only connect  dots that are close 
-           const line = lines[lineIndex]; // get line element when two dots are close 
-
-             const dx = dot2.x - dot1.x;
-                const dy = dot2.y - dot1.y;
-const angle = Math.atan2(dy, dx) * 180 / Math.PI
-
-  line.style.width = distance + "px";
-  line.style.left = dot1.x + 5 + "px";
-  line.style.top = dot1.y + 5 + "px";
-  line.style.background = typeColors[dot1.type];
-  line.style.transform = "rotate(" + angle + "deg)";
-  line.style.display = "block";
-
-  lineIndex++;
-           }
-        }
-    }
-}
-    while (lineIndex < lines.length) {
-    lines[lineIndex].style.display = "none";
-    lineIndex++;
   }
 }
- function animate(){
-moveDots();
-groupSimilarDots();
-  drawDots();
-  drawLines();//update connection 
-  checkprofile(); //check profile every frame 
 
-  requestAnimationFrame(animate);
- }
-
- function addLine() {
+function addLine() {
   const line = document.createElement("div");
   line.className = "line";
   stage.appendChild(line);
   lines.push(line);
 }
-function seedLines(){
-for (let i = 0; i < 300; i++) {
+
+function seedLines() {
+  for (let i = 0; i < 300; i++) {
     addLine();
   }
 }
-//listen for click inside stage 
-stage.addEventListener("click", function(event){
-if (archiveScreen.classList.contains("show")) return;
-// stop clicks when the archive screen is open
 
-//  clicks inside the stage(position and size )
-const rect = stage.getBoundingClientRect();
+function drawLines() {
+  let lineIndex = 0;
 
+  for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+      const dot1 = dots[i];
+      const dot2 = dots[j];
+      const distance = getDistance(dot1, dot2);
 
-const x = event.clientX - rect.left; //get click x position 
-      const y = event.clientY - rect.top;// get  y position 
-      addDot(x, y);
-});
+      if (dot1.type === dot2.type) {
+        if (distance < 120 && lineIndex < lines.length) {
+          const line = lines[lineIndex];
 
-function showNewProfile(){
-if (profileActive) return; // stop if already flashing
+          const dx = dot2.x - dot1.x;
+          const dy = dot2.y - dot1.y;
+          const angle = Math.atan2(dy, dx) * 180 / Math.PI;
 
-  profileActive = true;
-  usersGenerated++;
+          line.style.width = distance + "px";
+          line.style.left = dot1.x + 5 + "px";
+          line.style.top = dot1.y + 5 + "px";
+          line.style.background = typeColors[dot1.type];
+          line.style.transform = "rotate(" + angle + "deg)";
+          line.style.display = "block";
 
-//increase identity stage 
-  identityStage++;
-    
-if (userSphere) {
-    userSphere.visible = true;
+          lineIndex++;
+        }
+      }
+    }
   }
 
-  //make sphere bigger each time 
-  const scaleValue = 1 + identityStage * 0.5;
+  while (lineIndex < lines.length) {
+    lines[lineIndex].style.display = "none";
+    lineIndex++;
+  }
+}
+
+stage.addEventListener("click", function (event) {
+  if (archiveScreen.classList.contains("show")) return;
+
+  const rect = stage.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+
+  addDot(x, y);
+});
+
+function showNewProfile() {
+  if (profileActive) return;
+
+  profileActive = true;
+  identityStage++;
+
+  if (userSphere) {
+    userSphere.visible = true;
+
+    const scaleValue = 1 + identityStage * 0.5;
     userSphere.scale.set(scaleValue, scaleValue, scaleValue);
   }
 
-  message.textContent = "New user created";
+  message.textContent = "New identity added";
   message.style.opacity = 1;
 
-  //after 3 go to next oage 
   if (identityStage >= 3) {
-    setTimeout(() => {
+    setTimeout(function () {
       showArchive();
     }, 800);
   }
 
-// open archive after enough users are generated
-
-
-  setTimeout(function() {
+  setTimeout(function () {
     message.style.opacity = 0;
-
-    if (userSphere) {
-      userSphere.visible = false;
-    }
-
     profileActive = false;
   }, 800);
+}
 
+function checkProfile() {
+  const maxConnected = getMaxConnectedCount();
+  const currentLevel = Math.floor(maxConnected / 10);
 
-function checkprofile(){
-const maxConnected = getMaxConnectedCount();
-const currentLevel = Math.floor(maxConnected / 10);
-
-if (maxConnected > maxClusterReached) {
-    maxClusterReached = maxConnected;
+  if (currentLevel > lastProfileLevel) {
+    showNewProfile();
+    lastProfileLevel = currentLevel;
   }
 
-if (currentLevel > lastProfileLevel) {
-  showNewProfile();
-  lastProfileLevel = currentLevel;
-}
-if (maxConnected < 10) {
-  lastProfileLevel = 0;
+  if (maxConnected < 10) {
+    lastProfileLevel = 0;
+  }
 }
 
+function animate() {
+  moveDots();
+  groupSimilarDots();
+  drawDots();
+  drawLines();
+  checkProfile();
+
+  requestAnimationFrame(animate);
 }
-
-
- //generate all starting dots 
-seedDots();
-seedLines();
-animate(); 
-setupThreeScene();
-animateThreeScene();
-//setupThreeScene();
-//animateThreeScene();
 
 function setupThreeScene() {
-
   scene = new THREE.Scene();
 
   camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
@@ -344,20 +263,15 @@ function setupThreeScene() {
   threeContainer.appendChild(renderer.domElement);
 
   const geometry = new THREE.SphereGeometry(0.9, 20, 20);
-
   const material = new THREE.MeshBasicMaterial({
     color: 0xffffff,
     wireframe: true
   });
 
   userSphere = new THREE.Mesh(geometry, material);
-
-  scene.add(userSphere);    
-  userSphere.visible = false; 
+  scene.add(userSphere);
+  userSphere.visible = false;
 }
-
-
-
 
 function animateThreeScene() {
   requestAnimationFrame(animateThreeScene);
@@ -382,18 +296,25 @@ function formatSessionTime(ms) {
 }
 
 function showArchive() {
-  showArchiveScreen = true; 
-  // mark archive as open so clicks stop
+  sessionDuration = Date.now() - sessionStartTime;
 
-sessionDuration = Date.now() - sessionStartTime;
-
-
-  archiveUsers.textContent = usersGenerated;
-  archiveDots.textContent = dotsAddedByClick;
-  archiveCluster.textContent = maxClusterReached;
-  archiveDuration.textContent = formatTime(sessionDuration);
+  archiveUsers.textContent = identityStage;
+  archiveDots.textContent = dots.length;
+  archiveCluster.textContent = getMaxConnectedCount();
+  archiveDuration.textContent = formatSessionTime(sessionDuration);
 
   archiveScreen.classList.add("show");
 }
 
+document.addEventListener("keydown", function (event) {
+  if (event.key === "r" || event.key === "R") {
+    location.reload();
+  }
+});
+
+setupThreeScene();
+seedDots();
+seedLines();
+animate();
+animateThreeScene();
 
