@@ -422,4 +422,27 @@ dots.push({
     element: dot
   }); 
 }
-function showClickName(x, y) {}
+function showClickName(x, y) {
+
+  const tag = document.createElement("div");
+  tag.className = "name-tag";
+
+  const currentName = names[usedNameIndex];
+  tag.textContent = currentName;
+
+  usedNameIndex++;
+
+  if (usedNameIndex >= names.length) {
+    usedNameIndex = 0;
+  }
+  // start again from the first name when we reach the end
+
+  tag.style.left = x + "px";
+  tag.style.top = y + "px";
+
+  stage.appendChild(tag);
+
+  setTimeout(function() {
+    tag.remove();
+  }, 1800);
+} 
