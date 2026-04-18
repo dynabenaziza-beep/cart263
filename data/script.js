@@ -401,6 +401,8 @@ function layoutArchiveNumbers(){
     item.x = x;
     item.y = y;
 
+    item.baseX =x;
+
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
 
