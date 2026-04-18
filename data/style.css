@@ -103,16 +103,20 @@ top: 50%;
   opacity: 0.7;
 }
 
-#status-text {
+#archive-field {
+  position: relative;
+  width: 420px;
+  height: 620px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.archive-number {
   position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform: translateX(-50%);
   color: white;
-  font-size: 14px;
   font-family: Arial, sans-serif;
-  opacity: 0.8;
-  pointer-events: none;
-  letter-spacing: 0.08em;
-  z-index: 15;
+  font-size: 11px;
+  opacity: 0.85;
+  cursor: pointer;
+  user-select: none;
 }
