@@ -372,5 +372,7 @@ for (let i = 0; i < archiveData.length; i++) {
 function showArchiveEntry(entry){
   panelId.textContent = entry.id;
    panelName.textContent = entry.name
+   panelCountry.textContent = entry.country;
+  panelStatus.textContent = entry.status;
     panelCluster.textContent = entry.cluster;
 }
