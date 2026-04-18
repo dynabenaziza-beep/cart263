@@ -560,3 +560,20 @@ let lineIndex = 0;
   }         
   
 }
+function updateIdentityVisual() {
+  if (!userSphere) return;
+
+  if (identityStage === 0) {
+    userSphere.scale.set(1, 1, 1);
+    statusText.textContent = "click to register traces";
+  } else if (identityStage === 1) {
+    userSphere.scale.set(1.3, 1.3, 1.3);
+    statusText.textContent = "identity forming";
+  } else if (identityStage === 2) {
+    userSphere.scale.set(1.7, 1.7, 1.7);
+    statusText.textContent = "identity building";
+  } else if (identityStage >= 3) {
+    userSphere.scale.set(2.2, 2.2, 2.2);
+    statusText.textContent = "identity added to the loop";
+  }
+}
