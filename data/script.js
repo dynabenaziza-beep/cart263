@@ -247,6 +247,12 @@ if (userSphere) {
   message.textContent = "New user created";
   message.style.opacity = 1;
 
+   if (usersGenerated >= archiveThreshold) {
+    showArchive();
+  }
+// open archive after enough users are generated
+
+
   setTimeout(function() {
     message.style.opacity = 0;
 
