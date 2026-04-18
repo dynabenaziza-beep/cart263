@@ -396,3 +396,7 @@ document.addEventListener("keydown", function(event) {
   }
 });
 // restart the artwork when R is pressed
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
