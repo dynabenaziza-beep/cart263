@@ -260,12 +260,17 @@ if (profileActive) return; // stop if already flashing
 
   profileActive = true;
   usersGenerated++;
-  
+
 //increase identity stage 
   identityStage++;
     
 if (userSphere) {
     userSphere.visible = true;
+  }
+
+  //make sphere bigger each time 
+  const scaleValue = 1 + identityStage * 0.5;
+    userSphere.scale.set(scaleValue, scaleValue, scaleValue);
   }
 
   message.textContent = "New user created";
