@@ -474,3 +474,28 @@ function getDistance(dot1, dot2) {
 
   return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
 }
+function getMaxConnectedCount() {
+  let maxCount = 0;
+
+  for (let i = 0; i < dots.length; i++) {
+    let connectedCount = 1;
+
+    for (let j = 0; j < dots.length; j++) {
+      if (i !== j) {
+        const dot1 = dots[i];
+        const dot2 = dots[j];
+        const distance = getDistance(dot1, dot2);
+
+        if (dot1.type === dot2.type && distance < 120) {
+          connectedCount++;
+        }
+      }
+    }
+
+    if (connectedCount > maxCount) {
+      maxCount = connectedCount;
+    }
+  }
+
+  return maxCount;
+}
