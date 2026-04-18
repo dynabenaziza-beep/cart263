@@ -380,5 +380,31 @@ function showArchiveEntry(entry){
 
 }
 function layoutArchiveNumbers(){
-  
+  const centerX = 210;
+
+  archiveNumbers.forEach(function (item, index) {
+    const y = 40 + index * 36;
+
+    let width;
+
+    if (y < 120) {
+      width = 35;
+    } else if (y < 240) {
+      width = 90;
+    } else if (y < 380) {
+      width = 45;
+    } else if (y < 520) {
+      width = 95;
+    } else {
+      width = 55;
+    }
+
+    const x = centerX + random(-width, width);
+
+    item.x = x;
+    item.y = y;
+
+    item.element.style.left = x + "px";
+    item.element.style.top = y + "px";
+  });
 }
