@@ -375,4 +375,6 @@ function showArchiveEntry(entry){
    panelCountry.textContent = entry.country;
   panelStatus.textContent = entry.status;
     panelCluster.textContent = entry.cluster;
+
+   archivePanel.classList.add("show");  
 }
