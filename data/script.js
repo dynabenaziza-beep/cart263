@@ -377,5 +377,8 @@ function showArchiveEntry(entry){
     panelCluster.textContent = entry.cluster;
 
    archivePanel.classList.add("show");  
-   
+
+}
+function layoutArchiveNumbers(){
+  
 }
