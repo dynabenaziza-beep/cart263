@@ -523,3 +523,6 @@ for (let i = 0; i < dots.length; i++) {
   }
   
 }
+function drawLines(){
+  
+}
