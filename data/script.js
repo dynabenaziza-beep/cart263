@@ -402,6 +402,7 @@ function layoutArchiveNumbers(){
     item.y = y;
 
     item.baseX =x;
+    item.baseY = y;
 
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
