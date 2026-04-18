@@ -120,3 +120,27 @@ top: 50%;
   cursor: pointer;
   user-select: none;
 }
+#archive-panel {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 260px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#archive-panel.show {
+  opacity: 1;
+}
+
+.panel-title {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
