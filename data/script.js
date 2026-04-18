@@ -402,5 +402,23 @@ function random(min, max) {
 }
 
 function addDot(x,y){
-  
+   const type = Math.floor(Math.random() * 3);
+
+  const dot = document.createElement("div");
+  dot.className = "dot";
+  dot.style.background = typeColors[type];
+
+  dot.style.left = x + "px";
+  dot.style.top = y + "px";
+
+  stage.appendChild(dot);
+
+dots.push({
+    x: x,
+    y: y,
+    vx: random(-0.6, 0.6),
+    vy: random(-0.6, 0.6),
+    type: type,
+    element: dot
+  }); 
 }
