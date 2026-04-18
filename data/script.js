@@ -340,8 +340,11 @@ function formatSessionTime(ms) {
 }
 
 function showArchive() {
+  showArchiveScreen = true; 
+  // mark archive as open so clicks stop
 
 sessionDuration = Date.now() - sessionStartTime;
+
 
   archiveUsers.textContent = usersGenerated;
   archiveDots.textContent = dotsAddedByClick;
