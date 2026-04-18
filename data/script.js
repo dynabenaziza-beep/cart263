@@ -276,9 +276,13 @@ if (userSphere) {
   message.textContent = "New user created";
   message.style.opacity = 1;
 
-   if (usersGenerated >= archiveThreshold) {
-    showArchive();
+  //after 3 go to next oage 
+  if (identityStage >= 3) {
+    setTimeout(() => {
+      showArchive();
+    }, 800);
   }
+
 // open archive after enough users are generated
 
 
