@@ -411,6 +411,10 @@ function layoutArchiveNumbers(){
   });
 }
 
+function animateArchiveNumber(){
+
+}
+
 setupThreeScene();
 seedDots();
 seedLines();
