@@ -413,6 +413,7 @@ function layoutArchiveNumbers(){
 
 function animateArchiveNumber(){
 archiveNumbers.forEach(function(item) {
+  const time = Date.now()*0.001;
 
 });
 }
