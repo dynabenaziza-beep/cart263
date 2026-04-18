@@ -2,17 +2,20 @@
 
 console.log(window.THREE);
 
+let identityStage = 0;
+let sessionStartTime = Date.now();
+let sessionDuration = 0;
+
 let usersGenerated = 0;
 let dotsAddedByClick = 0;
 let maxClusterReached = 0;
 
-let sessionStartTime = Date.now();
-let sessionDuration = 0;
+
 
 let archiveThreshold = 5;
 let showArchivescreen = false;
 
-let identityStage = 0;
+
 // this counts how much the generated identity has grown
 
 let clickCount = 0;
@@ -295,7 +298,7 @@ if (userSphere) {
 
     profileActive = false;
   }, 800);
-}
+
 
 function checkprofile(){
 const maxConnected = getMaxConnectedCount();
