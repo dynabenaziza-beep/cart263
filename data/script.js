@@ -409,5 +409,7 @@ function layoutArchiveNumbers(){
 setupThreeScene();
 seedDots();
 seedLines();
+createArchiveNumbers();
+layoutArchiveNumbers();
 animate();
 animateThreeScene();
