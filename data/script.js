@@ -13,6 +13,10 @@ let archiveThreshold = 5;
 let showArchivescreen = false;
 
 let identityStage = 0;
+// this counts how much the generated identity has grown
+
+let clickCount = 0;
+// total number of clicks
 
 
 const stage = document.getElementById("stage");
