@@ -418,6 +418,7 @@ archiveNumbers.forEach(function(item) {
   const moveY = Math.sin(time + item.offset) * 4;
 
   item.element.style.left = item.baseX + moveX + "px";
+   item.element.style.top = item.baseY + moveY+ "px";
 
 });
 }
