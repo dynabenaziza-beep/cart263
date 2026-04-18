@@ -577,3 +577,39 @@ function updateIdentityVisual() {
     statusText.textContent = "identity added to the loop";
   }
 }
+
+function showNewProfile() {
+  if (profileActive) return;
+
+  profileActive = true;
+  usersGenerated++;
+
+  if (identityStage < 3) {
+    identityStage++;
+  }
+  // the sphere grows only until stage 3
+
+  profile.style.opacity = 1;
+
+  if (userSphere) {
+    userSphere.visible = true;
+  }
+
+  updateIdentityVisual();
+
+  if (identityStage === 1) {
+    message.textContent = "identity trace detected";
+  } else if (identityStage === 2) {
+    message.textContent = "identity entering formation";
+  } else if (identityStage >= 3) {
+    message.textContent = "identity added to the loop";
+  }
+
+  message.style.opacity = 1;
+
+  setTimeout(function() {
+    message.style.opacity = 0;
+    profile.style.opacity = 0;
+    profileActive = false;
+  }, 1200);
+}
