@@ -524,5 +524,39 @@ for (let i = 0; i < dots.length; i++) {
   
 }
 function drawLines(){
+let lineIndex = 0;
+
+  for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+      const dot1 = dots[i];
+      const dot2 = dots[j];
+      const distance = getDistance(dot1, dot2);
+
+      if (dot1.type === dot2.type) {
+        if (distance < 120 && lineIndex < lines.length) {
+          const line = lines[lineIndex];
+
+          const dx = dot2.x - dot1.x;
+          const dy = dot2.y - dot1.y;
+          const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+    line.style.width = distance + "px";
+          line.style.left = dot1.x + 5 + "px";
+          line.style.top = dot1.y + 5 + "px";
+          line.style.background = typeColors[dot1.type];
+          line.style.transform = "rotate(" + angle + "deg)";
+          line.style.display = "block";
+          line.style.opacity = 0.6 + (1 - distance / 120);
+
+          lineIndex++;
+        }
+      }
+    }
+  }
+
+  while (lineIndex < lines.length) {
+    lines[lineIndex].style.display = "none";
+    lineIndex++;
+  }         
   
 }
