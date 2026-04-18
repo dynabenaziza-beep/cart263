@@ -24,6 +24,8 @@ const panelCountry = document.getElementById("panel-country");
 const panelStatus = document.getElementById("panel-status");
 const panelCluster = document.getElementById("panel-cluster");
 
+const archiveNumbers =[];
+
 const archiveData = [
   { id: "0421", name: "Lina", country: "Algeria", status: "Archived", cluster: "03" },
   { id: "1874", name: "Noah", country: "Canada", status: "Stored", cluster: "02" },
