@@ -340,11 +340,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-setupThreeScene();
-seedDots();
-seedLines();
-animate();
-animateThreeScene();
+
 
 function createArchiveNumbers{
 for (let i = 0; i < archiveData.length; i++) {
@@ -406,6 +402,12 @@ function layoutArchiveNumbers(){
 
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
-    
+
   });
 }
+
+setupThreeScene();
+seedDots();
+seedLines();
+animate();
+animateThreeScene();
