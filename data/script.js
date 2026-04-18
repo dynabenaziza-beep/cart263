@@ -499,3 +499,4 @@ function getMaxConnectedCount() {
 
   return maxCount;
 }
+function groupSimilarDots(){}
