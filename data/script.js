@@ -10,6 +10,7 @@ let sessionStartTime = Date.now();
 let sessionDuration = 0;
 
 let archiveThreshold = 5;
+let showArchivescreen = false;
 
 
 const stage = document.getElementById("stage");
