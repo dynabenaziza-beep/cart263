@@ -346,6 +346,25 @@ seedLines();
 animate();
 animateThreeScene();
 
-function createArchiveNumbers(){
-  
-}
+function createArchiveNumbers{
+for (let i = 0; i < archiveData.length; i++) {
+    const entry = archiveData[i];
+
+    const number = document.createElement("div");
+    number.className = "archive-number";
+    number.textContent = entry.id;
+
+    archiveField.appendChild(number);
+
+    archiveNumbers.push({
+      element: number,
+      data: entry,
+      x: 0,
+      y: 0
+    });
+
+    number.addEventListener("click", function () {
+      showArchiveEntry(entry);
+    });
+  }
+} 
