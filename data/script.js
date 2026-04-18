@@ -26,11 +26,17 @@ const names = [
 ];
 // names that will appear when the user clicks
 
+let usedNameIndex = 0;
+// this helps us move through the names array one by one
+
+
+
 
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
 const message = document.getElementById("message"); // text message on screen
 const threeContainer = document.getElementById("three-container");
+const statusText = document.getElementById("status-text");
 
 const archiveScreen = document.getElementById("archive-screen");
 const archiveUsers = document.getElementById("archive-users");
