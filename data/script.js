@@ -446,3 +446,13 @@ function showClickName(x, y) {
     tag.remove();
   }, 1800);
 } 
+function seedDots() {
+  const rect = stage.getBoundingClientRect();
+
+  for (let i = 0; i < totalDots; i++) {
+    const x = random(20, rect.width - 20);
+    const y = random(20, rect.height - 20);
+
+    addDot(x, y);
+  }
+}
