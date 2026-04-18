@@ -16,6 +16,24 @@ const archiveDots = document.getElementById("archive-dots");
 const archiveCluster = document.getElementById("archive-cluster");
 const archiveDuration = document.getElementById("archive-duration");
 
+const archiveData = [
+  { id: "0421", name: "Lina", country: "Algeria", status: "Archived", cluster: "03" },
+  { id: "1874", name: "Noah", country: "Canada", status: "Stored", cluster: "02" },
+  { id: "5532", name: "Maya", country: "France", status: "Archived", cluster: "04" },
+  { id: "9011", name: "Adam", country: "Morocco", status: "Stored", cluster: "01" },
+  { id: "2345", name: "Sofia", country: "Spain", status: "Archived", cluster: "03" },
+  { id: "6789", name: "Elias", country: "Lebanon", status: "Stored", cluster: "05" },
+  { id: "1212", name: "Nora", country: "Tunisia", status: "Archived", cluster: "02" },
+  { id: "3456", name: "Leo", country: "Italy", status: "Stored", cluster: "04" },
+  { id: "9101", name: "Yara", country: "Egypt", status: "Archived", cluster: "01" },
+  { id: "5623", name: "Amine", country: "Algeria", status: "Stored", cluster: "03" },
+  { id: "7714", name: "Ines", country: "Belgium", status: "Archived", cluster: "05" },
+  { id: "8842", name: "Mila", country: "Serbia", status: "Stored", cluster: "02" },
+  { id: "3008", name: "Zayn", country: "Jordan", status: "Archived", cluster: "04" },
+  { id: "1490", name: "Sara", country: "Turkey", status: "Stored", cluster: "03" },
+  { id: "6602", name: "Aya", country: "Japan", status: "Archived", cluster: "01" }
+];
+
 // three.js variables
 let scene;
 let camera;
