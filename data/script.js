@@ -422,3 +422,4 @@ dots.push({
     element: dot
   }); 
 }
+function showClickName(x, y) {}
