@@ -412,9 +412,9 @@ function layoutArchiveNumbers(){
 }
 
 function animateArchiveNumber(){
-archiveNumbers.forEach(function(item)){
+archiveNumbers.forEach(function(item) {
 
-})
+});
 }
 
 setupThreeScene();
