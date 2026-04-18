@@ -499,4 +499,27 @@ function getMaxConnectedCount() {
 
   return maxCount;
 }
-function groupSimilarDots(){}
+function groupSimilarDots(){
+for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+      const dot1 = dots[j];
+      const dot2 = dots[j];
+
+      const distance = getDistance(dot1, dot2);
+
+      if (dot1.type === dot2.type) {
+        if (distance < 150) {
+          const dx = dot2.x - dot1.x;
+          const dy = dot2.y - dot1.y;
+
+          dot1.x += dx * 0.002;
+          dot1.y += dy * 0.002;
+
+          dot2.x -= dx * 0.002;
+          dot2.y -= dy * 0.002;
+        }
+      }
+    }
+  }
+  
+}
