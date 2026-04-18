@@ -223,7 +223,8 @@ for (let i = 0; i < 300; i++) {
 }
 //listen for click inside stage 
 stage.addEventListener("click", function(event){
-if (showArchiveScreen) return;
+if (archiveScreen.classList.contains("show")) return;
+// stop clicks when the archive screen is open
 
 //  clicks inside the stage(position and size )
 const rect = stage.getBoundingClientRect();
