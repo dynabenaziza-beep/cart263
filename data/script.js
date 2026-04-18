@@ -16,6 +16,14 @@ const archiveDots = document.getElementById("archive-dots");
 const archiveCluster = document.getElementById("archive-cluster");
 const archiveDuration = document.getElementById("archive-duration");
 
+const archiveField = document.getElementById("archive-field");
+const archivePanel = document.getElementById("archive-panel");
+const panelId = document.getElementById("panel-id");
+const panelName = document.getElementById("panel-name");
+const panelCountry = document.getElementById("panel-country");
+const panelStatus = document.getElementById("panel-status");
+const panelCluster = document.getElementById("panel-cluster");
+
 const archiveData = [
   { id: "0421", name: "Lina", country: "Algeria", status: "Archived", cluster: "03" },
   { id: "1874", name: "Noah", country: "Canada", status: "Stored", cluster: "02" },
