@@ -342,7 +342,7 @@ document.addEventListener("keydown", function (event) {
 
 
 
-function createArchiveNumbers{
+function createArchiveNumbers(){
 for (let i = 0; i < archiveData.length; i++) {
     const entry = archiveData[i];
 
@@ -364,6 +364,7 @@ for (let i = 0; i < archiveData.length; i++) {
       showArchiveEntry(entry);
     });
   }
+}
  
 function showArchiveEntry(entry){
   panelId.textContent = entry.id;
