@@ -417,6 +417,8 @@ archiveNumbers.forEach(function(item) {
   const moveX = Math.sin(time + item.offset) * 6;
   const moveY = Math.sin(time + item.offset) * 4;
 
+  item.element.style.left = item.baseX + moveX + "px";
+
 });
 }
 
