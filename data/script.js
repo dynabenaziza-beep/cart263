@@ -12,6 +12,8 @@ let sessionDuration = 0;
 let archiveThreshold = 5;
 let showArchivescreen = false;
 
+let identityStage = 0;
+
 
 const stage = document.getElementById("stage");
 const profile = document.getElementById("profile"); // profile circle
