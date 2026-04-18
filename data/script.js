@@ -371,4 +371,5 @@ for (let i = 0; i < archiveData.length; i++) {
  
 function showArchiveEntry(entry){
   panelId.textContent = entry.id;
+   panelName.textContent = entry.name
 }
