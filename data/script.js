@@ -462,3 +462,15 @@ function moveDots() {
     dot.y += dot.vy;
   });
 }
+function drawDots() {
+  dots.forEach(function(dot) {
+    dot.element.style.left = dot.x + "px";
+    dot.element.style.top = dot.y + "px";
+  });
+}
+function getDistance(dot1, dot2) {
+  const xDistance = dot1.x - dot2.x;
+  const yDistance = dot1.y - dot2.y;
+
+  return Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+}
