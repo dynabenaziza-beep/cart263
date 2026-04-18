@@ -418,7 +418,7 @@ function layoutArchiveNumbers(){
   });
 }
 
-function animateArchiveNumber(){
+function animateArchiveNumbers(){
 archiveNumbers.forEach(function(item) {
   const time = Date.now()*0.001;
   const moveX = Math.sin(time + item.offset) * 6;
