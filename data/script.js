@@ -363,8 +363,12 @@ for (let i = 0; i < archiveData.length; i++) {
       y: 0
     });
 
+
     number.addEventListener("click", function () {
       showArchiveEntry(entry);
     });
   }
-} 
+ 
+function showArchiveEntry(entry){
+  
+}
