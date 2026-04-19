@@ -67,7 +67,7 @@ let userSphere;
 const dots = [];
 const lines = [];
 const totalDots = 35;
-const typeColors = ["#ffffff", "#9ca3af", "#60a5fa"];
+const typeColors = ["#000000", "#888888", "#ffffff"];
 
 function random(min, max) {
   return Math.random() * (max - min) + min;
