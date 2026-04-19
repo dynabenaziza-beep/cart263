@@ -250,8 +250,8 @@ function showNewProfile() {
     let scaleValue = 1 + identityStage * 0.35;
     
 
-if (scaleValue > 1.6) {
-  scaleValue = 1.6;
+if (scaleValue > 2) {
+  scaleValue = 2;
 }
 userSphere.scale.set(scaleValue, scaleValue, scaleValue);
    
@@ -310,7 +310,7 @@ function setupThreeScene() {
     antialias: true
   });
 
-  renderer.setSize(180, 180);
+  renderer.setSize(240, 240);
   threeContainer.appendChild(renderer.domElement);
 
   const geometry = new THREE.SphereGeometry(1.4, 30, 30);
