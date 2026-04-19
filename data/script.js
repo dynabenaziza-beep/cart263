@@ -15,6 +15,7 @@ let experienceStarted = false;
 let startScene;
 let startCamera;
 let startRenderer;
+let startSpheres = [];
 
 
 let identityStage = 0;
