@@ -19,7 +19,7 @@ let startSpheres = [];
 
 
 let identityStage = 0;
-let sessionStartTime = Date.now();
+let sessionStartTime = 0;
 let sessionDuration = 0;
 let profileActive = false;
 let lastProfileLevel = 0;
