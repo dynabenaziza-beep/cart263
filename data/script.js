@@ -58,8 +58,6 @@ for (let i = 0; i < 8; i++) {
   });
 }
 
-
-
 // three.js variables
 let scene;
 let camera;
@@ -362,8 +360,8 @@ document.addEventListener("keydown", function (event) {
 
 
 function createArchiveNumbers(){
-for (let i = 0; i < archiveData.length; i++) {
-    const entry = archiveData[i];
+for (let i = 0; i < expandarchiveData.length; i++) {
+    const entry = expandedarchiveData[i];
 
     const number = document.createElement("div");
     number.className = "archive-number";
