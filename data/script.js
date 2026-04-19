@@ -14,6 +14,7 @@ const startBg = document.getElementById("start-bg");
 let experienceStarted = false;
 let startScene;
 let startCamera;
+let startRenderer;
 
 
 let identityStage = 0;
