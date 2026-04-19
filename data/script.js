@@ -459,6 +459,25 @@ function showTransition() {
 
     transitionCopy.appendChild(newDot);
   }
+  let centerX = 0;
+let centerY = 0;
+
+for (let i = 0; i < group.length; i++) {
+  centerX += group[i].x;
+  centerY += group[i].y;
+}
+
+centerX = centerX / group.length;
+centerY = centerY / group.length;
+
+const label = document.createElement("div");
+label.className = "transition-number";
+label.textContent = transitionData[g];
+
+label.style.left = centerX + "px";
+label.style.top = (centerY - 30) + "px";
+
+transitionCopy.appendChild(label);
 }
 
  
