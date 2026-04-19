@@ -293,9 +293,18 @@ if (currentLevel > lastProfileLevel) {
   const group = getConnectedGroup();
 
   if (group && capturedGroups.length < 3) {
-    capturedGroups.push(group);
+  const savedGroup = [];
+
+  for (let i = 0; i < group.length; i++) {
+    savedGroup.push({
+      x: group[i].x,
+      y: group[i].y,
+      type: group[i].type
+    });
   }
 
+  capturedGroups.push(savedGroup);
+}
   showNewProfile();
   lastProfileLevel = currentLevel;
 }
@@ -413,10 +422,16 @@ document.addEventListener("keydown", function (event) {
 function showTransition() {
   secondPageActive = true;
   transitionCopy.innerHTML = "";
-  for (let i = 0; i < dots.length; i++) {
-    for (let j = i + 1; j < dots.length; j++) {
-      const dot1 = dots[i];
-      const dot2 = dots[j];
+    for (let g = 0; g < capturedGroups.length; g++) {
+  const group = capturedGroups[g];
+
+  for (let i = 0; i < group.length; i++) {
+    for (let j = i + 1; j < group.length; j++) {
+      const dot1 = group[i];
+      const dot2 = group[j]; 
+
+
+
       const distance = getDistance(dot1, dot2);
 
       if (dot1.type === dot2.type && distance < 120) {
@@ -437,6 +452,8 @@ function showTransition() {
       }
     }
   }
+
+}
   for (let i = 0; i < dots.length; i++) {
     const dot = dots[i];
 
