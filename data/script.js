@@ -12,6 +12,7 @@ const startButton = document.getElementById("start-button");
 const startBg = document.getElementById("start-bg");
 
 let experienceStarted = false;
+let startScene;
 
 
 let identityStage = 0;
