@@ -371,6 +371,10 @@ function showTransition() {
     transitionText.textContent = "entered the loop";
   }, 600); 
 
+    setTimeout(function () {
+    transitionText.style.opacity = 0;
+    showArchive();
+  }, 1300);
 }
 
 function createArchiveNumbers(){
