@@ -386,21 +386,24 @@ function layoutArchiveNumbers(){
   const centerX = 210;
 
   archiveNumbers.forEach(function (item, index) {
-    const y = 40 + index * 36;
+    const y = 30 + index * 22;
 
     let width;
 
-    if (y < 120) {
-      width = 35;
-    } else if (y < 240) {
-      width = 90;
-    } else if (y < 380) {
-      width = 45;
-    } else if (y < 520) {
-      width = 95;
-    } else {
+     if (y < 110) {
+        width = 18;
+    } else if (y < 190) {
       width = 55;
+    } else if (y < 320) {
+      width = 22;
+    } else if (y < 470) {
+      width = 60;
+    } else if (y < 620) {
+      width = 28;
+    } else {
+      width = 12;
     }
+
 
     const x = centerX + random(-width, width);
 
@@ -409,11 +412,11 @@ function layoutArchiveNumbers(){
 
     item.baseX =x;
     item.baseY = y;
+     item.offset= Math.random()*1000;
 
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
-    item.offset= Math.random()*1000;
-
+    
   });
 }
 
