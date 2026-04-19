@@ -262,10 +262,9 @@ userSphere.scale.set(scaleValue, scaleValue, scaleValue);
   message.style.opacity = 1;
 
   if (identityStage >= 3) {
-    setTimeout(function () {
-      showArchive();
-    }, 800);
-  }
+    showArchive();
+    }
+  
 
   setTimeout(function () {
     message.style.opacity = 0;
