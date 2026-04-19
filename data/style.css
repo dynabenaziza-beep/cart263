@@ -150,3 +150,6 @@ top: 50%;
 .archive-analysis {
   display: none;
 }
+#transition-text {
+  color: black;
+}
