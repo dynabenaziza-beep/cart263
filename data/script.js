@@ -429,10 +429,8 @@ function showTransition() {
     for (let j = i + 1; j < group.length; j++) {
       const dot1 = group[i];
       const dot2 = group[j]; 
+ const distance = getDistance(dot1, dot2);
 
-
-
-      const distance = getDistance(dot1, dot2);
 
       if (dot1.type === dot2.type && distance < 120) {
         const line = document.createElement("div");
@@ -453,7 +451,7 @@ function showTransition() {
     }
   }
 
-}
+
   for (let i = 0; i < group.length; i++) {
   const dot = group[i];
 
@@ -465,8 +463,9 @@ function showTransition() {
 
     transitionCopy.appendChild(newDot);
   }
+}
 
-  transitionNumbers.classList.add("show");
+ 
 transitionScreen.classList.add("show");
 
   transitionText.style.opacity = 1;
@@ -481,7 +480,7 @@ transitionScreen.classList.add("show");
        secondPageActive = false;
 
     transitionScreen.classList.remove("show");
-    transitionNumbers.classList.remove("show");
+  
    transitionText.style.opacity =0;
     showArchive();
   }, 1700);
