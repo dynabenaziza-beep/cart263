@@ -191,7 +191,7 @@ left: 50%;
   z-index: 9;
 }
 
-#transition-number.show{
+#transition-numbers.show{
 display:block;
 }
 .transition-number{

@@ -492,7 +492,7 @@ function createTransitionNumbers(){
 
 }
 
-function animateTransitionNumber(){
+function animateTransitionNumbers(){
 const time = Date.now() * 0.001;
 
   transitionNumberItems.forEach(function(item) {
