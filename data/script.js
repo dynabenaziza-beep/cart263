@@ -247,13 +247,14 @@ function showNewProfile() {
   if (userSphere) {
     userSphere.visible = true;
 
-    const scaleValue = 1 + identityStage * 0.25;
+    let scaleValue = 1 + identityStage * 0.25;
+    
 
 if (scaleValue > 1.6) {
   scaleValue = 1.6;
 }
-
-    userSphere.scale.set(scaleValue, scaleValue, scaleValue);
+userSphere.scale.set(scaleValue, scaleValue, scaleValue);
+   
   }
 
   message.textContent = "New identity added";
