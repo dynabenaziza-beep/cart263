@@ -156,4 +156,8 @@ top: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   color: black;
+
+  opacity: 0;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
