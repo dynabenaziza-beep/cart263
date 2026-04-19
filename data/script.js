@@ -313,7 +313,7 @@ function setupThreeScene() {
   renderer.setSize(240, 240);
   threeContainer.appendChild(renderer.domElement);
 
-  const geometry = new THREE.SphereGeometry(1.4, 30, 30);
+  const geometry = new THREE.SphereGeometry(1.05, 25, 25);
   const material = new THREE.MeshBasicMaterial({
     color: 0x000000,
     wireframe: true
