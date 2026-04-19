@@ -192,9 +192,13 @@ left: 50%;
 }
 
 #transition-number.show{
-
+display:block;
 }
 .transition-number{
-
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  opacity: 0.8;
 }
 
