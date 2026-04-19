@@ -366,17 +366,17 @@ document.addEventListener("keydown", function (event) {
 });
 
 function showTransition() {
-  transitionText.style.opacity=1;
+   transitionScreen.classList.add("show");
   transitionText.textContent = "data gathered";
 
  setTimeout(function () {
     transitionText.textContent = "entered the loop";
-  }, 600); 
+  }, 800); 
 
     setTimeout(function () {
-    transitionText.style.opacity = 0;
+   transitionScreen.classList.remove("show");
     showArchive();
-  }, 1300);
+  }, 1700);
 }
 
 function createArchiveNumbers(){
