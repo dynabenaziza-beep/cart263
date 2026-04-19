@@ -510,10 +510,7 @@ const time = Date.now() * 0.001;
   });
 }
 
-function copyDotsTransition(){
 
-
-}
 
 setupThreeScene();
 seedDots();
