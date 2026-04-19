@@ -297,7 +297,10 @@ function checkProfile() {
     lastProfileLevel = 0;
   }
 }
+function getConnectedGroup(){
 
+  
+}
 function animate() {
   moveDots();
   groupSimilarDots();
