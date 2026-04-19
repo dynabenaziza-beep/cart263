@@ -288,10 +288,17 @@ function checkProfile() {
   const maxConnected = getMaxConnectedCount();
   const currentLevel = Math.floor(maxConnected / 10);
 
-  if (currentLevel > lastProfileLevel) {
-    showNewProfile();
-    lastProfileLevel = currentLevel;
+
+if (currentLevel > lastProfileLevel) {
+  const group = getConnectedGroup();
+
+  if (group && capturedGroups.length < 3) {
+    capturedGroups.push(group);
   }
+
+  showNewProfile();
+  lastProfileLevel = currentLevel;
+}
 
   if (maxConnected < 10) {
     lastProfileLevel = 0;
