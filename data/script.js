@@ -364,7 +364,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 function showTransition() {
-  
+  transitionText.style.opacity=1;
 }
 
 function createArchiveNumbers(){
