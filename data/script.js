@@ -380,6 +380,7 @@ document.addEventListener("keydown", function (event) {
 
 function showTransition() {
   secondPageActive = true;
+  transitionCopy.innerHTML = "";
 
   transitionNumbers.classList.add("show");
 transitionScreen.classList.add("show");
