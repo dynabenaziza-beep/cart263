@@ -365,6 +365,8 @@ document.addEventListener("keydown", function (event) {
 
 function showTransition() {
   transitionText.style.opacity=1;
+  transitionText.textContent = "data gathered";
+
 }
 
 function createArchiveNumbers(){
