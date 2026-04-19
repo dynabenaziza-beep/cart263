@@ -360,8 +360,8 @@ document.addEventListener("keydown", function (event) {
 
 
 function createArchiveNumbers(){
-for (let i = 0; i < expandarchiveData.length; i++) {
-    const entry = expandedarchiveData[i];
+for (let i = 0; i < expandedArchiveData.length; i++) {
+  const entry = expandedArchiveData[i];
 
     const number = document.createElement("div");
     number.className = "archive-number";
