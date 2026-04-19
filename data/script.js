@@ -417,7 +417,6 @@ function showTransition() {
     transitionCopy.appendChild(newDot);
   }
 
-
   transitionNumbers.classList.add("show");
 transitionScreen.classList.add("show");
 
