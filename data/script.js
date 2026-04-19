@@ -363,7 +363,9 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-
+function showTransition() {
+  
+}
 
 function createArchiveNumbers(){
 for (let i = 0; i < expandedArchiveData.length; i++) {
