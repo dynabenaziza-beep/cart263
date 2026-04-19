@@ -15,6 +15,7 @@ let lastProfileLevel = 0;
 
 const transitionScreen = document.getElementById("transition-screen");
 const transitionText = document.getElementById("transition-text");
+const transitionCopy = document.getElementById("transition-copy");
 
 const stage = document.getElementById("stage");
 const message = document.getElementById("message");
