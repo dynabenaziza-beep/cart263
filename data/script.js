@@ -482,6 +482,9 @@ function createTransitionNumbers(){
 
 }
 
+function animateTransitionNumber(){
+
+}
 setupThreeScene();
 seedDots();
 seedLines();
