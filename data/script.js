@@ -12,6 +12,7 @@ let sessionStartTime = Date.now();
 let sessionDuration = 0;
 let profileActive = false;
 let lastProfileLevel = 0;
+let capturedGroups = [];
 
 const transitionScreen = document.getElementById("transition-screen");
 const transitionText = document.getElementById("transition-text");
