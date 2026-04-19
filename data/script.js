@@ -454,8 +454,8 @@ function showTransition() {
   }
 
 }
-  for (let i = 0; i < dots.length; i++) {
-    const dot = dots[i];
+  for (let i = 0; i < group.length; i++) {
+  const dot = group[i];
 
     const newDot = document.createElement("div");
     newDot.className = "transition-dot";
