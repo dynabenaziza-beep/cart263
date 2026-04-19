@@ -366,7 +366,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 function showTransition() {
-   transitionScreen.classList.add("show");
+  transitionText.style.opacity = 1;
   transitionText.textContent = "data gathered";
 
  setTimeout(function () {
@@ -374,7 +374,7 @@ function showTransition() {
   }, 800); 
 
     setTimeout(function () {
-   transitionScreen.classList.remove("show");
+   transitionText.style.opacity =0;
     showArchive();
   }, 1700);
 }
