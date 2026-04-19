@@ -247,7 +247,7 @@ function showNewProfile() {
   if (userSphere) {
     userSphere.visible = true;
 
-    let scaleValue = 1 + identityStage * 0.25;
+    let scaleValue = 1 + identityStage * 0.35;
     
 
 if (scaleValue > 1.6) {
