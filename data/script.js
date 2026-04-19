@@ -509,6 +509,12 @@ const time = Date.now() * 0.001;
     item.element.style.top = y + "px";
   });
 }
+
+function copyDotsTransition(){
+
+
+}
+
 setupThreeScene();
 seedDots();
 seedLines();
