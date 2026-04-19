@@ -247,7 +247,12 @@ function showNewProfile() {
   if (userSphere) {
     userSphere.visible = true;
 
-    const scaleValue = 1 + identityStage * 0.5;
+    const scaleValue = 1 + identityStage * 0.25;
+
+if (scaleValue > 1.6) {
+  scaleValue = 1.6;
+}
+
     userSphere.scale.set(scaleValue, scaleValue, scaleValue);
   }
 
