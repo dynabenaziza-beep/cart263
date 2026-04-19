@@ -7,6 +7,9 @@ const transitionNumberItems = [];
 const transitionData = ["0421", "1874", "5532", "9011", "2345", "6789"];
 
 
+const startScreen = document.getElementById("start-screen");
+
+
 let identityStage = 0;
 let sessionStartTime = Date.now();
 let sessionDuration = 0;
