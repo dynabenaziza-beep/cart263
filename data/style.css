@@ -188,7 +188,7 @@ display:block;
 .transition-number{
   position: absolute;
   color: white;
-  font-size: 12px;
+  font-size: 18px;
   font-family: Arial, sans-serif;
   opacity: 0.8;
 }
