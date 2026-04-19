@@ -302,6 +302,10 @@ function animate() {
   drawLines();
   checkProfile();
 
+  if (secondPageActive) {
+  animateTransitionNumbers();
+}
+
   if (archiveScreen.classList.contains("show")) {
   animateArchiveNumbers();
   }
@@ -491,7 +495,7 @@ const time = Date.now() * 0.001;
 
     item.element.style.left = x + "px";
     item.element.style.top = y + "px";
-  });
+  });e
 }
 setupThreeScene();
 seedDots();
