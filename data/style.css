@@ -181,7 +181,14 @@ top: 50%;
   font-family: Arial, sans-serif;
 }
 #transition-numbers{
-
+left: 50%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  display: none;
+  pointer-events: none;
+  z-index: 9;
 }
 
 #transition-number.show{
