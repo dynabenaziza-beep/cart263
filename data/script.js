@@ -6,7 +6,9 @@ let sessionDuration = 0;
 let profileActive = false;
 let lastProfileLevel = 0;
 
+onst transitionScreen = document.getElementById("transition-screen");
 const transitionText = document.getElementById("transition-text");
+
 const stage = document.getElementById("stage");
 const message = document.getElementById("message");
 const threeContainer = document.getElementById("three-container");
