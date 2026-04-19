@@ -379,7 +379,10 @@ document.addEventListener("keydown", function (event) {
 
 function showTransition() {
   secondPageActive = true;
+
   transitionNumbers.classList.add("show");
+transitionScreen.classList.add("show");
+
   transitionText.style.opacity = 1;
   transitionText.textContent = "data gathered";
 
@@ -390,6 +393,8 @@ function showTransition() {
 
     setTimeout(function () {
        secondPageActive = false;
+
+    transitionScreen.classList.remove("show");
     transitionNumbers.classList.remove("show");
    transitionText.style.opacity =0;
     showArchive();
