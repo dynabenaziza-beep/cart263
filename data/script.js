@@ -9,6 +9,7 @@ const transitionData = ["0421", "1874", "5532", "9011", "2345", "6789"];
 
 const startScreen = document.getElementById("start-screen");
 const startButton = document.getElementById("start-button");
+const startBg = document.getElementById("start-bg");
 
 
 let identityStage = 0;
