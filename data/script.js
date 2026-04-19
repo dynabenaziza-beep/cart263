@@ -437,8 +437,8 @@ function layoutArchiveNumbers(){
 function animateArchiveNumbers(){
 archiveNumbers.forEach(function(item) {
   const time = Date.now()*0.001;
-  const moveX = Math.sin(time + item.offset) * 6;
-  const moveY = Math.cos(time + item.offset) * 4;
+  const moveX = Math.sin(time + item.offset) * 1.5;
+  const moveY = Math.cos(time + item.offset) * 1;
 
   item.element.style.left = item.baseX + moveX + "px";
    item.element.style.top = item.baseY + moveY+ "px";
