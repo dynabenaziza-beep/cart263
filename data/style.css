@@ -131,6 +131,7 @@ top: 50%;
   line-height: 1.8;
   text-align: left;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s;
 }
 

@@ -393,6 +393,9 @@ function showArchiveEntry(entry){
   panelStatus.textContent = entry.status;
     panelCluster.textContent = entry.cluster;
 
+    archivePanel.style.left = "30px";
+  archivePanel.style.top = "30px";
+
    archivePanel.classList.add("show");  
 
 }
