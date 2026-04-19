@@ -204,3 +204,22 @@ display:block;
   opacity: 0.8;
 }
 
+#transition-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 101;
+}
+
+.transition-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.transition-line {
+  position: absolute;
+  height: 2px;
+  transform-origin: left center;
+  opacity: 0.3;
+}
