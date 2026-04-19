@@ -407,31 +407,14 @@ function showArchiveEntry(entry){
 }
 function layoutArchiveNumbers(){
   const centerX = 210;
+const centerY = 350;
+  const radius = 150;
+  
+   archiveNumbers.forEach(function (item, index) {
+    const angle = (Math.PI * 2 / archiveNumbers.length) * index;
 
-  archiveNumbers.forEach(function (item, index) {
-    const y = 10 + index * 15 ;
-
-    let width;
-
-     if (y < 110) {
-        width = 18;
-    } else if (y < 190) {
-      width = 55;
-    } else if (y < 320) {
-      width = 22;
-    } else if (y < 470) {
-      width = 60;
-    } else if (y < 620) {
-      width = 28;
-    } else {
-      width = 12;
-    }
-
-
-    const x = centerX + random(-width, width);
-
-    item.x = x;
-    item.y = y;
+    const x = centerX + Math.cos(angle) * radius;
+    const y = centerY + Math.sin(angle) * radius;
 
     item.baseX =x;
     item.baseY = y;
