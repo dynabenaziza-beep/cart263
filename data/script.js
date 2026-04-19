@@ -498,7 +498,7 @@ transitionScreen.classList.add("show");
   
    transitionText.style.opacity =0;
     showArchive();
-  }, 1700);
+  }, 5000);
 }
 
 function createArchiveNumbers(){
