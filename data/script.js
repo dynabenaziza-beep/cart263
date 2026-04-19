@@ -6,6 +6,7 @@ let sessionDuration = 0;
 let profileActive = false;
 let lastProfileLevel = 0;
 
+const transitionText = document.getElementById("transition-text");
 const stage = document.getElementById("stage");
 const message = document.getElementById("message");
 const threeContainer = document.getElementById("three-container");
@@ -409,7 +410,7 @@ function layoutArchiveNumbers(){
   const centerX = 210;
 const centerY = 350;
   const radius = 150;
-  
+
    archiveNumbers.forEach(function (item, index) {
     const angle = (Math.PI * 2 / archiveNumbers.length) * index;
 
