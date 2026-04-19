@@ -13,6 +13,7 @@ const startBg = document.getElementById("start-bg");
 
 let experienceStarted = false;
 let startScene;
+let startCamera;
 
 
 let identityStage = 0;
