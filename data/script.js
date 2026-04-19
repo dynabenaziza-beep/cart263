@@ -44,6 +44,22 @@ const archiveData = [
   { id: "6602", name: "Aya", country: "Japan", status: "Archived", cluster: "01" }
 ];
 
+const expandedArchiveData = [];
+
+for (let i = 0; i < 8; i++) {
+  archiveData.forEach(function(entry, index) {
+    expandedArchiveData.push({
+      id: String(1000 + i * 100 + index),
+      name: entry.name,
+      country: entry.country,
+      status: entry.status,
+      cluster: entry.cluster
+    });
+  });
+}
+
+
+
 // three.js variables
 let scene;
 let camera;
