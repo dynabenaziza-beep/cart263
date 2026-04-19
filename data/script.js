@@ -11,6 +11,8 @@ const startScreen = document.getElementById("start-screen");
 const startButton = document.getElementById("start-button");
 const startBg = document.getElementById("start-bg");
 
+let experienceStarted = false;
+
 
 let identityStage = 0;
 let sessionStartTime = Date.now();
