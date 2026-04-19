@@ -309,7 +309,7 @@ function setupThreeScene() {
 
   const geometry = new THREE.SphereGeometry(0.9, 20, 20);
   const material = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
+    color: 0x000000,
     wireframe: true
   });
 
