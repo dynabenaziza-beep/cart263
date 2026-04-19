@@ -465,7 +465,21 @@ const amountY = 0.2 + (index % 3) * 0.15;
 
 
 function createTransitionNumbers(){
-  
+
+  for (let i = 0; i < transitionData.length; i++) {
+    const number = document.createElement("div");
+    number.className = "transition-number";
+    number.textContent = transitionData[i];
+
+    transitionNumbers.appendChild(number);
+
+    transitionNumberItems.push({
+      element: number,
+      angle: (Math.PI * 2 / transitionData.length) * i,
+      radius: 30 + Math.random() * 25
+    });
+  }
+
 }
 
 setupThreeScene();
