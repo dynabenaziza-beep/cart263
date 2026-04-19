@@ -400,7 +400,7 @@ function layoutArchiveNumbers(){
   const centerX = 210;
 
   archiveNumbers.forEach(function (item, index) {
-    const y = 30 + index * 22;
+    const y = 20 + index * 20;
 
     let width;
 
