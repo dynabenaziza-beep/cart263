@@ -403,7 +403,7 @@ function layoutArchiveNumbers(){
   const centerX = 210;
 
   archiveNumbers.forEach(function (item, index) {
-    const y = 10 + index * 10 ;
+    const y = 10 + index * 15 ;
 
     let width;
 
@@ -444,8 +444,8 @@ archiveNumbers.forEach(function(item, index) {
   const amountX = 0.3 + (index % 4) * 0.2;
 const amountY = 0.2 + (index % 3) * 0.15;
   
-  const moveX = Math.sin(time + item.offset) * 1.5;
-  const moveY = Math.cos(time + item.offset) * 1;
+  const moveX = Math.sin(time + item.offset) * 2;
+  const moveY = Math.cos(time + item.offset) * 1.5;
 
   item.element.style.left = item.baseX + moveX + "px";
   item.element.style.top = item.baseY + moveY+ "px";
