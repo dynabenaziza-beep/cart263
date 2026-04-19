@@ -46,7 +46,7 @@ const archiveData = [
 
 const expandedArchiveData = [];
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 10; i++) {
   archiveData.forEach(function(entry, index) {
     expandedArchiveData.push({
       id: String(1000 + i * 100 + index),
