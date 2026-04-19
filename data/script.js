@@ -262,7 +262,7 @@ userSphere.scale.set(scaleValue, scaleValue, scaleValue);
   message.style.opacity = 1;
 
   if (identityStage >= 3) {
-    showArchive();
+    showTransition();
     }
   
 
