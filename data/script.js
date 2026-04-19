@@ -240,6 +240,7 @@ function drawLines() {
 
 stage.addEventListener("click", function (event) {
   if (archiveScreen.classList.contains("show")) return;
+  if (secondPageActive) return;
 
   const rect = stage.getBoundingClientRect();
   const x = event.clientX - rect.left;
@@ -377,14 +378,19 @@ document.addEventListener("keydown", function (event) {
 });
 
 function showTransition() {
+  secondPageActive = true;
+  transitionNumbers.classList.add("show");
   transitionText.style.opacity = 1;
   transitionText.textContent = "data gathered";
 
  setTimeout(function () {
+  
     transitionText.textContent = "entered the loop";
   }, 800); 
 
     setTimeout(function () {
+       secondPageActive = false;
+    transitionNumbers.classList.remove("show");
    transitionText.style.opacity =0;
     showArchive();
   }, 1700);
