@@ -345,10 +345,6 @@ function animate() {
   drawLines();
   checkProfile();
 
-  if (secondPageActive) {
-  animateTransitionNumbers();
-}
-
   if (archiveScreen.classList.contains("show")) {
   animateArchiveNumbers();
   }
