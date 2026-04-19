@@ -22,6 +22,7 @@ body {
   
   transform-origin: left center;
   display: none;
+  opacity: 0.3;
 }
 #profile  {
 position: absolute;
