@@ -152,18 +152,6 @@ top: 50%;
 .archive-analysis {
   display: none;
 }
-#transition-text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: blue;
-  opacity: 0;
-  font-size: 20px;
-  font-family: Arial, sans-serif;
-  z-index: 10;
-}
-
 
 #transition-screen {
   position: absolute;
