@@ -298,9 +298,30 @@ function checkProfile() {
   }
 }
 function getConnectedGroup(){
+for (let i = 0; i < dots.length; i++) {
+    const group = [dots[i]];
 
-  
+    for (let j = 0; j < dots.length; j++) {
+      if (i !== j) {
+        const dot1 = dots[i];
+        const dot2 = dots[j];
+        const distance = getDistance(dot1, dot2);
+
+        if (dot1.type === dot2.type && distance < 120) {
+          group.push(dot2);
+        }
+      }
+    }
+
+    if (group.length >= 3) {
+      return group;
+    }
+  }
+
+  return null;
 }
+
+
 function animate() {
   moveDots();
   groupSimilarDots();
