@@ -252,6 +252,7 @@ function drawLines() {
 }
 
 stage.addEventListener("click", function (event) {
+   if (!experienceStarted) return;
   if (archiveScreen.classList.contains("show")) return;
   if (secondPageActive) return;
 
