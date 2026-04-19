@@ -181,17 +181,6 @@ top: 50%;
   font-family: Arial, sans-serif;
   z-index: 102;
 }
-#transition-numbers{
-    position: absolute;
-left: 50%;
-  top: 50%;
-  width: 220px;
-  height: 220px;
-  transform: translate(-50%, -50%);
-  display: none;
-  pointer-events: none;
-  z-index: 101;
-}
 
 #transition-numbers.show{
 display:block;
@@ -209,6 +198,31 @@ display:block;
   inset: 0;
   z-index: 101;
 }
+
+#transition-numbers{
+    position: absolute;
+left: 50%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  display: none;
+  pointer-events: none;
+  z-index: 101;
+}
+#transition-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  z-index: 102;
+}
+
 
 .transition-dot {
   width: 20px;
