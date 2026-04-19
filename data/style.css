@@ -237,3 +237,101 @@ left: 50%;
   transform-origin: left center;
   opacity: 0.3;
 }
+
+#start-screen {
+  position: absolute;
+  inset: 0;
+  background: black;
+  z-index: 200;
+  overflow: hidden;
+}
+
+#start-screen.hide {
+  display: none;
+}
+
+#start-bg {
+  position: absolute;
+  inset: 0;
+}
+
+#start-center {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+}
+
+#start-three {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  z-index: 201;
+  pointer-events: none;
+}
+
+.start-content {
+  position: absolute;
+  left: 50%;
+  top: 74%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 202;
+  width: 420px;
+  max-width: 80%;
+}
+
+.start-title {
+  font-size: 28px;
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+
+.start-instruction {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.start-concept {
+  font-size: 10px;
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+#start-button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  font-size: 11px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+}
+
+#start-button:hover {
+  opacity: 0.8;
+}
+
+.start-node {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.start-line {
+  position: absolute;
+  height: 2px;
+  background: white;
+  transform-origin: left center;
+  opacity: 0.8;
+}
