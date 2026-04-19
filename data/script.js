@@ -440,11 +440,12 @@ function layoutArchiveNumbers(){
 function animateArchiveNumbers(){
 archiveNumbers.forEach(function(item, index) {
   const time = Date.now()*0.001;
+  const speed = 0.4 + (index % 5) * 0.08;
   const moveX = Math.sin(time + item.offset) * 1.5;
   const moveY = Math.cos(time + item.offset) * 1;
 
   item.element.style.left = item.baseX + moveX + "px";
-   item.element.style.top = item.baseY + moveY+ "px";
+  item.element.style.top = item.baseY + moveY+ "px";
 
 });
 }
