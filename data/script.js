@@ -463,6 +463,11 @@ const amountY = 0.2 + (index % 3) * 0.15;
 });
 }
 
+
+function createTransitionNumbers(){
+  
+}
+
 setupThreeScene();
 seedDots();
 seedLines();
