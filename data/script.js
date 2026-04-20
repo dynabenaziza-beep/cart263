@@ -621,7 +621,15 @@ const time = Date.now() * 0.001;
   });
 }
  function createStartBackground(){
-  
+  const colors = [
+  "#ff4d4d",
+  "#ffcc33",
+  "#33cc66",
+  "#33cfff",
+  "#9966cc",
+  "#ff66b3"
+];
+
  }
 
 
