@@ -589,20 +589,6 @@ const amountY = 0.2 + (index % 3) * 0.15;
 });
 }
 
-
-
-
-function animateTransitionNumbers(){
-const time = Date.now() * 0.001;
-
-  transitionNumberItems.forEach(function(item) {
-    const x = 110 + Math.cos(time + item.angle) * item.radius;
-    const y = 110 + Math.sin(time + item.angle) * item.radius;
-
-    item.element.style.left = x + "px";
-    item.element.style.top = y + "px";
-  });
-}
  function createStartBackground(){
   const colors = [
   "#ff4d4d",
