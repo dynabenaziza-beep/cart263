@@ -36,6 +36,13 @@ https://www.youtube.com/watch?v=YKzyhcyAijo
 
 
 
+
+
+
+
+
+
+
 Project 1 – Studio Response
 Aydan’s Project
 Live link: https://aydanmcgrail.github.io/cart263/Project1_aydan/
