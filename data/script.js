@@ -669,9 +669,9 @@ const material = new THREE.MeshBasicMaterial({
 for (let i = 0; i < 12; i++) {
   const sphere = new THREE.Mesh(geometry, material);
 
-  sphere.position.x = (Math.random() - 0.5) * 2;
-  sphere.position.y = (Math.random() - 0.5) * 2;
-  sphere.position.z = (Math.random() - 0.5) * 2;
+  sphere.position.x = (Math.random() - 0.5) * 3;
+  sphere.position.y = (Math.random() - 0.5) * 3;
+  sphere.position.z = (Math.random() - 0.5) * 3;
 
   sphere.scale.setScalar(1 + Math.random()*2.1);
 
