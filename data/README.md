@@ -1,3 +1,39 @@
+
+Project 2 
+
+Data Loop — Interactive Artwork
+How It Works
+This is an interactive system where the user creates data through simple actions.
+Click on the screen to generate data points
+Data points move and connect based on similarity
+When enough connections form, a new identity is created
+Each identity makes the central sphere grow
+After 3 identities, the system transitions to the archive
+In the archive, all generated identities are stored and displayed as part of a larger dataset.
+Controls
+
+
+Click → create data
+R key → restart
+
+
+Tools
+Built with HTML, CSS, JavaScript
+Uses Three.js for the 3D sphere
+
+TUTORIALS 
+Three.js Crash Course
+https://www.youtube.com/watch?v=Q7AOvWpIVHU
+→ Helped understand scene, camera, renderer, and basic animation
+Three.js Tutorial for Beginners
+https://www.youtube.com/watch?v=YKzyhcyAijo
+→ Helped with creating shapes and working with materials
+
+
+
+
+
+
 Project 1 – Studio Response
 Aydan’s Project
 Live link: https://aydanmcgrail.github.io/cart263/Project1_aydan/
