@@ -716,7 +716,7 @@ s.position.y += Math.cos(Date.now() * 0.001 + i) * 0.001;
 
  }
 
-
+  startRenderer.render(startScene, startCamera);
  }
 setupThreeScene();
 seedDots();
