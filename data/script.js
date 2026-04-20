@@ -641,11 +641,16 @@ const x = centerX + Math.cos(angle) * radius;
 const y = centerY + Math.sin(angle) * radius;
 const size = 8 + Math.random() * 45;
 
+const dx = centerX - x;
+const dy = centerY - y;
+const distance = Math.sqrt(dx * dx + dy * dy);
+const rotate = Math.atan2(dy, dx) * 180 / Math.PI;
+
 
 
  }
 
-
+ }
 setupThreeScene();
 seedDots();
 seedLines();
