@@ -31,17 +31,18 @@ Three.js Tutorial for Beginners
 https://www.youtube.com/watch?v=YKzyhcyAijo
 → Helped with creating shapes and working with materials
 
+--
+-
+-
+-
+-
+-
+-
 
-
-
-
-
-
-
-
-
-
-
+-
+-
+-
+-
 
 Project 1 – Studio Response
 Aydan’s Project
