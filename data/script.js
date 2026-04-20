@@ -630,6 +630,8 @@ const time = Date.now() * 0.001;
   "#ff66b3"
 ];
 
+const centerX = window.innerWidth / 2;
+const centerY = window.innerHeight / 2;
  }
 
 
