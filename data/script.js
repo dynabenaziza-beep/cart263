@@ -702,7 +702,7 @@ for (let i = 0; i < 12; i++) {
 }
 }
  function animateStartThree() {
-
+requestAnimationFrame(animateStartThree);
   
  }
 
