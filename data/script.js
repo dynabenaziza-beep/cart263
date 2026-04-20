@@ -669,6 +669,9 @@ function setupStartThree(){
  const container = document.getElementById("start-three");
 
 startScene = new THREE.Scene(); 
+
+startCamera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+startCamera.position.z = 4;
 }
  
 
