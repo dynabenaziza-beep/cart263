@@ -651,6 +651,11 @@ seedDots();
 seedLines();
 createArchiveNumbers();
 layoutArchiveNumbers();
+
+createStartBackground();
+
+
 animate();
 animateThreeScene();
+
 createTransitionNumbers();
