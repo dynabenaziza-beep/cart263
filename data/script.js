@@ -680,6 +680,26 @@ startRenderer = new THREE.WebGLRenderer({
 
 startRenderer.setSize(220, 220);
 container.appendChild(startRenderer.domElement);
+
+const geometry = new THREE.SphereGeometry(0.15, 10, 10);
+
+const material = new THREE.MeshBasicMaterial({
+  color: 0xffffff,
+  wireframe: true
+});
+
+for (let i = 0; i < 12; i++) {
+  const sphere = new THREE.Mesh(geometry, material);
+
+  sphere.position.x = (Math.random() - 0.5) * 2;
+  sphere.position.y = (Math.random() - 0.5) * 2;
+  sphere.position.z = (Math.random() - 0.5) * 2;
+
+  sphere.scale.setScalar(0.6 + Math.random());
+
+  startScene.add(sphere);
+  startSpheres.push(sphere);
+}
 }
  
 
