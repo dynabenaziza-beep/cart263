@@ -708,6 +708,12 @@ requestAnimationFrame(animateStartThree);
 for (let i = 0; i < startSpheres.length; i++) {
   const s = startSpheres[i];
   
+s.rotation.x += 0.01;
+s.rotation.y += 0.01;
+
+s.position.x += Math.sin(Date.now() * 0.001 + i) * 0.001;
+s.position.y += Math.cos(Date.now() * 0.001 + i) * 0.001;
+
  }
 
 
