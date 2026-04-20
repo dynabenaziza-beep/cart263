@@ -652,8 +652,21 @@ line.style.top = y + size / 2 + "px";
 line.style.transform = "rotate(" + rotate + "deg)";
 
 
+artBg.appendChild(line);
 
- }
+    const dot = document.createElement("div");
+    dot.className = "start-node";
+    dot.style.width = size + "px";
+    dot.style.height = size + "px";
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
+    dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+    startBg.appendChild(dot);
+  }
+
+
+ 
 
  }
 setupThreeScene();
