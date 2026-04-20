@@ -665,7 +665,9 @@ artBg.appendChild(line);
     startBg.appendChild(dot);
   }
 
-
+function setupStartThree(){
+  
+}
  
 
  }
