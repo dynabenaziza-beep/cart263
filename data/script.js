@@ -669,6 +669,13 @@ startBg.appendChild(line);
     startBg.appendChild(dot);
   }
  }
+
+startButton.addEventListener("click", function () {
+  startScreen.classList.add("hide");
+  experienceStarted = true;
+  sessionStartTime = Date.now();
+});
+
 function setupStartThree(){
  const container = document.getElementById("start-three");
 
@@ -722,6 +729,8 @@ s.position.y += Math.cos(Date.now() * 0.001 + i) * 0.001;
 
   startRenderer.render(startScene, startCamera);
  }
+
+
 setupThreeScene();
 seedDots();
 seedLines();
@@ -736,3 +745,4 @@ animateThreeScene();
 animateStartThree();
 
 createTransitionNumbers();
+animateTransitionNumbers();
