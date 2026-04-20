@@ -715,9 +715,10 @@ createArchiveNumbers();
 layoutArchiveNumbers();
 
 createStartBackground();
-
+setupStartThree();
 
 animate();
 animateThreeScene();
+animateStartThree();
 
 createTransitionNumbers();
