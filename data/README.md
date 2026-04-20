@@ -1,3 +1,6 @@
+PROJECT 2 VIDEO : 
+https://www.loom.com/share/39e12cf56ac34a738a5eba1d637f862e
+
 Project 2 
 
 Data Loop — Interactive Artwork
