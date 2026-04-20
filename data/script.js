@@ -703,6 +703,10 @@ for (let i = 0; i < 12; i++) {
 }
  function animateStartThree() {
 requestAnimationFrame(animateStartThree);
+
+
+for (let i = 0; i < startSpheres.length; i++) {
+  const s = startSpheres[i];
   
  }
 
