@@ -666,7 +666,9 @@ artBg.appendChild(line);
   }
 
 function setupStartThree(){
-  
+ const container = document.getElementById("start-three");
+
+startScene = new THREE.Scene(); 
 }
  
 
