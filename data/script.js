@@ -646,6 +646,11 @@ const dy = centerY - y;
 const distance = Math.sqrt(dx * dx + dy * dy);
 const rotate = Math.atan2(dy, dx) * 180 / Math.PI;
 
+line.style.width = distance + "px";
+line.style.left = x + size / 2 + "px";
+line.style.top = y + size / 2 + "px";
+line.style.transform = "rotate(" + rotate + "deg)";
+
 
 
  }
