@@ -634,6 +634,14 @@ const centerX = window.innerWidth / 2;
 const centerY = window.innerHeight / 2;
 for (let i = 0; i < 18; i++) {
 
+const angle = Math.random() * Math.PI * 2;
+const radius = 80 + Math.random() * 260;
+
+const x = centerX + Math.cos(angle) * radius;
+const y = centerY + Math.sin(angle) * radius;
+const size = 8 + Math.random() * 45;
+
+
 
  }
 
