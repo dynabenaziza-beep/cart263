@@ -641,6 +641,10 @@ const x = centerX + Math.cos(angle) * radius;
 const y = centerY + Math.sin(angle) * radius;
 const size = 8 + Math.random() * 45;
 
+ const line = document.createElement("div");
+    line.className = "start-line";
+
+
 const dx = centerX - x;
 const dy = centerY - y;
 const distance = Math.sqrt(dx * dx + dy * dy);
@@ -652,7 +656,7 @@ line.style.top = y + size / 2 + "px";
 line.style.transform = "rotate(" + rotate + "deg)";
 
 
-artBg.appendChild(line);
+startBg.appendChild(line);
 
     const dot = document.createElement("div");
     dot.className = "start-node";
@@ -664,7 +668,7 @@ artBg.appendChild(line);
 
     startBg.appendChild(dot);
   }
-
+ }
 function setupStartThree(){
  const container = document.getElementById("start-three");
 
